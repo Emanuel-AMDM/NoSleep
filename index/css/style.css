@@ -1,0 +1,92 @@
+/* ultiliza a pagina inteira  */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+body{
+    display: table;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background: url(../../GIF/gif_index.gif) no-repeat bottom center scroll;
+    background-position: 100% 35%;
+    -webkit-background-size: cover;
+
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+
+    img{
+        margin-top: 30px;
+        width: 400px;
+    }
+}
+
+.subtitulo{
+    p{
+        display: flex;
+        justify-content: center;
+        color: white;
+        font-size: 25px;
+    }
+}
+
+.menu{
+
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    ul li{
+        list-style: none;
+        padding: 5px 0px;
+    }
+
+    ul li a{
+        display: flex;
+        text-decoration: none;
+        color: white;
+    }
+
+    ul li a:hover{
+        background-color: blue;
+        display: block;
+        transition: all .3s;
+        padding: 10px;
+    }
+
+}
+
+.footer{
+    color: white;
+    margin-top: 100px;
+
+    ul{
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        list-style: none;
+        justify-content: center;
+    }
+
+    .info{
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .copy{
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
