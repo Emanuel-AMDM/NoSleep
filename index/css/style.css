@@ -52,7 +52,6 @@ body{
     }
 
     ul li a{
-        display: flex;
         text-decoration: none;
         color: white;
     }
@@ -61,9 +60,70 @@ body{
         background-color: blue;
         display: block;
         transition: all .3s;
+        border-radius: 10px;
         padding: 10px;
     }
 
+}
+
+.modal {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(77, 77, 77, 0.7);
+    transition: all 0.4s;
+
+    .footer_modal {
+        text-align: right;
+        padding: 15px 0px;
+        background-color: rgb(124, 123, 123);
+    }
+    
+    .footer-btn-close {
+        width: 150px;
+        padding: 10px;
+        text-decoration: none;
+        background-color: #cfcca8;
+        border-radius: 3px;
+        color: black;
+    }
+
+    .content {
+        border-radius: 4px;
+        position: relative;
+        width: 500px;
+        max-width: 90%;
+        background: rgb(124, 123, 123);
+        padding: 1em 2em;
+
+        .contact{
+            ul li{
+                list-style: none;
+                margin-top: 15px;
+            }
+
+            ul li i{
+                padding-right: 10px;
+            }
+
+            ul li a{
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+}
+
+.modal:target {
+    visibility: visible;
+    opacity: 1;
 }
 
 .footer{
@@ -76,6 +136,12 @@ body{
         gap: 30px;
         list-style: none;
         justify-content: center;
+    }
+
+    .rede_social{
+        ul li a i{
+            color: white;
+        }
     }
 
     .info{
