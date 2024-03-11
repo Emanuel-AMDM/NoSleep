@@ -1,5 +1,11 @@
 function verso1(){
-    document.getElementById("img_1").src="../../img/img_peita1_verso.png";
+    var img_atual = "../../img/img_peita1_verso.png"
+    var img_anterior = "../../img/img_peita1_frente.png"
+
+    document.getElementById("img_1").scr = img_atual;
+    var aux = img_atual
+    img_atual = img_anterior
+    img_anterior = aux
 }
 function verso2(){
     document.getElementById("img_2").src="../../img/img_peita2_verso.png";
