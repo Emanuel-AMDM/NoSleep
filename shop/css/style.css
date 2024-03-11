@@ -1,0 +1,136 @@
+/* ultiliza a pagina inteira  */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+body{
+    display: table;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background: url(../../GIF/gif_index.gif) no-repeat bottom center scroll;
+    background-position: 100% 55%;
+    -webkit-background-size: cover;
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+
+    img{
+        margin-top: 30px;
+        width: 400px;
+    }
+}
+
+.filter_bar{
+    
+    background-color: black;
+    padding: 30px;
+
+    ul{
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        gap: 100px;
+    }
+
+    ul li:hover{
+        background-color: blue;
+        transition: all .3s;
+        border-radius: 10px;
+        padding: 15px;
+    }
+
+    ul li a{
+        color: white;
+        text-decoration: none;
+    }
+
+    .menu{
+    
+        li  ul{
+            background-color:blue;
+            display:none;
+        }
+
+        li:hover ul, .menu li.over ul{
+            display:block;
+        }
+
+        li ul li{
+            margin-top: 5px;
+        }
+
+    }
+}
+
+.img_shop{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    img{
+        margin-top: 30px;
+        width: 400px;
+        height: 300px;
+    }
+}
+
+.txt_shop{
+    display: flex;
+    gap: 50px;
+    
+    #roupa1{
+        margin-left: 580px;
+    }
+    #roupa2{
+        margin-left: 240px;
+    }
+    #roupa3{
+        margin-left: 240px;
+    }
+    #roupa4{
+        margin-left: 240px;
+    }
+}
+
+.footer{
+    color: white;
+    margin-top: 100px;
+
+    ul{
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        list-style: none;
+        justify-content: center;
+    }
+
+    .rede_social{
+        ul li a i{
+            color: white;
+        }
+    }
+
+    .info{
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .copy{
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
