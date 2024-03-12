@@ -63,37 +63,73 @@
     }
 }
 
-.img_shop{
-
+.border_up{
+    width: 100%;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+
+    .img_shop{
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        img{
+            margin-top: 30px;
+            width: 500px;
+            height: 650px;
+        }
+
+        .border_img{
+            width: 100%;
+            max-width: 1000px;
+            border: 1px solid black;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    }
+}
+.border_down{
+    width: 100%;
+    display: flex;
     justify-content: center;
 
-    img{
-        margin-top: 30px;
-        width: 400px;
-        height: 300px;
+    .txt_shop{
+
+        display: flex;
+        flex-direction: row;
+
+        #roupa1{
+            display: flex;
+            justify-content: center;
+            width: 500px;
+        }
+        #roupa2{
+            display: flex;
+            justify-content: center;
+            width: 500px;
+        }
+        #roupa3{
+            display: flex;
+            justify-content: center;
+            width: 500px;
+        }
+        #roupa4{
+            display: flex;
+            justify-content: center;
+            width: 500px;
+        }
+        
+        .border_txt{
+            width: 100%;
+            max-width: 1000px;
+            border: 1px solid black;
+            padding: 10px;
+            margin-top: 20px;
+        }
     }
 }
-
-.txt_shop{
-    display: flex;
-    gap: 50px;
-    
-    #roupa1{
-        margin-left: 580px;
-    }
-    #roupa2{
-        margin-left: 240px;
-    }
-    #roupa3{
-        margin-left: 240px;
-    }
-    #roupa4{
-        margin-left: 240px;
-    }
-}
-
 .footer{
     color: black;
     margin-top: 100px;
