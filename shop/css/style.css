@@ -54,23 +54,6 @@ body{
         color: white;
         text-decoration: none;
     }
-
-    .menu{
-    
-        li  ul{
-            background-color:blue;
-            display:none;
-        }
-
-        li:hover ul, .menu li.over ul{
-            display:block;
-        }
-
-        li ul li{
-            margin-top: 5px;
-        }
-
-    }
 }
 
 .img_shop{
