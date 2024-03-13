@@ -38,72 +38,62 @@
     <div class="border"><hr id="border_down"></div>
 
     <div class="frete_calculate">
-        <ul>
-            <li>
-                <div>
+        <div>
+            <div>
+                <h2>Frete</h2>
+                <input type="text" placeholder="Calculate your frete" id="input_txt">
+                <input type="button" value="Calculate" id="input_button">
+            </div>
+            <div class="frete_type">
+                <p>Select a shipping method below:</p>
+                <div class="border_box">
                     <div>
-                        <h2>Frete</h2>
-                        <input type="text" placeholder="Calculate your frete" id="input_txt">
-                        <input type="button" value="Calculate" id="input_button">
-                    </div>
-                    <div class="frete_type">
-                        <p>Select a shipping method below:</p>
-                        <div class="border_box">
-                            <div>
-                                <a href="">Sedex Correio</a>
-                            </div>
-                        </div>
-                        <div class="border_box">
-                            <div>
-                                <a href="">PAC Correio</a>
-                            </div>
-                        </div>
-                        <div class="border_box">
-                            <div>
-                                <a href="">Motoboy Sorocaba / Votorantim</a>
-                            </div>
-                        </div>
+                        <a href="">Sedex Correio</a>
                     </div>
                 </div>
-            </li>
-            <li>
-                <div class="frete_summary">
-                    <h2>request Summary</h2>
-
-                    <div class="border_summary"><hr></div>
-                    
-                    <div class="frete_summary_up">
-                        <ul>
-                            <li>
-                                <p id="subtotal_txt">Subtotal</p>
-                            </li>
-                            <li>
-                                <p id="subtotal_value">$10</p>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="border_summary"><hr></div>
-                    
-                    <div class="frete_summary_down">
-                        <ul>
-                            <li>
-                                <p id="total_txt">Total request</p>
-                            </li>
-                            <li>
-                                <p id="total_value" >$10</p>
-                            </li>
-                        </ul>
+                <div class="border_box">
+                    <div>
+                        <a href="">PAC Correio</a>
                     </div>
                 </div>
-            </li>
-        </ul>
+                <div class="border_box">
+                    <div>
+                        <a href="">Motoboy Sorocaba / Votorantim</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="frete_summary">
+            <h2>request Summary</h2>
+
+            <div class="border_summary"><hr></div>
+            
+            <div class="frete_summary_up">
+                <div>
+                    <p id="subtotal_txt">Subtotal</p>
+                </div>
+                <div>
+                    <p id="subtotal_value">$10</p>
+                </div>
+            </div>
+
+            <div class="border_summary"><hr></div>
+            
+            <div class="frete_summary_down">
+                <div>
+                    <p id="total_txt">Total request</p>
+                </div>
+                <div>
+                    <p id="total_value" >$10</p>
+                </div>   
+            </div>
+        </div>
     </div>
 
     <div class="border"><hr id="border_continue"></div>
 
     <div class="continue">
-        <input type="button" value="Continue">
+        <a href="../payment/index.html" type="button" class="btn btn-primary">Continue</a>
     </div>
 
     <footer class="footer">
