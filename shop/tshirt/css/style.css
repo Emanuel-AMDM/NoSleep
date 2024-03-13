@@ -44,23 +44,6 @@
         color: white;
         text-decoration: none;
     }
-
-    .menu{
-    
-        li  ul{
-            background-color:blue;
-            display:none;
-        }
-
-        li:hover ul, .menu li.over ul{
-            display:block;
-        }
-
-        li ul li{
-            margin-top: 5px;
-        }
-
-    }
 }
 
 .border_up{
@@ -183,5 +166,20 @@
         display: flex;
         justify-content: center;
         margin-top: 10px;
+    }
+
+    .footer_politics{
+        ul li a{
+            text-decoration: none;
+            color: black;
+            font-size: 13px;
+        }
+    }
+
+    .footer_end{
+        ul li{
+            color: rgb(134, 134, 134);
+            font-size: 10px;
+        }
     }
 }
