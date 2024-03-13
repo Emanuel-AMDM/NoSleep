@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <nav class="nav_menu">
+        <div>
+            <img src="../img_logo/Destaques_07 - Menu.png" alt="">
+        </div>
+    </nav>
+
+    <div class="information">
+        <div class="border">
+            <div class="information_title">
+                <h3>Personal information</h3>
+            </div>
+            <div class="information">
+                <div>
+                    <label for="">E-mail</label><br>
+                    <input type="text" name="" id="email">
+                </div>
+                <div>
+                    <label for="">Nome</label><br>
+                    <input type="text" name="" id="nome">
+                </div>
+                <div>
+                    <label for="">Telefone</label><br>
+                    <input type="text" name="" id="">
+                </div>
+            </div>
+            <div class="information">
+                <div>
+                    <label for="">Senha</label><br>
+                    <input type="text" name="" id="senha">
+                </div>
+                <div>
+                    <label for="">Confirmar Senha</label><br>
+                    <input type="text" name="" id="senha2">
+                </div>
+                <div>
+                    <label for="">RG</label><br>
+                    <input type="text" name="" id="">
+                </div>
+            </div>
+            <div class="information_button">
+                <input type="button" value="save">
+            </div>
+        </div>
+    </div>
+
+    <div class="delivery">
+        <div class="border">
+            <div class="delivery_title">
+                <h3>Delivery address</h3>
+            </div>
+            <div class="delivery_up">
+                <div>
+                    <label for="">Rua</label><br>
+                    <input type="text" name="" id="rua">
+                </div>
+                <div>
+                    <label for="">Bairro</label><br>
+                    <input type="text" name="" id="bairro">
+                </div>
+                <div>
+                    <label for="">Numero</label><br>
+                    <input type="text" name="" id="">
+                </div>
+            </div>
+            <div class="delivery_down">
+                <div>
+                    <label for="">Complemento</label><br>
+                    <input type="text" name="" id="complemento">
+                </div>
+                <div>
+                    <label for="">CEP</label><br>
+                    <input type="text" name="" id="">
+                </div>
+            </div>
+            <div class="delivery_button">
+                <input type="button" value="save">
+            </div>
+        </div>
+    </div>
+
+    <div class="shipping">
+        <div class="border">
+            <div class="shipping_title">
+                <h3>Shipping methods</h3>
+            </div>
+            <div class="shipping_content">
+                <p>Select a shipping method below:</p>
+                <div>
+                    <input type="radio"><a href="">Sedex Correio</a>
+                </div>
+                <div>
+                    <input type="radio"><a href="">PAC Correio</a>
+                </div>
+                <div>
+                    <input type="radio"><a href="">Motoboy Sorocaba / Votorantim</a>
+                </div>    
+            </div>
+        </div>
+    </div>
+
+    <div class="pay">
+        <div class="border">
+            <div class="pay_title">
+                <h3>Pay with credit card</h3>
+            </div>
+            <div class="pay_up">
+                <div>
+                    <label for="">Card Number</label><br>
+                    <input type="number" name="" id="card_number">
+                </div>
+                <div>
+                    <label for="">Cardholder Name</label><br>
+                    <input type="text" name="" id="cardholder">
+                </div>
+                <div>
+                    <label for="">Card Expiry Date</label><br>
+                    <input type="month" name="" id="card_expiry">
+                </div>
+            </div>
+            <div class="pay_down">
+                <div>
+                    <label for="">Security Code</label><br>
+                    <input type="number" name="" id="security_code">
+                </div>
+                <div>
+                    <label for="">Installment</label><br>
+                    <select name="" id="installment">
+                        <option value="">1X</option>
+                        <option value="">2X</option>
+                        <option value="">3X</option>
+                        <option value="">4X</option>
+                        <option value="">5X</option>
+                        <option value="">6X</option>
+                        <option value="">7X</option>
+                        <option value="">8X</option>
+                        <option value="">9X</option>
+                        <option value="">10X</option>
+                        <option value="">11X</option>
+                        <option value="">12X</option>
+                    </select>
+                </div>
+            </div>
+            <div class="pay_button">
+                <input type="button" value="Finalizar Compra com Cartão">
+            </div>
+        </div>
+    </div>
+
+    <div class="pix">
+        <div class="border">
+            <div class="pix_title">
+                <h3>Pay with Pix</h3>
+            </div>
+            <div>
+                <div class="pix_info">
+                    <label for="">Aprovação em minutos</label>
+                </div>
+                <div class="pix_desc">
+                    <div class="pix_value">
+                        <p>$10  $5 (50% de desconto)</p>
+                    </div>
+                    <div class="pix_1">
+                        <span>1 - Após a finalização do pedido, abra o app ou banco de sua preferência. Escolha a opção pagar com código Pix “copia e cola”, ou código QR. O código tem validade de 2 horas.</span>
+                    </div>
+                    <div class="pix_2">
+                        <span>2 - Copie e cole o código, ou escaneie o código Qr com a câmera do seu celular. Confira todas as informações e autorize o pagamento.</span>
+                    </div>
+                    <div class="pix_3">
+                        <span>3 - Você vai receber a confirmação de pagamento no seu e-mail e através dos nossos canais. E pronto!</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pix_button">
+                <input type="button" value="Finalizar Compra com PIX">
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="rede_social">
+            <ul>
+                <li><a href="https://www.instagram.com/no.sleep.boyz?igsh=MWVsOHk4ZjIwY2hrOA=="><i class="fa-brands fa-instagram"></i></a></li>
+            </ul>
+        </div>
+        <div class="info">
+            <p>NoSleep, trust and quality.</p>
+        </div>
+        <div class="copy">
+            <p>&copy;NoSleep</p>
+        </div>
+        <div class="footer_politics">
+            <ul>
+                <li><a href="">TERMO DE USO            </a></li>
+                <li><a href="">POLÍTICAS DE PRIVACIDADE</a></li>
+                <li><a href="">CENTRAL DE ATENDIMENTO  </a></li>
+                <li><a href="">TERMOS DE SERVIÇO       </a></li>
+                <li><a href="">POLÍTICA DE REEMBOLSO   </a></li>
+            </ul>
+        </div>
+        <div class="footer_end">
+            <ul>
+                <li>NOSLEEP INDÚSTRIA E COMÉRCIO DE ROUPAS LTDA - XX.XXX.XXX/XXXX-XX</li>
+                <li>RUA PANCADA, XX - VILA CAROL - XXXXX-XXX - SOROCABA - SP        </li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/5dc8345cee.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
