@@ -92,18 +92,9 @@
     display: flex;
     justify-content: center;
     margin-top: 15px;
+    gap: 390px;
 
-    ul{
-        display: flex;
-        gap: 400px;
-        padding-left: 15px;
-    }
-
-    ul li{
-        list-style: none;
-    }
-
-    ul li h2{
+    h2{
         color: rgb(190, 190, 190);
     }
 
@@ -168,6 +159,18 @@
             color: rgb(131, 131, 131);
         }
 
+        .frete_summary_up{
+            display: flex;
+            gap: 400px;
+            padding-left: 15px;
+        }
+
+        .frete_summary_down{
+            display: flex;
+            gap: 400px;
+            padding-left: 15px;
+        }
+
         #subtotal_txt{
             display: flex;
             margin-top: 10px;
@@ -195,7 +198,9 @@
     justify-content: flex-end;
     padding-right: 700px;
 
-    input{
+    a{
+        text-decoration: none;
+        color: black;
         border: none;
         background-color: rgb(252, 69, 69);
         padding: 20px 100px;
