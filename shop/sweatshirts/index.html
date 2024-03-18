@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
+    <title>NoSleep - Shop</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,6 +11,34 @@
 
 </head>
 <body>
+
+    <div id="modal" class="modal">
+        
+        <div class="content">
+            
+            <div class="content_data">
+                <div class="content_img">
+                    <img src="../../img/img_peita1_frente.png" alt="">
+                </div>
+                <div class="content_text">
+                    <p>Camiseta - NoSleep</p>
+                    <p>100%Algodão - Preta</p>
+                    <p>$10</p>
+                </div>
+            </div>
+            <div>
+                <h2>Information</h2>
+                <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quod illo ipsa nam hic nisi optio, doloribus beatae eos quas,
+                blanditiis quam aperiam dicta tempore! Alias itaque sint ipsam maxime.</span>
+            </div>
+
+            <div class="footer_modal">
+                <a href="" class="footer-btn-close">Adicionar no Carrinho</a>
+                <a href="#" class="footer-btn-close">Fechar</a>
+            </div>
+        </div>
+
+    </div>
 
     <div id="top" class="titulo">
         <a href="../../index/index.html"><img src="../../img_logo/Destaques_07.png" alt=""></a>
@@ -33,16 +61,16 @@
     <div class="border_up">
         <div class="img_shop">
             <div class="border_img">
-                <img src="../../img/img_peita1_frente.png" alt="" id="img_1" onmouseover="alternarImagem1()">
+                <a href="#modal"><img src="../../img/img_peita1_frente.png" alt="" id="img_1" onmouseover="alternarImagem1()"></a>
             </div>
             <div class="border_img">
-                <img src="../../img/img_peita2_frente.png" alt="" id="img_2" onmouseover="alternarImagem2()">
+                <a href="#modal"><img src="../../img/img_peita2_frente.png" alt="" id="img_2" onmouseover="alternarImagem2()"></a>
             </div>
             <div class="border_img">
-                <img src="../../img/img_peita3_frente.png" alt="" id="img_3" onmouseover="alternarImagem3()">
+                <a href="#modal"><img src="../../img/img_peita3_frente.png" alt="" id="img_3" onmouseover="alternarImagem3()"></a>
             </div>
             <div class="border_img">
-                <img src="../../img/img_peita4_frente.png" alt="" id="img_4" onmouseover="alternarImagem4()">
+                <a href="#modal"><img src="../../img/img_peita4_frente.png" alt="" id="img_4" onmouseover="alternarImagem4()"></a>
             </div>
         </div>
     </div>
@@ -52,18 +80,22 @@
             <div class="border_txt">
                 <label for="" id="roupa1">CAMISETA - PRETA</label>
                 <p>$10</p>
+                <i class="fa-solid fa-cart-plus"></i>
             </div>
             <div class="border_txt">
                 <label for="" id="roupa2">CAMISETA - PRETA</label>
                 <p>$10</p>
+                <i class="fa-solid fa-cart-plus"></i>
             </div>
             <div class="border_txt">
                 <label for="" id="roupa3">CAMISETA - PRETA</label>
                 <p>$10</p>
+                <i class="fa-solid fa-cart-plus"></i>
             </div>
             <div class="border_txt">
                 <label for="" id="roupa4">CAMISETA - BRANCA</label>
                 <p>$10</p>
+                <i class="fa-solid fa-cart-plus"></i>
             </div>
         </div>
     </div>
