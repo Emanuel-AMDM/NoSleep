@@ -1,0 +1,215 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.nav_menu{
+    padding-left: 600px;
+
+    img{
+        margin-top: 50px;
+        width: 200px;
+        height: 40px;
+    }
+}
+
+.info_frete{
+    padding-left: 600px;
+    
+    label{
+        font-size: 12px;
+        color: rgb(156, 155, 155);
+    }
+}
+
+.titulo_frete{
+
+    h2{
+        color: rgb(190, 190, 190);
+        margin-top: 35px;
+        padding-left: 630px;
+    }
+}
+
+.border{
+    display: flex;
+    justify-content: center;
+    
+    hr{
+        width: 1300px;
+        height: 3px;
+        margin-top: 5px;
+        background-color: rgb(190, 190, 190);
+    }
+
+    #border_down{
+        width: 1300px;
+        height: 1px;
+        margin-top: 5px;
+        background-color: rgb(190, 190, 190);
+    }
+
+    #border_continue{
+        width: 1300px;
+        height: 1px;
+        margin-top: 20px;
+        background-color: rgb(190, 190, 190);
+    }
+}
+
+.frete_calculate{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 300px;
+
+    h2{
+        color: rgb(190, 190, 190);
+    }
+
+    input{
+        border-radius: 6px;
+        padding: 3px;
+    }
+
+    #input_txt{
+        border: none;
+        border-bottom: 2px solid black;
+        padding: 5px 8px;
+    }
+
+    #input_button{
+        background-color: rgb(135, 216, 248);
+        color: black;
+        font-size: 12px;
+        padding: 5px 8px;
+        border-radius: 12px;
+        transition-duration: 0.4s;
+        border: none;
+    }
+
+    #input_button:hover{
+        background-color: rgb(172, 172, 243); /* Green */
+        color: white
+    }
+
+    .cart_itens{
+        img{
+            width: 120px;
+            height: 145px;
+        }
+        .cart_item_up{
+            display: flex;
+            gap: 40px;
+            .cart_item_up_text{
+                margin-top: 20px;
+            }
+        }
+        .qntd1{
+            display: flex;
+            gap: 10px;
+        }
+        .qntd2{
+            display: flex;
+            gap: 10px;
+        }
+    }
+    
+    .frete_summary{
+
+
+        .frete_summary_subtotal_frete{
+            padding: 20px 0px;
+
+            .frete_summary_subtotal{
+                display: flex;
+                gap: 250px;
+                font-size: 15px;
+            }
+    
+            .frete_summary_frete{
+                display: flex;
+                gap: 272px;
+                margin-top: 15px;
+                font-size: 15px;
+            }
+        }
+
+        .frete_summary_total{
+            margin-top: 20px;
+            display: flex;
+            gap: 270px;
+        }
+
+    }
+}
+
+.continue{
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 700px;
+
+    a{
+        text-decoration: none;
+        color: black;
+        border: none;
+        background-color: rgb(252, 69, 69);
+        padding: 20px 100px;
+        font-size: 17px;
+        border-radius: 15px;
+        box-shadow: 2px 2px 2px black;
+    }
+}
+
+.footer{
+    color: black;
+    margin-top: 100px;
+
+    ul{
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        list-style: none;
+        justify-content: center;
+    }
+
+    .rede_social{
+        ul li a i{
+            color: black;
+        }
+    }
+
+    .info{
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .copy{
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .footer_politics{
+        ul li a{
+            text-decoration: none;
+            color: black;
+            font-size: 13px;
+        }
+    }
+
+    .footer_end{
+        ul li{
+            color: rgb(134, 134, 134);
+            font-size: 10px;
+        }
+    }
+}
