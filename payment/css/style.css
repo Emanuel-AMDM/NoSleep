@@ -10,359 +10,237 @@
 }
 
 .nav_menu{
-    background-color: rgb(248, 238, 228);
-    padding: 20px;
-    box-shadow: 5px 5px 5px black;
-    
+    padding-left: 600px;
+
     img{
-        margin-top: 5px;
+        margin-top: 50px;
         width: 200px;
         height: 40px;
     }
 }
 
-
-.information{
-    margin-top: 50px;
+.modal {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     display: flex;
+    align-items: center;
     justify-content: center;
+    background: rgba(77, 77, 77, 0.7);
+    transition: all 0.4s;
+
+    .footer_modal {
+        text-align: right;
+        padding: 15px 0px;
+        background-color: white;
+    }
     
-    .border{
-        width: 100%;
-        max-width: 1000px;
-        border: 1px solid black;
+    .footer-btn-close {
+        width: 150px;
         padding: 10px;
-        margin-top: 20px;
-        border-radius: 10px;
-     
-        .information_title{
-            display: flex;
-            padding-left: 20px;
-            margin-top: 30px;
-            color: rgb(156, 156, 156);
+        text-decoration: none;
+        background-color: #cfcca8;
+        border-radius: 3px;
+        color: black;
+    }
+
+    .content {
+        border-radius: 4px;
+        position: relative;
+        width: 500px;
+        max-width: 90%;
+        background: white;
+        padding: 1em 2em;
+    }
+
+    .form_payment_card{
+        .credito{
+            padding: 10px 0px;
         }
-    
-        .information{
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-    
-            input{
-                border: none;
-                border-radius: 10px;
-                padding: 5px;
-                border-bottom: 2px solid black;
-            }
-    
-            #email{
-                width: 300px;
-            }
-            #nome{
-                width: 300px;
-            }
-            #senha{
-                width: 300px;
-            }
-            #senha2{
-                width: 300px;
-            }
-        }
-    
-        .information_button{
-            display: flex;
-            justify-content: flex-end;
-            padding-right: 66px;
-            margin-top: 20px;
-    
-            input{
-                border: none;
-                background-color: rgb(3, 219, 86);
-                padding: 10px 50px;
-                font-size: 17px;
-                border-radius: 15px;
-                box-shadow: 2px 2px 2px black;
-            }
+        .debito{
+            padding: 10px 0px;
         }
     }
 }
 
-.delivery{
-    display: flex;
-    justify-content: center;
+.modal:target {
+    visibility: visible;
+    opacity: 1;
+}
 
-    .border{
-        width: 100%;
-        max-width: 1000px;
-        border: 1px solid black;
-        padding: 10px;
-        margin-top: 20px;
-        border-radius: 10px;
+.info_payment{
+    padding-left: 600px;
     
-
-        .delivery_title{
-            display: flex;
-            padding-left: 20px;
-            margin-top: 30px;
-            color: rgb(156, 156, 156);
-        }
-
-        .delivery_up{
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-
-            input{
-                border: none;
-                border-radius: 10px;
-                padding: 5px;
-                border-bottom: 2px solid black;
-            }
-
-            #rua{
-                width: 300px;
-            }
-            #bairro{
-                width: 300px;
-            }
-        }
-
-        .delivery_down{
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-            
-            input{
-                border: none;
-                border-radius: 10px;
-                padding: 5px;
-                border-bottom: 2px solid black;
-            }
-
-            #complemento{
-                width: 630px;
-            }
-        }
-
-        .delivery_button{
-            display: flex;
-            justify-content: flex-end;
-            padding-right: 66px;
-            margin-top: 20px;
-    
-            input{
-                border: none;
-                background-color: rgb(3, 219, 86);
-                padding: 10px 50px;
-                font-size: 17px;
-                border-radius: 15px;
-                box-shadow: 2px 2px 2px black;
-            }
-        }
+    label{
+        font-size: 12px;
+        color: rgb(156, 155, 155);
     }
 }
 
-.shipping{
+.payment_title{
+
+    h2{
+        color: rgb(190, 190, 190);
+        margin-top: 35px;
+        padding-left: 630px;
+    }
+}
+
+.border{
     display: flex;
     justify-content: center;
-
-    .border{
-        width: 100%;
-        height: 300px;
-        max-width: 1000px;
-        border: 1px solid black;
-        padding: 10px;
-        margin-top: 20px;
-        border-radius: 10px;
     
-        .shipping_title{
-            display: flex;
-            padding-left: 20px;
-            margin-top: 30px;
-            color: rgb(156, 156, 156);
+    hr{
+        width: 1300px;
+        height: 3px;
+        margin-top: 5px;
+        background-color: rgb(190, 190, 190);
+    }
+
+    #border_down{
+        width: 1300px;
+        height: 1px;
+        margin-top: 5px;
+        background-color: rgb(190, 190, 190);
+    }
+
+    #border_continue{
+        width: 1300px;
+        height: 1px;
+        margin-top: 20px;
+        background-color: rgb(190, 190, 190);
+    }
+}
+
+.cpf_payment{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 630px;
+    
+    label{
+        font-size: 15px;
+    }
+    input{
+        border: 3px solid #918e8e;
+        margin-top: 10px;
+        border-radius: 6px;
+        width: 400px;
+        height: 35px;
+    }
+}
+
+.delivery_address{
+    display: flex;
+    justify-content: center;
+    gap: 300px;
+
+    h2{
+        color: rgb(190, 190, 190);
+        margin-top: 20px;
+    }
+
+    .address_input{
+        
+        .address_info{
+            input{
+                border: 3px solid #918e8e;
+                margin-top: 10px;
+                border-radius: 6px;
+                width: 400px;
+                height: 35px;
+            }
+            .address_info_united{
+                display: flex;
+                gap: 10px;
+
+                #number_card{
+                    width: 300px;
+                }
+                #cvv{
+                    width: 90px;
+                }
+            }
+            label{
+                font-size: 15px;
+            }
+            #validade{
+                width: 262px;
+            }
         }
 
-        .shipping_content{
+        .address_name{
+            input{
+                border: 3px solid #918e8e;
+                margin-top: 10px;
+                border-radius: 6px;
+                width: 198px;
+                height: 35px;
+            }
+        }
+        
+    }
+    
+    .payment_summary{
+    
+        .information_summary_img{
+            display: flex;
+            gap: 30px;
+        }
+
+        .form_payment{
+            padding: 10px 0px;
+            color: black;
+        }
+
+        .parcelas{
+            padding: 10px 0px;
             display: flex;
             flex-direction: column;
-            align-items: center;
+
+            label{
+                font-size: 15px;
+            }
+            select{
+                border: 2px solid #918e8e;
+                border-radius: 5px;
+                width: 300px;
+            }
         }
 
-        p{
-            margin-top: 20px;
-        }
-
-        input{
-            margin-top: 30px;
-        }
-
-        a{
-            text-decoration: none;
-            color: black;
-            padding-left: 10px;
+        .input_save{
+            font-size: 12px;
+            padding: 10px 0px;
         }
 
     }
 }
 
-.pay{
+
+.continue{
+    margin-top: 50px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    padding-right: 700px;
 
-    .border{
-        width: 100%;
-        max-width: 1000px;
-        border: 1px solid black;
-        padding: 10px;
-        margin-top: 20px;
-        border-radius: 10px;
-    
-
-        .pay_title{
-            display: flex;
-            padding-left: 20px;
-            margin-top: 30px;
-            color: rgb(156, 156, 156);
-        }
-
-        .pay_up{
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-
-            input{
-                border: none;
-                border-radius: 10px;
-                padding: 5px;
-                border-bottom: 2px solid black;
-            }
-
-            #card_number{
-                width: 300px;
-            }
-            #cardholder{
-                width: 300px;
-            }
-        }
-
-        .pay_down{
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-            
-            input{
-                border: none;
-                border-radius: 10px;
-                padding: 5px;
-                border-bottom: 2px solid black;
-            }
-
-            #security_code{
-                width: 80px;
-            }
-            #installment{
-                border: none;
-                padding: 2px 10px;
-                font-size: 17px;
-                border-radius: 15px;
-                box-shadow: 2px 2px 2px black;
-            }
-        }
-
-        .pay_button{
-            display: flex;
-            justify-content: flex-end;
-            padding-right: 75px;
-            margin-top: 40px;
-    
-            input{
-                border: none;
-                background-color: rgb(3, 219, 86);
-                padding: 10px 50px;
-                font-size: 17px;
-                border-radius: 15px;
-                box-shadow: 2px 2px 2px black;
-            }
-        }
-    }
-}
-
-.pix{
-    display: flex;
-    justify-content: center;
-
-    .border{
-        width: 100%;
-        max-width: 1000px;
-        border: 1px solid black;
-        padding: 10px;
-        margin-top: 20px;
-        border-radius: 10px;
-    
-
-        .pix_title{
-            display: flex;
-            padding-left: 20px;
-            margin-top: 30px;
-            color: rgb(156, 156, 156);
-        }
-
-        .pix_info{
-            margin-top: 10px;
-            width: 300px;
-            height: 25px;
-            display: flex;
-            padding-left: 58px;
-            background-color: rgb(3, 219, 86);
-            font-size: 17px;
-            border-radius: 15px;
-            box-shadow: 2px 2px 2px black;
-        }
-
-        .pix_desc{
-            padding-left: 35px;
-
-            .pix_value{
-                padding: 20px 0px;
-                color: rgb(156, 156, 156);
-            }
-
-            .pix_1{
-                
-            }
-            .pix_2{
-                margin-top: 20px;
-            }
-            .pix_3{
-                margin-top: 20px;
-            }
-        }
-
-        .pix_button{
-            display: flex;
-            justify-content: flex-end;
-            padding-right: 75px;
-            margin-top: 40px;
-    
-            input{
-                border: none;
-                background-color: rgb(3, 219, 86);
-                padding: 10px 50px;
-                font-size: 17px;
-                border-radius: 15px;
-                box-shadow: 2px 2px 2px black;
-            }
-        }
+    a{
+        text-decoration: none;
+        color: black;
+        border: none;
+        background-color: rgb(252, 69, 69);
+        padding: 20px 100px;
+        font-size: 17px;
+        border-radius: 15px;
+        box-shadow: 2px 2px 2px black;
     }
 }
 
 .footer{
     color: black;
-    margin-top: 50px;
+    margin-top: 100px;
 
     ul{
         display: flex;
