@@ -1,0 +1,109 @@
+/* ultiliza a pagina inteira  */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+body{
+    display: table;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background: url(../../GIF/gif_index.gif) no-repeat bottom center scroll;
+    background-position: 100% 35%;
+    -webkit-background-size: cover;
+
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+
+    img{
+        margin-top: 30px;
+        width: 400px;
+    }
+}
+
+.subtitulo{
+    p{
+        display: flex;
+        justify-content: center;
+        color: white;
+        font-size: 25px;
+    }
+}
+
+.login{
+    
+    input{
+        border: 3px solid #918e8e;
+        margin-top: 20px;
+        border-radius: 6px;
+        width: 300px;
+        height: 35px;
+    }
+
+    .login_button{
+        margin-top: 20px;
+
+        a{
+            border: 3px solid #918e8e;
+            border-radius: 6px;
+            padding: 2px 125px;
+            color: rgb(255, 239, 239);
+            text-decoration: none;
+            background-color: rgb(0, 0, 0);
+        }
+    }
+
+    .login_register{
+        margin-top: 20px;
+
+        a{
+            border: 3px solid #918e8e;
+            border-radius: 6px;
+            padding: 2px 22px;
+            color: rgb(255, 239, 239);
+            text-decoration: none;
+            background-color: rgb(0, 0, 0);
+        }
+    }
+}
+
+.footer{
+    color: white;
+    margin-top: 100px;
+
+    ul{
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        list-style: none;
+        justify-content: center;
+    }
+
+    .rede_social{
+        ul li a i{
+            color: white;
+        }
+    }
+
+    .info{
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .copy{
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
