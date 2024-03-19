@@ -67,6 +67,3 @@ complemento(varchar200)
 numero(int)
 dt_created_at(date(currenttimestamp))
 dt_updated_at(date(currenttimestamp))
-
-
-llll
