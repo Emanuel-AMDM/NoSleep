@@ -13,21 +13,16 @@ UPDATE = update/:id -> atualiza o cliente
 DELETE = delete/:id -> deleta a conta
 CREATE = save       -> cria o cliente
 
-banco: stock
+banco: client
 colunas:
 id(altoincrement)
-part_code(int)
-sector(varchar50)
-type(varchar50)
-subtype(varchar50)
-material(varchar50)
-line(varchar50)
-color(varchar50)
-details(varchar50)
-tamanho(varchar10)
-funcionario(varchar150)
-dt_register(date(currenttimestemp))
-valor(float)
+name(varchar50)
+surname(varchar50)
+email(varchar50)
+telephone(varchar50)
+gender(varchar50)
+birthday(date)
+password(varchar50)
 dt_created_at(date(currenttimestamp))
 dt_updated_at(date(currenttimestamp))
 
@@ -84,7 +79,7 @@ LIST   = list       -> lista os registros para trazer todos os funcionarios
 banco: employee
 colunas:
 id(altoincrement)
-name(varchar(150))
+name(varchar150)
 dt_birth(date)
 cpf_cnpj(int)
 rg_ie(int)
