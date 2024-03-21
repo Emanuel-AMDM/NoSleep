@@ -51,7 +51,11 @@ body{
     }
 
     select{
-        
+        border: 3px solid #918e8e;
+        margin-top: 20px;
+        border-radius: 6px;
+        width: 300px;
+        height: 35px;
     }
 
     .register_up{
@@ -70,9 +74,22 @@ body{
 
     .register_button{
         margin-top: 20px;
+        display: flex;
+        justify-content: center;
 
         button{
-            
+            border: 3px solid #918e8e;
+            border-radius: 6px;
+            padding: 2px 54px;
+            font-size: 16px;
+            color: rgb(255, 239, 239);
+            background-color: rgb(0, 0, 0);
+        }
+        button:hover{
+            background-color: blue;
+            display: block;
+            transition: all .3s;
+            border-radius: 10px;
         }
     }
 
