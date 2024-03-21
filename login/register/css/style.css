@@ -67,12 +67,11 @@ body{
     .register_button{
         margin-top: 20px;
 
-        a{
+        #button{
             border: 3px solid #918e8e;
             border-radius: 6px;
             padding: 2px 125px;
             color: rgb(255, 239, 239);
-            text-decoration: none;
             background-color: rgb(0, 0, 0);
         }
     }
