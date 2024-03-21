@@ -29,18 +29,26 @@
             <div class="register_up">
                 <input type="text" name="email" placeholder="Email">
                 <br>
-                <input type="number" name="telephone" placeholder="Telephone">
+                <input type="text" name="telephone" placeholder="Telephone">
+            </div>
+            
+            <div>
+                <div>
+                    <label>Gender</label>
+                    <select name="gender" id="gender">
+                        <option value="0">Prefer not to say</option>
+                        <option value="1">Masculine</option>
+                        <option value="2">Feminine</option>
+                    </select>
+                </div>
+                <div>
+                    <label>birthday</label>
+                    <input type="date" name="birthday" id="birthday">
+                </div>
             </div>
 
-            <select name="gender" id="gender">
-                <option value="m">Masculino</option>
-                <option value="f">Feminino</option>
-            </select>
-
-            <input type="date" name="birthday" placeholder="birthday">
-
             <div class="register_down">
-                <input type="password" name="password" placeholder="Password">
+                <input type="text" name="password" placeholder="Password">
             </div>
 
             <div class="register_button">
@@ -48,7 +56,7 @@
             </div>
 
             <div class="register_login">
-                <a href="">existing account</a>
+                <a href="../../login/index.html">existing account</a>
             </div>
         </div>
 
