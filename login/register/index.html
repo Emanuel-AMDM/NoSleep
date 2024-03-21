@@ -10,55 +10,58 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <form action="../../routes/save.php" method="post">
     
-    <div class="titulo">
-        <img src="../../img_logo/Destaques_01.png" alt="">
-    </div>
-
-    <div class="subtitulo">
-        <p>REGISTER</p>
-    </div>
-
-    <div class="register">
-
-        <input type="text" placeholder="Name">
-        <input type="text" placeholder="surname">
-
-        <div class="register_up">
-            <input type="text" placeholder="Email">
-            <br>
-            <input type="text" placeholder="Telephone">
+        <div class="titulo">
+            <img src="../../img_logo/Destaques_01.png" alt="">
         </div>
 
-        <input type="text" placeholder="gender">
-        <input type="text" placeholder="birthday">
-
-        <div class="register_down">
-            <input type="password" placeholder="Password">
+        <div class="subtitulo">
+            <p>REGISTER</p>
         </div>
 
-        <div class="register_button">
-            <a href="">Register</a>
+        <div class="register">
+
+            <input type="text" name="name" placeholder="Name">
+            <input type="text" name="surname" placeholder="surname">
+
+            <div class="register_up">
+                <input type="text" name="email" placeholder="Email">
+                <br>
+                <input type="text" name="telephone" placeholder="Telephone">
+            </div>
+
+            <input type="text" name="gender" placeholder="gender">
+            <input type="text" name="birthday" placeholder="birthday">
+
+            <div class="register_down">
+                <input type="password" name="password" placeholder="Password">
+            </div>
+
+            <div class="register_button">
+                <button type="submit" id="button">Register</button>
+            </div>
+
+            <div class="register_login">
+                <a href="">existing account</a>
+            </div>
         </div>
 
-        <div class="register_login">
-            <a href="">existing account</a>
-        </div>
-    </div>
-
-    <footer class="footer">
-        <div class="rede_social">
-            <ul>
-                <li><a href="https://www.instagram.com/no.sleep.boyz?igsh=MWVsOHk4ZjIwY2hrOA=="><i class="fa-brands fa-instagram"></i></a></li>
-            </ul>
-        </div>
-        <div class="info">
-            <p>NoSleep, trust and quality.</p>
-        </div>
-        <div class="copy">
-            <p>&copy;NoSleep</p>
-        </div>
-    </footer>
+        <footer class="footer">
+            <div class="rede_social">
+                <ul>
+                    <li><a href="https://www.instagram.com/no.sleep.boyz?igsh=MWVsOHk4ZjIwY2hrOA=="><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+            </div>
+            <div class="info">
+                <p>NoSleep, trust and quality.</p>
+            </div>
+            <div class="copy">
+                <p>&copy;NoSleep</p>
+            </div>
+        </footer>
+    </form>
 
     <script src="https://kit.fontawesome.com/5dc8345cee.js" crossorigin="anonymous"></script>
 
