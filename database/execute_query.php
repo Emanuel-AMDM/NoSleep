@@ -14,14 +14,18 @@ function execute_query($sql)
 
     // Atira um erro e para a execucao da funcao se nao for possivel abrir uma conexao
     if ($conn->connect_error) {
-        throw new Error("Erro na conexão: " . $conn->connect_error);
+        throw new Exception("Erro na conexão: " . $conn->connect_error);
     }
 
     // Executa a query
     $result = $conn->query($sql);
 
     //verifica se reult é booleano, usado quando é executado insert, delete, update
-    if(is_bool($result)){
+    if (is_bool($result)) {
+        if (!$result) {
+            throw new Exception(sprintf("Error message: %s", $conn->error));
+        }
+
         return $result;
     }
     // Verifica se a consulta retornou resultados
@@ -33,7 +37,7 @@ function execute_query($sql)
     $data = [];
 
     // Percorre todas as linhas da resposta e agrupa elas dentro da variavel $data
-    while($row = $result->fetch_assoc()) {
+    while ($row = $result->fetch_assoc()) {
         $data[] = $row;
     }
 
