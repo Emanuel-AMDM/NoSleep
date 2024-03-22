@@ -2,7 +2,7 @@
 
 require_once('../../../services/get_client_by_id.php');
 
-$id = 26;
+$id = 29;
 
 $client = get_client_by_id($id);
 
