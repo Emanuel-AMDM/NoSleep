@@ -93,6 +93,29 @@ body{
         }
     }
 
+    .register_contents{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        gap: 5px;
+        margin-top: 15px;
+        
+        .register_gender{
+            display: flex;
+            flex-direction: column;
+            #gender{
+                margin-top: 4px;
+            }
+        }
+        .register_birthday{
+            display: flex;
+            flex-direction: column;
+            #birthday{
+                margin-top: 4px;
+            }
+        }
+    }
+
     .register_login{
         margin-top: 20px;
 
