@@ -1,14 +1,16 @@
 <?php
 
-require_once('list_entity.php');
+require_once('../../../database/execute_query.php');
 
 function get_client_by_id($id){
 
-    $client = list_entity_client();
+    $sql = "SELECT * FROM client WHERE id = $id";
+    $client = execute_query($sql);
 
     foreach($client as $cli){
         if($cli['id'] == $id){
             return $cli;
         }
     }
+
 }
