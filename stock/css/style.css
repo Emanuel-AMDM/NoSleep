@@ -29,10 +29,10 @@
         border-radius: 5px;
     }
     .menu{
-        display: flex;
-        padding-left: 100px;
-        margin-top: 10px;
-        gap: 50px;
+      display: flex;
+      padding-left: 100px;
+      margin-top: 10px;
+      gap: 50px;
     }
     .menu_login{
         display: flex;
@@ -49,6 +49,26 @@
         height: 40px;
     }
 }
+
+.button_create{
+  margin-top: 50px;
+  padding-left: 100px;
+
+  a{
+    padding: 10px 30px;
+    background-color: green;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+  }
+  a:hover{
+    padding: 10px 30px;
+    background-color: rgb(106, 127, 247);
+    border: none;
+    border-radius: 5px;
+  }
+}
+
 /* ///////////////////////////////////////////////////////////////////////// */
 #picture__input {
     display: none;
@@ -92,39 +112,24 @@
   }
 /* ///////////////////////////////////////////////////////////////////////////////// */
 
-input{
-    border: 3px solid #918e8e;
-    margin-top: 10px;
-    border-radius: 6px;
-    width: 400px;
-    height: 35px;
-}
+.client_show{
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
 
-.stock_title{
-    margin-top: 20px;
-    padding-left: 500px;
-}
+  .client_show_title{
+    text-align: center;
+    border: 2px solid black;
 
-.stock_content_center{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-    .stock_content_column{
-        display: flex;
-        flex-direction: column;
+    tr, td{
+      border: 2px solid black;
     }
-}
+  }
 
-.stock_button_save{
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 500px;
-    margin-top: 50px;
-    button{
-        padding: 10px 30px;
-        background-color: green;
-        border: none;
-        border-radius: 5px;
-    }
+  table, tbody, tr, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 20px;
+    padding-left: 5px;
+  }
 }
