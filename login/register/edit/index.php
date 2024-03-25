@@ -2,7 +2,7 @@
 
 require_once('../../../services/get_client_by_id.php');
 
-$id = 29;
+$id = $_GET['id'];
 
 $client = get_client_by_id($id);
 
@@ -21,7 +21,7 @@ $client = get_client_by_id($id);
 </head>
 <body>
 
-    <form action="../../../routes/update.php?id=<?=$client['id']?>" method="post">
+    <form action="../../../routes/client/update_client.php?id=<?=$client['id']?>" method="post">
 
         <!-- traz a data de crição do registro -->
         <input type="hidden" name="dt_created_at" value="<?=$client['dt_created_at']?>">
@@ -80,7 +80,7 @@ $client = get_client_by_id($id);
                 <button type="submit">save</button>
             </div>
             <div class="delete_login">
-                <a href='../../../routes/delete.php?id=<?=$client['id']?>'>delete account</a>
+                <a href='../../../routes/client/delete_client.php?id=<?=$client['id']?>'>delete account</a>
             </div>
 
         <footer class="footer">
