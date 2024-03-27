@@ -46,28 +46,6 @@
     }
 }
 
-.client_show{
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
-  
-    .client_show_title{
-      text-align: center;
-      border: 1px solid black;
-  
-      tr, td{
-        border: 1px solid black;
-      }
-    }
-  
-    table, tbody, tr, td{
-      border: 1px solid black;
-      border-collapse: collapse;
-      padding: 20px;
-      padding-left: 5px;
-    }
-  }
-
 .img_shop{
 
     display: flex;
@@ -77,9 +55,8 @@
     flex-wrap: wrap;
 
     img{
-        margin-top: 30px;
-        width: 500px;
-        height: 650px;
+        width: 589px;
+        height: 690px;
     }
 
     .border_img{
@@ -87,51 +64,16 @@
         max-width: 1000px;
         border: 1px solid black;
         padding: 10px;
-        margin-top: 20px;
-    }
-}
 
-.border_down{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-
-    .txt_shop{
-
-        display: flex;
-        flex-direction: row;
-
-        p{
-            text-align: center;
-        }
-
-        #roupa1{
+        .shoes_info{
             display: flex;
             justify-content: center;
-            width: 500px;
-        }
-        #roupa2{
-            display: flex;
-            justify-content: center;
-            width: 500px;
-        }
-        #roupa3{
-            display: flex;
-            justify-content: center;
-            width: 500px;
-        }
-        #roupa4{
-            display: flex;
-            justify-content: center;
-            width: 500px;
-        }
-        
-        .border_txt{
-            width: 100%;
-            max-width: 1000px;
-            border: 1px solid black;
-            padding: 10px;
-            margin-top: 20px;
+
+            .shoes_contents{
+                .shoes_value{
+                    padding-left: 38px;
+                }
+            }
         }
     }
 }
