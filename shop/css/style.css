@@ -56,34 +56,30 @@ body{
     }
 }
 
-.img_shop{
-
+.stock_part{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
 
-    img{
-        margin-top: 30px;
-        width: 400px;
-        height: 300px;
-    }
-}
+    .stock_content{
+        width: 25%;
 
-.txt_shop{
-    display: flex;
-    gap: 50px;
-    
-    #roupa1{
-        margin-left: 580px;
-    }
-    #roupa2{
-        margin-left: 240px;
-    }
-    #roupa3{
-        margin-left: 240px;
-    }
-    #roupa4{
-        margin-left: 240px;
+        .img_shop{
+        
+            img{
+                margin-top: 10px;
+                width: 400px;
+                height: 300px;
+            }
+        }
+
+        .txt_shop{
+            display: flex;
+            justify-content: center;
+        }
+
     }
 }
 
