@@ -23,9 +23,9 @@ $client = list_entity_client();
                 <div class="menu">
                     <li><a href="../shop/index.html">Shop</a></li>
                     <li><a href="../MANUAL-DA-IDENTIDADE-VISUAL.pdf">Lookbook</a></li>
-                    <li><a href="../stock/create/index.html">Stock Registration</a></li>
-                    <li><a href="../employee/index.html">Employee Registration</a></li>
-                    <li><a href="index.php">Clients list</a></li>
+                    <li><a href="../stock/create/index.html">Stock</a></li>
+                    <li><a href="../employee/index.php">Employee</a></li>
+                    <li><a href="index.php">Clients</a></li>
                 </div>
                 <div class="menu_login">
                     <li><a href="">Emanuel Menezes</a></li>
