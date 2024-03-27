@@ -38,11 +38,21 @@ $stock = list_entity_stock();
     <div class="img_shop">
         <?php foreach($stock as $stock): ?>
             <div class="border_img">
-                <a href="#modal"><img src="../../img/img_peita1_frente.png" alt="" id="img_1" onmouseover="alternarImagem1()"></a>
-                <div class="border_txt">
-                    <label for="" id="roupa1">CAMISETA - PRETA</label>
-                    <p>$10</p>
-                    <i class="fa-solid fa-cart-plus"></i>
+                <div>
+                    <a href="#modal"><img src="../../img/img_peita1_frente.png" alt="" id="img_1" onmouseover="alternarImagem1()"></a>
+                </div>
+                
+                <hr>
+
+                <div class="shoes_info">
+                    <div class="shoes_contents">
+                        <div>
+                            <label for="" id="roupa1"><?= $stock['type'] . ' - ' . $stock['color']?></label>
+                        </div>
+                        <div class="shoes_value">
+                            <label for=""><?= $stock['value'] ?></label>
+                        </div>
+                    </div>
                 </div>
             </div>
         <?php endforeach; ?>
