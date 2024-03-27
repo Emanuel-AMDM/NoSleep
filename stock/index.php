@@ -77,7 +77,7 @@ $stock = list_entity_stock();
                     <td><?= $stock['value'] ?></td>
                     <td><?= $stock['dt_register'] ?></td>
                     <td><?= $stock['picture'] ?></td>
-                    <td><a href="edit/index.php?id=<?= $stock['id'] ?>">|Show| </a><a href="../routes/stock/delete_stock.php?id=<?= $stock['id'] ?>">|Excluir| </a></td>
+                    <td><a href="edit/index.php?id=<?= $stock['id'] ?>">|Show| </a><a href="../routes/stock/delete.php?id=<?= $stock['id'] ?>">|Excluir| </a></td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>
