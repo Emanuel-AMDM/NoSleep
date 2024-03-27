@@ -42,7 +42,7 @@ foreach($cod as $cod){
         </div>
     </nav>
 
-    <form action="../../routes/stock/save_stock.php" method="post">
+    <form action="../../routes/stock/save.php" method="post">
 
         <div class="stock_title">
             <h1>Part Registration</h1>
