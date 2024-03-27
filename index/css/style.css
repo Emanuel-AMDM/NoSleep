@@ -15,13 +15,13 @@ body{
     width: 100%;
     text-align: center;
     color: white;
-    background: url(../../../GIF/gif_index.gif) no-repeat bottom center scroll;
+    background: url(../../GIF/gif_index.gif) no-repeat bottom center scroll;
     background-position: 100% 35%;
     -webkit-background-size: cover;
 
 }
 
-.titulo{
+.title{
     display: flex;
     justify-content: center;
 
@@ -31,7 +31,7 @@ body{
     }
 }
 
-.subtitulo{
+.subtitle{
     p{
         display: flex;
         justify-content: center;
