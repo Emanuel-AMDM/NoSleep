@@ -25,15 +25,14 @@ $stock = get_stock_by_id($id);
             <ul>
                 <li><img src="../../img_logo/Destaques_07 - Menu.png" alt=""></li>
                 <div class="menu">
-                    <li><a href="../../shop/index.html">Shop</a></li>
+                    <li><a href="../../shop/index.php">Shop</a></li>
                     <li><a href="../../MANUAL-DA-IDENTIDADE-VISUAL.pdf">Lookbook</a></li>
                     <li><a href="../index.php">Stock</a></li>
-                    <li><a href="../../employee/index.html">Employee Registration</a></li>
-                    <li><a href="../../client/index.php">Clients list</a></li>
+                    <li><a href="../../employee/index.php">Employee</a></li>
+                    <li><a href="../../client/index.php">Clients</a></li>
                 </div>
                 <div class="menu_login">
                     <li><a href="">Emanuel Menezes</a></li>
-                    <li><img src="../img/user.png" alt=""></li>
                 </div>
             </ul>
         </div>
@@ -97,6 +96,13 @@ $stock = get_stock_by_id($id);
             <div class="stock_content_column">
                 <label for="">Tamanho</label>
                 <input type="text" name="size" id="" value='<?= $stock['size'] ?>'>
+            </div>
+        </div>
+
+        <div class="stock_content_center">
+            <div class="stock_content_column">
+                <label for="">Quantidade de Peças</label>
+                <input type="text" name="qntd_part" id="" value='<?= $stock['qntd_part'] ?>'>
             </div>
         </div>
 
