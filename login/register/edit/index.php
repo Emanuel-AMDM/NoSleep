@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../../services/get_client_by_id.php');
+require_once('../../../services/get_by_id.php');
 
 $id = $_GET['id'];
 
