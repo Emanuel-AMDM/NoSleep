@@ -21,15 +21,14 @@ $stock = list_entity_stock();
             <ul>
                 <li><img src="../img_logo/Destaques_07 - Menu.png" alt=""></li>
                 <div class="menu">
-                    <li><a href="../shop/index.html">Shop</a></li>
+                    <li><a href="../shop/index.php">Shop</a></li>
                     <li><a href="../MANUAL-DA-IDENTIDADE-VISUAL.pdf">Lookbook</a></li>
                     <li><a href="index.php">Stock</a></li>
-                    <li><a href="../employee/index.html">Employee Registration</a></li>
-                    <li><a href="index.php">Clients list</a></li>
+                    <li><a href="../employee/index.php">Employee</a></li>
+                    <li><a href="../client/index.php">Clients</a></li>
                 </div>
                 <div class="menu_login">
                     <li><a href="">Emanuel Menezes</a></li>
-                    <li><img src="../img/user.png" alt=""></li>
                 </div>
             </ul>
         </div>
@@ -55,6 +54,7 @@ $stock = list_entity_stock();
                     <td>size</td>
                     <td>employee</td>
                     <td>value</td>
+                    <td>number parts</td>
                     <td>date register</td>
                     <td>picture</td>
                     <td>action</td>
@@ -75,6 +75,7 @@ $stock = list_entity_stock();
                     <td><?= $stock['size'] ?></td>
                     <td><?= $stock['employee'] ?></td>
                     <td><?= $stock['value'] ?></td>
+                    <td><?= $stock['qntd_part'] ?></td>
                     <td><?= $stock['dt_register'] ?></td>
                     <td><?= $stock['picture'] ?></td>
                     <td><a href="edit/index.php?id=<?= $stock['id'] ?>">|Show| </a><a href="../routes/stock/delete.php?id=<?= $stock['id'] ?>">|Excluir| </a></td>
