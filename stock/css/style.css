@@ -117,19 +117,16 @@
   justify-content: center;
   margin-top: 100px;
 
-  .client_show_title{
-    text-align: center;
-    border: 2px solid black;
-
-    tr, td{
-      border: 2px solid black;
+  .client_show_up{
+    tr td{
+      padding: 20px;
     }
   }
 
-  table, tbody, tr, td{
-    border: 1px solid black;
-    border-collapse: collapse;
-    padding: 20px;
-    padding-left: 5px;
+  .client_show_down{
+    tr td img{
+      width: 100px;
+      height: 100px;
+    }
   }
 }
