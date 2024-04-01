@@ -2,11 +2,30 @@
 
 require_once('../../services/update.php');
 
-$name_picture = $_POST['picture__input'];
-if(isset($_FILES['picture__input'])){
+$name_picture = $_POST['picture_current_name'];
+
+if(file_exists($_FILES['picture__input']['tmp_name']) && is_uploaded_file($_FILES['picture__input']['tmp_name'])) {
+    $name_picture = md5(uniqid(time() * rand())) . '.jpeg';
     move_uploaded_file($_FILES['picture__input']['tmp_name'], '../../uploads/' . $name_picture);
 }
 
-update_stock($_GET['id'], $_POST['part_code'], $_POST['sector'], $_POST['type'], $_POST['subtype'], $_POST['material'], $_POST['line'], $_POST['color'], $_POST['details'], $_POST['size'], $_POST['employee'], $_POST['dt_register'], $_POST['value'], $_POST['dt_created_at'], $name_picture, $_POST['qntd_part']);
+update_stock(
+    $_GET['id'],
+    $_POST['part_code'],
+    mb_strtoupper($_POST['sector']),
+    mb_strtoupper($_POST['type']),
+    mb_strtoupper($_POST['subtype']),
+    mb_strtoupper($_POST['material']), 
+    mb_strtoupper($_POST['line']),
+    mb_strtoupper($_POST['color']),
+    mb_strtoupper($_POST['details']),
+    mb_strtoupper($_POST['size']),
+    mb_strtoupper($_POST['employee']),
+    $_POST['dt_register'],
+    $_POST['value'],
+    $_POST['dt_created_at'],
+    $name_picture,
+    $_POST['qntd_part']
+);
 
 header('Location: ../../stock/index.php');
