@@ -29,57 +29,39 @@ function create_employee($name, $dt_birth, $cpf_cnpj, $rg_ie, $telephone, $email
     $dt_created_at = $agora;
     $dt_updated_at = $agora;
 
-    if(isset($dt_birth)){
-        $dt_birth = $dt_birth;
-    }else{
+    if(empty($dt_birth)){
         $dt_birth = '0000-00-00';
     }
 
-    if(isset($rg_ie)){
-        $rg_ie = $rg_ie;
-    }else{
+    if(empty($rg_ie)){
         $rg_ie = '';
     }
     
-    if(isset($cep)){
-        $cep = $cep;
-    }else{
+    if(empty($cep)){
         $cep = '';
     }
 
-    if(isset($road)){
-        $road = $road;
-    }else{
+    if(empty($road)){
         $road = '';
     }
 
-    if(isset($neighborhood)){
-        $neighborhood = $neighborhood;
-    }else{
+    if(empty($neighborhood)){
         $neighborhood = '';
     }
 
-    if(isset($city)){
-        $city = $city;
-    }else{
+    if(empty($city)){
         $city = '';
     }
 
-    if(isset($state)){
-        $state = $state;
-    }else{
+    if(empty($state)){
         $state = '';
     }
 
-    if(isset($complement)){
-        $complement = $complement;
-    }else{
+    if(empty($complement)){
         $complement = '';
     }
 
-    if(isset($number)){
-        $number = $number;
-    }else{
+    if(empty($number)){
         $number = '';
     }
 
@@ -88,81 +70,59 @@ function create_employee($name, $dt_birth, $cpf_cnpj, $rg_ie, $telephone, $email
     execute_query($sql1);
 }
 
-function create_stock($part_code, $sector, $type, $subtype, $material, $line, $color, $details, $size, $employee, $dt_register, $value, $picture__input, $qntd_part){
+function create_stock($part_code, $sector, $type, $subtype, $material, $line, $color, $details, $size, $employee, $dt_register, $value, $name_picture, $qntd_part){
 
     //coloca a data de hoje
     $agora = date('Y-m-d');
     $dt_created_at = $agora;
     $dt_updated_at = $agora;
 
-    if(isset($part_code)){
-        $part_code = $part_code;
-    }else{
+    if(empty($part_code)){
         $part_code = '';
     }
 
-    if(isset($sector)){
-        $sector = $sector;
-    }else{
+    if(empty($sector)){
         $sector = '';
     }
     
-    if(isset($type)){
-        $type = $type;
-    }else{
+    if(empty($type)){
         $type = '';
     }
 
-    if(isset($subtype)){
-        $subtype = $subtype;
-    }else{
+    if(empty($subtype)){
         $subtype = '';
     }
 
-    if(isset($material)){
-        $material = $material;
-    }else{
+    if(empty($material)){
         $material = '';
     }
 
-    if(isset($line)){
-        $line = $line;
-    }else{
+    if(empty($line)){
         $line = '';
     }
 
-    if(isset($color)){
-        $color = $color;
-    }else{
+    if(empty($color)){
         $color = '';
     }
 
-    if(isset($details)){
-        $details = $details;
-    }else{
+    if(empty($details)){
         $details = '';
     }
 
-    if(isset($size)){
-        $size = $size;
-    }else{
+    if(empty($size)){
         $size = '';
     }
 
-    if(isset($employee)){
-        $employee = $employee;
-    }else{
+    if(empty($employee)){
         $employee = '';
     }
 
-    if(isset($picture__input)){
-        $picture__input = $picture__input;
-    }else{
-        $picture__input = '';
+    if(empty($name_picture)){
+        $name_picture = '';
     }
 
     //insert sql
-    $sql1 = "INSERT INTO stock (part_code, sector, type, subtype, material, line, color, details, size, employee, dt_register, value, qntd_part, dt_created_at, dt_updated_at, picture) VALUES ('$part_code', '$sector', '$type', '$subtype', '$material', '$line', '$color', '$details', '$size', '$employee', '$dt_register', '$value', '$qntd_part', '$dt_created_at', '$dt_updated_at', '$picture__input')";
+    $sql1 = "INSERT INTO stock (part_code, sector, type, subtype, material, line, color, details, size, employee, dt_register, value, qntd_part, dt_created_at, dt_updated_at, picture) VALUES ('$part_code', '$sector', '$type', '$subtype', '$material', '$line', '$color', '$details', '$size', '$employee', '$dt_register', '$value', '$qntd_part', '$dt_created_at', '$dt_updated_at', '$name_picture')";
     execute_query($sql1);
 }
 
