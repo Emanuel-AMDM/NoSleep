@@ -41,7 +41,7 @@ foreach($cod as $cod){
         </div>
     </nav>
 
-    <form action="../../routes/stock/save.php" method="post">
+    <form action="../../routes/stock/save.php" method="post" enctype="multipart/form-data">
 
         <div class="stock_title">
             <h1>Part Registration</h1>
@@ -103,7 +103,7 @@ foreach($cod as $cod){
         <div class="stock_content_center">
             <div class="stock_content_column">
                 <label for="">Quantidade de Peças</label>
-                <input type="number" name="qntd_part" id="">
+                <input type="number" name="qntd_part" id="" required>
             </div>
         </div>
 
