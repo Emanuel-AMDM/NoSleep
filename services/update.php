@@ -36,20 +36,21 @@ function update_employee($id, $name, $dt_birth, $cpf_cnpj, $rg_ie, $telephone, $
     execute_query($sql1);
 }
 
-function update_stock($id, $part_code, $sector, $type, $subtype, $material, $line, $color, $details, $size, $employee, $dt_register, $value, $dt_created_at, $picture__input, $qntd_part){
+function update_stock($id, $part_code, $sector, $type, $subtype, $material, $line, $color, $details, $size, $employee, $dt_register, $value, $dt_created_at, $name_picture, $qntd_part){
 
     //coloca a data de hoje
     $agora = date('Y-m-d');
     $dt_updated_at = $agora;
 
-    if(isset($picture__input)){
-        $picture__input = $picture__input;
-    }else{
+    if(empty($picture__input)){
         $picture__input = '';
     }
 
+    if(empty($name_picture)){
+        $name_picture = '';
+    }
 
     //insert sql
-    $sql1 = "UPDATE stock SET part_code = '$part_code', sector = '$sector', type = '$type', subtype = '$subtype', material = '$material', line = '$line', color = '$color', details = '$details', size = '$size', employee = '$employee', dt_register = '$dt_register', value = '$value', qntd_part = '$qntd_part', dt_created_at = '$dt_created_at', dt_updated_at = '$dt_updated_at', picture = '$picture__input' WHERE id = $id";
+    $sql1 = "UPDATE stock SET part_code = '$part_code', sector = '$sector', type = '$type', subtype = '$subtype', material = '$material', line = '$line', color = '$color', details = '$details', size = '$size', employee = '$employee', dt_register = '$dt_register', value = '$value', qntd_part = '$qntd_part', dt_created_at = '$dt_created_at', dt_updated_at = '$dt_updated_at', picture = '$name_picture' WHERE id = $id";
     execute_query($sql1);
 }
