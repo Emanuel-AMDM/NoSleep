@@ -1,5 +1,5 @@
 <?php
-require_once('../services/list_entity.php');
+require_once('../services/shop/list_entity_index.php');
 $stock = list_entity_stock();
 
 ?>
