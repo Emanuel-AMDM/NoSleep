@@ -1,5 +1,5 @@
 <?php
-require_once('../services/stock/list_entity.php');
+require_once('../services/stock/list_entity_index.php');
 $stock = list_entity_stock();
 ?>
 
@@ -17,9 +17,11 @@ $stock = list_entity_stock();
 <body>
     
     <nav class="nav_menu">
-        <div>
+        <div class="nav_flex">
+            <div>
+                <a href="../index/index.html"><img src="../img_logo/Destaques_07 - Menu.png" alt=""></a>
+            </div>
             <ul>
-                <li><img src="../img_logo/Destaques_07 - Menu.png" alt=""></li>
                 <div class="menu">
                     <li><a href="../shop/index.php">Shop</a></li>
                     <li><a href="../MANUAL-DA-IDENTIDADE-VISUAL.pdf">Lookbook</a></li>
@@ -27,43 +29,43 @@ $stock = list_entity_stock();
                     <li><a href="../employee/index.php">Employee</a></li>
                     <li><a href="../client/index.php">Clients</a></li>
                 </div>
-                <div class="menu_login">
-                    <li><a href="">Emanuel Menezes</a></li>
-                </div>
             </ul>
+            <div class="menu_login">
+                <li><a href="">Emanuel Menezes</a></li>
+            </div>
         </div>
     </nav>
 
     <div class='button_create'>
-        <a href="create/index.php">Part Create</a>
+        <div class='glow-on-hover'>
+            <a href="create/index.php">Part Create</a>
+        </div>
     </div>
 
-    <div class='client_show'>
+    <div class='stock_show'>
         <table>
-            <thead class='client_show_up'>
+            <thead class='stock_show_up'>
                 <tr>
-                    <td><strong>id</strong></td>
-                    <td><strong>part_code</strong></td>
-                    <td><strong>sector</strong></td>
-                    <td><strong>type</strong></td>
-                    <td><strong>subtype</strong></td>
-                    <td><strong>material</strong></td>
-                    <td><strong>line</strong></td>
-                    <td><strong>color</strong></td>
-                    <td><strong>details</strong></td>
-                    <td><strong>size</strong></td>
-                    <td><strong>employee</strong></td>
-                    <td><strong>value</strong></td>
-                    <td><strong>number parts</strong></td>
-                    <td><strong>date register</strong></td>
-                    <td><strong>picture</strong></td>
-                    <td><strong>action</strong></td>
+                    <th>Part Code</th>
+                    <th>Sector</th>
+                    <th>Type</th>
+                    <th>Subtype</th>
+                    <th>Material</th>
+                    <th>Line</th>
+                    <th>Color</th>
+                    <th>Details</th>
+                    <th>Size</th>
+                    <th>Employee</th>
+                    <th>Value</th>
+                    <th>Number Parts</th>
+                    <th>Date Register</th>
+                    <th>Picture</th>
+                    <th>Action</th>
                 </tr>
             </thead>
-            <tbody class='client_show_down'>
+            <tbody class='stock_show_down'>
                 <?php foreach($stock as $stock): ?>
                 <tr>
-                    <td><?= $stock['id'] ?></td>
                     <td><?= $stock['part_code'] ?></td>
                     <td><?= $stock['sector'] ?></td>
                     <td><?= $stock['type'] ?></td>
@@ -78,7 +80,7 @@ $stock = list_entity_stock();
                     <td><?= $stock['qntd_part'] ?></td>
                     <td><?= $stock['dt_register'] ?></td>
                     <td><img src="../uploads/<?= $stock['picture'] ?>"></td>
-                    <td><a href="edit/index.php?id=<?= $stock['id'] ?>">|Show| </a><a href="../routes/stock/delete.php?id=<?= $stock['id'] ?>">|Excluir| </a></td>
+                    <td><a href="edit/index.php?id=<?= $stock['id'] ?>"><i class="fa-solid fa-eye"></i></a><a id="trash" href="../routes/stock/delete.php?id=<?= $stock['id'] ?>"><i class="fa-solid fa-trash"></i></a></td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>
