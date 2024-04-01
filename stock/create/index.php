@@ -1,7 +1,7 @@
 <?php
 require_once('../../database/execute_query.php');
 
-$sql = "SELECT * FROM stock";
+$sql = "SELECT * FROM stock ORDER BY part_code ASC";
 $cod = execute_query($sql);
 
 foreach($cod as $cod){
@@ -48,86 +48,71 @@ foreach($cod as $cod){
         </div>
 
         <div class="stock_content_center">
-            <label class="picture" for="picture__input" tabIndex="0">
-            <span class="picture__image"></span>
-            </label>
-            
-            <input type="file" name="picture__input" id="picture__input">
-        </div>
-
-        <div class="stock_content_center">
             <div class="stock_content_column">
                 <label for="">Codigo da Peça</label>
                 <input type="text" name="part_code" id="" value='<?= $cod ?>' readonly>
-            </div>
-            <div class="stock_content_column">
+            
                 <label for="">Setor</label>
                 <input type="text" name="sector" id="">
-            </div>
-            <div class="stock_content_column">
+
                 <label for="">Tipo</label>
                 <input type="text" name="type" id="">
-            </div>
-        </div>
 
-        <div class="stock_content_center">
-            <div class="stock_content_column">
                 <label for="">SubTipo</label>
                 <input type="text" name="subtype" id="">
-            </div>
-            <div class="stock_content_column">
-                <label for="">Material</label>
-                <input type="text" name="material" id="">
-            </div>
-            <div class="stock_content_column">
-                <label for="">Linha</label>
-                <input type="text" name="line" id="">
-            </div>
-        </div>
 
-        <div class="stock_content_center">
-            <div class="stock_content_column">
-                <label for="">Cor</label>
-                <input type="text" name="color" id="">
-            </div>
-            <div class="stock_content_column">
                 <label for="">Detalhes</label>
                 <input type="text" name="details" id="">
-            </div>
-            <div class="stock_content_column">
-                <label for="">Tamanho</label>
-                <input type="text" name="size" id="">
-            </div>
-        </div>
 
-        <div class="stock_content_center">
-            <div class="stock_content_column">
-                <label for="">Quantidade de Peças</label>
-                <input type="number" name="qntd_part" id="" required>
-            </div>
-        </div>
+                <h1>Information</h1>
 
-        <div class="stock_title">
-            <h1>Information</h1>
-        </div>
-
-        <div class="stock_content_center">
-            <div class="stock_content_column">
                 <label for="">Funcionario</label>
                 <input type="text" name="employee" id="">
             </div>
+
             <div class="stock_content_column">
-                <label for="">Data Cadastro</label>
-                <input type="date" name="dt_register" id="" required>
+                <label for="">Material</label>
+                <input type="text" name="material" id="">
+
+                <label for="">Cor</label>
+                <input type="text" name="color" id="">
+
+                <label for="">Linha</label>
+                <input type="text" name="line" id="">
+
+                <label for="">Tamanho</label>
+                <input type="text" name="size" id="">
+
+                <label for="">Quantidade de Peças</label>
+                <input type="number" name="qntd_part" id="" required>
+
+                <div class="stock_content_column">
+                    <div class="stock_information">
+                        <div class="stock_content_column">
+                            <label for="">Data Cadastro</label>
+                            <input type="date" name="dt_register" id="dt_register" required>
+                        </div>
+                        <div class="stock_content_column">
+                            <label for="">Valor</label>
+                            <input type="text" name="value" id="value" required>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="stock_content_column">
-                <label for="">Valor</label>
-                <input type="text" name="value" id="" required>
+        
+            <div class="stock_content_center">
+                <label class="picture" for="picture__input" tabIndex="0">
+                <span class="picture__image"></span>
+                </label>
+                
+                <input type="file" name="picture__input" id="picture__input">
             </div>
         </div>
 
         <div class="stock_button_save">
-            <button type="submit">Save</button>
+            <div class="glow-on-hover">
+                <button type="submit">Save</button>
+            </div>
         </div>
     </form>
 
