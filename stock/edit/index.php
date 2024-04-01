@@ -1,5 +1,5 @@
 <?php
-require_once('../../services/get_by_id.php');
+require_once('../../services/stock/get_by_id.php');
 
 $id = $_GET['id'];
 
@@ -38,7 +38,7 @@ $stock = get_stock_by_id($id);
         </div>
     </nav>
 
-    <form action="../../routes/stock/update.php?id=<?= $stock['id'] ?>" method="post">
+    <form action="../../routes/stock/update.php?id=<?= $stock['id'] ?>" method="post"  enctype="multipart/form-data">
         
         <input type="hidden" value='<?= $stock['dt_created_at'] ?>' name='dt_created_at'>
 
@@ -48,10 +48,10 @@ $stock = get_stock_by_id($id);
 
         <div class="stock_content_center">
             <label class="picture" for="picture__input" tabIndex="0">
-            <span class="picture__image"></span>
+                <img src="../../uploads/<?= $stock['picture'] ?>" alt="">
             </label>
             
-            <input type="file" name="picture__input" id="picture__input" value='<?= $stock['picture'] ?>'>
+            <input value="<?= $stock['picture'] ?>" type="file" name="picture__input" id="picture__input">
         </div>
 
         <div class="stock_content_center">
