@@ -111,6 +111,14 @@ input{
         display: flex;
         flex-direction: column;
     }
+    label{
+        width: 200;
+        width: 200;
+    }
+    label img{
+        width: 150px;
+        width: 200px;
+    }
 }
 
 .stock_button_save{
