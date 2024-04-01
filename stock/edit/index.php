@@ -47,86 +47,71 @@ $stock = get_stock_by_id($id);
         </div>
 
         <div class="stock_content_center">
-            <label class="picture" for="picture__input" tabIndex="0">
-                <img src="../../uploads/<?= $stock['picture'] ?>" alt="">
-            </label>
-            
-            <input value="<?= $stock['picture'] ?>" type="file" name="picture__input" id="picture__input">
-        </div>
-
-        <div class="stock_content_center">
             <div class="stock_content_column">
                 <label for="">Codigo da Peça</label>
                 <input type="text" name="part_code" id="" value='<?= $stock['part_code'] ?>' readonly>
-            </div>
-            <div class="stock_content_column">
+
                 <label for="">Setor</label>
                 <input type="text" name="sector" id="" value='<?= $stock['sector'] ?>'>
-            </div>
-            <div class="stock_content_column">
+
                 <label for="">Tipo</label>
                 <input type="text" name="type" id="" value='<?= $stock['type'] ?>'>
-            </div>
-        </div>
 
-        <div class="stock_content_center">
-            <div class="stock_content_column">
                 <label for="">SubTipo</label>
                 <input type="text" name="subtype" id="" value='<?= $stock['subtype'] ?>'>
-            </div>
-            <div class="stock_content_column">
-                <label for="">Material</label>
-                <input type="text" name="material" id="" value='<?= $stock['material'] ?>'>
-            </div>
-            <div class="stock_content_column">
-                <label for="">Linha</label>
-                <input type="text" name="line" id="" value='<?= $stock['line'] ?>'>
-            </div>
-        </div>
 
-        <div class="stock_content_center">
-            <div class="stock_content_column">
-                <label for="">Cor</label>
-                <input type="text" name="color" id="" value='<?= $stock['color'] ?>'>
-            </div>
-            <div class="stock_content_column">
                 <label for="">Detalhes</label>
                 <input type="text" name="details" id="" value='<?= $stock['details'] ?>'>
-            </div>
-            <div class="stock_content_column">
-                <label for="">Tamanho</label>
-                <input type="text" name="size" id="" value='<?= $stock['size'] ?>'>
-            </div>
-        </div>
 
-        <div class="stock_content_center">
-            <div class="stock_content_column">
-                <label for="">Quantidade de Peças</label>
-                <input type="text" name="qntd_part" id="" value='<?= $stock['qntd_part'] ?>'>
-            </div>
-        </div>
+                <h1>Information</h1>
 
-        <div class="stock_title">
-            <h1>Information</h1>
-        </div>
-
-        <div class="stock_content_center">
-            <div class="stock_content_column">
                 <label for="">Funcionario</label>
                 <input type="text" name="employee" id="" value='<?= $stock['employee'] ?>'>
             </div>
+
             <div class="stock_content_column">
-                <label for="">Data Cadastro</label>
-                <input type="date" name="dt_register" id="" required value='<?= $stock['dt_register'] ?>'>
+                <label for="">Material</label>
+                <input type="text" name="material" id="" value='<?= $stock['material'] ?>'>
+
+                <label for="">Cor</label>
+                <input type="text" name="color" id="" value='<?= $stock['color'] ?>'>
+
+                <label for="">Linha</label>
+                <input type="text" name="line" id="" value='<?= $stock['line'] ?>'>
+
+                <label for="">Tamanho</label>
+                <input type="text" name="size" id="" value='<?= $stock['size'] ?>'>
+
+                <label for="">Quantidade de Peças</label>
+                <input type="text" name="qntd_part" id="" value='<?= $stock['qntd_part'] ?>'>
+
+                <div class="stock_content_column">
+                    <div class="stock_information">
+                        <div class="stock_content_column">
+                            <label for="">Data Cadastro</label>
+                            <input type="date" name="dt_register" id="dt_register" required value='<?= $stock['dt_register'] ?>'>
+                        </div>
+                        <div class="stock_content_column">
+                            <label for="">Valor</label>
+                            <input type="text" name="value" id="value" required value='<?= $stock['value'] ?>'>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="stock_content_column">
-                <label for="">Valor</label>
-                <input type="text" name="value" id="" required value='<?= $stock['value'] ?>'>
-            </div>
+
+            <label class="picture" for="picture__input" tabIndex="0">
+                <img class="picture__image" src="../../uploads/<?= $stock['picture'] ?>" alt="">
+            </label>
+
+            <input type="hidden" value="<?= $stock['picture'] ?>" name="picture_current_name">
+            
+            <input type="file" name="picture__input" id="picture__input">
         </div>
 
         <div class="stock_button_save">
-            <button type="submit">Save</button>
+            <div class="glow-on-hover">
+                <button type="submit">Save</button>
+            </div>
         </div>
     </form>
 
