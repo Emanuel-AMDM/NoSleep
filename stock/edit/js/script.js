@@ -19,19 +19,19 @@ inputFile.addEventListener("change", function (e) {
         //armazena o arquivo
         const reader = new FileReader();
 
-        //carrega o arquivo no capo
+        //carrega o arquivo no campo
         reader.addEventListener("load", function (e) {
             //quando tiver alguma coisa do meu inputTarget que recebe parametro e.target
             const readerTarget = e.target;
 
             //cria a imagem
-            const img = document.createElement("img");
-            img.src = readerTarget.result;
-            img.classList.add("picture__img");
+            // const img = document.createElement("img");
+            // img.src = readerTarget.result;
+            // img.classList.add("picture__img");
 
             //adicione esse filho dentro do campo e limpa a outra imagem que colocou primeiro
-            pictureImage.innerHTML = "";
-            pictureImage.appendChild(img);
+            pictureImage.src = readerTarget.result;
+            // pictureImage.appendChild(img);
     });
 
     reader.readAsDataURL(file);
