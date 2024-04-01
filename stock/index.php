@@ -1,5 +1,5 @@
 <?php
-require_once('../services/list_entity.php');
+require_once('../services/stock/list_entity.php');
 $stock = list_entity_stock();
 ?>
 
@@ -40,27 +40,27 @@ $stock = list_entity_stock();
 
     <div class='client_show'>
         <table>
-            <thead class='client_show_title'>
+            <thead class='client_show_up'>
                 <tr>
-                    <td>id</td>
-                    <td>part_code</td>
-                    <td>sector</td>
-                    <td>type</td>
-                    <td>subtype</td>
-                    <td>material</td>
-                    <td>line</td>
-                    <td>color</td>
-                    <td>details</td>
-                    <td>size</td>
-                    <td>employee</td>
-                    <td>value</td>
-                    <td>number parts</td>
-                    <td>date register</td>
-                    <td>picture</td>
-                    <td>action</td>
+                    <td><strong>id</strong></td>
+                    <td><strong>part_code</strong></td>
+                    <td><strong>sector</strong></td>
+                    <td><strong>type</strong></td>
+                    <td><strong>subtype</strong></td>
+                    <td><strong>material</strong></td>
+                    <td><strong>line</strong></td>
+                    <td><strong>color</strong></td>
+                    <td><strong>details</strong></td>
+                    <td><strong>size</strong></td>
+                    <td><strong>employee</strong></td>
+                    <td><strong>value</strong></td>
+                    <td><strong>number parts</strong></td>
+                    <td><strong>date register</strong></td>
+                    <td><strong>picture</strong></td>
+                    <td><strong>action</strong></td>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class='client_show_down'>
                 <?php foreach($stock as $stock): ?>
                 <tr>
                     <td><?= $stock['id'] ?></td>
@@ -77,7 +77,7 @@ $stock = list_entity_stock();
                     <td><?= $stock['value'] ?></td>
                     <td><?= $stock['qntd_part'] ?></td>
                     <td><?= $stock['dt_register'] ?></td>
-                    <td><?= $stock['picture'] ?></td>
+                    <td><img src="../uploads/<?= $stock['picture'] ?>"></td>
                     <td><a href="edit/index.php?id=<?= $stock['id'] ?>">|Show| </a><a href="../routes/stock/delete.php?id=<?= $stock['id'] ?>">|Excluir| </a></td>
                 </tr>
                 <?php endforeach; ?>
