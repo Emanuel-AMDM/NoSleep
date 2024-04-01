@@ -1,5 +1,5 @@
 <?php
-require_once('../../services/list_entity.php');
+require_once('../../services/shop/list_entity_shoes.php');
 $stock = list_entity_stock();
 ?>
 
@@ -39,7 +39,7 @@ $stock = list_entity_stock();
         <?php foreach($stock as $stock): ?>
             <div class="border_img">
                 <div>
-                    <a href="#modal"><img src="../../img/img_peita1_frente.png" alt="" id="img_1" onmouseover="alternarImagem1()"></a>
+                    <a href=""><img src="../../uploads/<?= $stock['picture'] ?>" alt="" id="img_1"></a>
                 </div>
                 
                 <hr>
@@ -94,7 +94,6 @@ $stock = list_entity_stock();
 
     <script src="https://kit.fontawesome.com/5dc8345cee.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
 
 </body>
 </html>
