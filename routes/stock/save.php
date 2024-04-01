@@ -7,6 +7,21 @@ if(isset($_FILES['picture__input'])){
     move_uploaded_file($_FILES['picture__input']['tmp_name'], '../../uploads/' . $name_picture);
 }
 
-create_stock($_POST['part_code'], $_POST['sector'], $_POST['type'], $_POST['subtype'], $_POST['material'], $_POST['line'], $_POST['color'], $_POST['details'], $_POST['size'], $_POST['employee'], $_POST['dt_register'], $_POST['value'], $name_picture, $_POST['qntd_part']);
+create_stock(
+    $_POST['part_code'],
+    mb_strtoupper($_POST['sector']),
+    mb_strtoupper($_POST['type']),
+    mb_strtoupper($_POST['subtype']),
+    mb_strtoupper($_POST['material']),
+    mb_strtoupper($_POST['line']),
+    mb_strtoupper($_POST['color']),
+    mb_strtoupper($_POST['details']),
+    mb_strtoupper($_POST['size']),
+    mb_strtoupper($_POST['employee']),
+    $_POST['dt_register'],
+    $_POST['value'],
+    $name_picture,
+    $_POST['qntd_part']
+);
 
 header('Location: ../../stock/create/index.php');
