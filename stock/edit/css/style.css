@@ -12,6 +12,9 @@
 .nav_menu{
     background-color:beige;
     padding: 20px;
+    .nav_flex{
+      display: flex;
+    }
     ul{
         display: flex;
     }
@@ -29,20 +32,37 @@
         border-radius: 5px;
     }
     .menu{
-        display: flex;
-        padding-left: 100px;
-        margin-top: 10px;
-        gap: 50px;
+      display: flex;
+      padding-left: 150px;
+      margin-top: 10px;
+      gap: 50px;
     }
     .menu_login{
-        display: flex;
-        padding-left: 1400px;
-        margin-top: 10px;
-        gap: 10px;
+      display: flex;
+      padding-left: 1400px;
+      margin-top: 10px;
+      gap: 10px;
+      li{
+        list-style: none;
+      }
+      a{
+        text-decoration: none;
+        color: black;
+      }
+      a:hover{
+        background-color: #04AA6D;
+        transition: all .3s;
+        padding: 15px;
+        border-radius: 5px;
+      }
+      img{
+        width: 20px;
+        height: 20px;
+      }
     }
     img{
-        width: 200px;
-        height: 40px;
+      width: 200px;
+      height: 40px;
     }
 }
 /* ///////////////////////////////////////////////////////////////////////// */
