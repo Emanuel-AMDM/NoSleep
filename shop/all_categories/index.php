@@ -1,6 +1,6 @@
 <?php
-require_once('../../services/list_entity.php');
-$stock = list_entity_stock();
+require_once('../../services/shop/list_entity_allcategories.php');
+$allcategories = list_entity_allcategories();
 ?>
 
 <!DOCTYPE html>
@@ -36,21 +36,21 @@ $stock = list_entity_stock();
     </nav>
 
     <div class="img_shop">
-        <?php foreach($stock as $stock): ?>
+        <?php foreach($allcategories as $allcategories): ?>
             <div class="border_img">
                 <div>
-                    <a href="#modal"><img src="../../img/img_peita1_frente.png" alt="" id="img_1" onmouseover="alternarImagem1()"></a>
+                    <a href=""><img src="../../uploads/<?= $allcategories['picture'] ?>" alt="" id="img_1"></a>
                 </div>
                 
                 <hr>
 
-                <div class="shoes_info">
-                    <div class="shoes_contents">
-                        <div>
-                            <label for="" id="roupa1"><?= $stock['type'] . ' - ' . $stock['color']?></label>
+                <div class="allcategories_info">
+                    <div class="allcategories_contents">
+                        <div class="allcategories_img">
+                            <label for="" id="roupa1"><?= $allcategories['material'] . ' - ' . $allcategories['sector'] . ' - ' . $allcategories['size'] ?></label>
                         </div>
-                        <div class="shoes_value">
-                            <label for=""><?= $stock['value'] ?></label>
+                        <div class="allcategories_value">
+                            <label for=""><?='R$' . $allcategories['value'] ?></label>
                         </div>
                     </div>
                 </div>
