@@ -1,5 +1,5 @@
 <?php
-require_once('../services/list_entity.php');
+require_once('../services/client/list_entity_index.php');
 $client = list_entity_client();
 ?>
 
@@ -17,49 +17,48 @@ $client = list_entity_client();
 <body>
     
     <nav class="nav_menu">
-        <div>
+        <div class="nav_flex">
+            <div>
+                <a href="../index/index.html"><img src="../img_logo/Destaques_07 - Menu.png" alt=""></a>
+            </div>
             <ul>
-                <li><img src="../img_logo/Destaques_07 - Menu.png" alt=""></li>
                 <div class="menu">
-                    <li><a href="../shop/index.html">Shop</a></li>
+                    <li><a href="../shop/index.php">Shop</a></li>
                     <li><a href="../MANUAL-DA-IDENTIDADE-VISUAL.pdf">Lookbook</a></li>
-                    <li><a href="../stock/create/index.html">Stock</a></li>
-                    <li><a href="../employee/index.php">Employee</a></li>
-                    <li><a href="index.php">Clients</a></li>
-                </div>
-                <div class="menu_login">
-                    <li><a href="">Emanuel Menezes</a></li>
-                    <li><img src="../img/user.png" alt=""></li>
+                    <li><a href="index.php">Stock</a></li>
+                    <li><a href="../../employee/index.php">Employee</a></li>
+                    <li><a href="../client/index.php">Clients</a></li>
                 </div>
             </ul>
+            <div class="menu_login">
+                <li><a href="">Emanuel Menezes</a></li>
+            </div>
         </div>
     </nav>
 
     <div class='client_show'>
         <table>
-            <thead class='client_show_title'>
+            <thead class='client_show_up'>
                 <tr>
-                    <td>id</td>
-                    <td>nome</td>
-                    <td>sobrenome</td>
-                    <td>email</td>
-                    <td>telefone</td>
-                    <td>genero</td>
-                    <td>data aniversario</td>
-                    <td>CRM</td>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Email</th>
+                    <th>Telephone</th>
+                    <th>Gender</th>
+                    <th>Birthday</th>
+                    <th>Action</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class='client_show_down'>
                 <?php foreach($client as $client): ?>
                 <tr>
-                    <td><?= $client['id'] ?></td>
                     <td><?= $client['name'] ?></td>
                     <td><?= $client['surname'] ?></td>
                     <td><?= $client['email'] ?></td>
                     <td><?= $client['telephone'] ?></td>
                     <td><?= $client['gender'] ?></td>
                     <td><?= $client['birthday'] ?></td>
-                    <td><a href="../login/register/edit/index.php?id=<?= $client['id'] ?>">|Show| </a><a href="">|Todas as Compras| </a><a href=""> |Mais Informações|</a></td>
+                    <td><a href="../login/register/edit/index.php?id=<?= $client['id'] ?>"><i class="fa-solid fa-eye"></i></a>
                 </tr>
                 <?php endforeach; ?>
             </tbody>
