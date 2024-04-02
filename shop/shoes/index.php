@@ -1,6 +1,6 @@
 <?php
 require_once('../../services/shop/list_entity_shoes.php');
-$stock = list_entity_stock();
+$shoes = list_entity_shoes();
 ?>
 
 <!DOCTYPE html>
@@ -25,32 +25,32 @@ $stock = list_entity_stock();
         <div class="filter_bar">
             <div>
                 <ul class="menu">
-                    <li><a href="../shoes/index.html"         >Shoes         </a></li>
-                    <li><a href="../tshirt/index.html"        >T-shirts      </a></li>
-                    <li><a href="../caps/index.html"          >Caps          </a></li>
-                    <li><a href="../sweatshirts/index.html"   >Sweatshirts   </a></li>
-                    <li><a href="../all_categories/index.html">All categories</a></li>
+                    <li><a href="index.php"         >Shoes         </a></li>
+                    <li><a href="../tshirt/index.php"        >T-shirts      </a></li>
+                    <li><a href="../caps/index.php"          >Caps          </a></li>
+                    <li><a href="../sweatshirts/index.php"   >Sweatshirts   </a></li>
+                    <li><a href="../all_categories/index.php">All categories</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     
     <div class="img_shop">
-        <?php foreach($stock as $stock): ?>
+        <?php foreach($shoes as $shoes): ?>
             <div class="border_img">
                 <div>
-                    <a href=""><img src="../../uploads/<?= $stock['picture'] ?>" alt="" id="img_1"></a>
+                    <a href=""><img src="../../uploads/<?= $shoes['picture'] ?>" alt="" id="img_1"></a>
                 </div>
                 
                 <hr>
 
                 <div class="shoes_info">
                     <div class="shoes_contents">
-                        <div>
-                            <label for="" id="roupa1"><?= $stock['type'] . ' - ' . $stock['color']?></label>
+                        <div class="shoes_img">
+                            <label for="" id="roupa1"><?= $shoes['material'] . ' - ' . $shoes['sector'] . ' - ' . $shoes['size'] ?></label>
                         </div>
                         <div class="shoes_value">
-                            <label for=""><?= $stock['value'] ?></label>
+                            <label for=""><?='R$' . $shoes['value'] ?></label>
                         </div>
                     </div>
                 </div>
