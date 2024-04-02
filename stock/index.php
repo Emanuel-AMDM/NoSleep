@@ -36,58 +36,60 @@ $stock = list_entity_stock();
         </div>
     </nav>
 
-    <div class='button_create'>
-        <div class='glow-on-hover'>
-            <a href="create/index.php">Part Create</a>
+    <div class='contents_center'>
+        <div>
+            <div class='button_create'>
+                <div class='glow-on-hover'>
+                    <a href="create/index.php">Part Create</a>
+                </div>
+            </div>
+
+            <div class='stock_show'>
+                <table>
+                    <thead class='stock_show_up'>
+                        <tr>
+                            <th>Part Code</th>
+                            <th>Sector</th>
+                            <th>Type</th>
+                            <th>Subtype</th>
+                            <th>Material</th>
+                            <th>Line</th>
+                            <th>Color</th>
+                            <th>Details</th>
+                            <th>Size</th>
+                            <th>Employee</th>
+                            <th>Value</th>
+                            <th>Number Parts</th>
+                            <th>Date Register</th>
+                            <th>Picture</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class='stock_show_down'>
+                        <?php foreach($stock as $stock): ?>
+                        <tr>
+                            <td><?= $stock['part_code'] ?></td>
+                            <td><?= $stock['sector'] ?></td>
+                            <td><?= $stock['type'] ?></td>
+                            <td><?= $stock['subtype'] ?></td>
+                            <td><?= $stock['material'] ?></td>
+                            <td><?= $stock['line'] ?></td>
+                            <td><?= $stock['color'] ?></td>
+                            <td><?= $stock['details'] ?></td>
+                            <td><?= $stock['size'] ?></td>
+                            <td><?= $stock['employee'] ?></td>
+                            <td><?= $stock['value'] ?></td>
+                            <td><?= $stock['qntd_part'] ?></td>
+                            <td><?= $stock['dt_register'] ?></td>
+                            <td><img src="../uploads/<?= $stock['picture'] ?>"></td>
+                            <td><a href="edit/index.php?id=<?= $stock['id'] ?>"><i class="fa-solid fa-eye"></i></a><a id="trash" href="../routes/stock/delete.php?id=<?= $stock['id'] ?>"><i class="fa-solid fa-trash"></i></a></td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-
-    <div class='stock_show'>
-        <table>
-            <thead class='stock_show_up'>
-                <tr>
-                    <th>Part Code</th>
-                    <th>Sector</th>
-                    <th>Type</th>
-                    <th>Subtype</th>
-                    <th>Material</th>
-                    <th>Line</th>
-                    <th>Color</th>
-                    <th>Details</th>
-                    <th>Size</th>
-                    <th>Employee</th>
-                    <th>Value</th>
-                    <th>Number Parts</th>
-                    <th>Date Register</th>
-                    <th>Picture</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody class='stock_show_down'>
-                <?php foreach($stock as $stock): ?>
-                <tr>
-                    <td><?= $stock['part_code'] ?></td>
-                    <td><?= $stock['sector'] ?></td>
-                    <td><?= $stock['type'] ?></td>
-                    <td><?= $stock['subtype'] ?></td>
-                    <td><?= $stock['material'] ?></td>
-                    <td><?= $stock['line'] ?></td>
-                    <td><?= $stock['color'] ?></td>
-                    <td><?= $stock['details'] ?></td>
-                    <td><?= $stock['size'] ?></td>
-                    <td><?= $stock['employee'] ?></td>
-                    <td><?= $stock['value'] ?></td>
-                    <td><?= $stock['qntd_part'] ?></td>
-                    <td><?= $stock['dt_register'] ?></td>
-                    <td><img src="../uploads/<?= $stock['picture'] ?>"></td>
-                    <td><a href="edit/index.php?id=<?= $stock['id'] ?>"><i class="fa-solid fa-eye"></i></a><a id="trash" href="../routes/stock/delete.php?id=<?= $stock['id'] ?>"><i class="fa-solid fa-trash"></i></a></td>
-                </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
-
-    
 
     <script src="https://kit.fontawesome.com/5dc8345cee.js" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
