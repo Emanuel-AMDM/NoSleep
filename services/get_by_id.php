@@ -27,16 +27,3 @@ function get_employee_by_id($id){
     }
 }
 
-function get_stock_by_id($id){
-
-    $sql = "SELECT * FROM stock WHERE id = $id";
-    $stock = execute_query($sql);
-
-    foreach($stock as $stock){
-        if($stock['id'] == $id){
-            return $stock;
-        }
-    }
-
-}
-
