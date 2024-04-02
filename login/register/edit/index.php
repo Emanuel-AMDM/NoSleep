@@ -61,8 +61,8 @@ $client = get_client_by_id($id);
                             ?>
                         </option>
                         <option value="0">Prefer not to say</option>
-                        <option value="1">Masculine</option>
-                        <option value="2">Feminine</option>
+                        <option value="1">MASCULINE</option>
+                        <option value="2">FEMININE</option>
                     </select>
                 </div>
                 
@@ -76,11 +76,16 @@ $client = get_client_by_id($id);
                 <input type="text" name="password" placeholder="Password" value="<?=$client['password']?>">
             </div>
 
-            <div class="register_button">
-                <button type="submit">save</button>
+            <div class="save_button">
+                <div class="glow-on-hover">
+                    <button type="submit">Save</button>
+                </div>
             </div>
+            
             <div class="delete_login">
-                <a href='../../../routes/client/delete.php?id=<?=$client['id']?>'>delete account</a>
+                <div class="glow-on-hover">
+                    <a href='../../../routes/client/delete.php?id=<?=$client['id']?>'>delete account</a>
+                </div>
             </div>
 
         <footer class="footer">
