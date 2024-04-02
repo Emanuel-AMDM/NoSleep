@@ -1,6 +1,6 @@
 <?php
-require_once('../../services/list_entity.php');
-$stock = list_entity_stock();
+require_once('../../services/shop/list_entity_tshirt.php');
+$tshirt = list_entity_tshirt();
 
 ?>
 
@@ -37,21 +37,21 @@ $stock = list_entity_stock();
     </nav>
 
     <div class="img_shop">
-        <?php foreach($stock as $stock): ?>
+        <?php foreach($tshirt as $tshirt): ?>
             <div class="border_img">
                 <div>
-                    <a href="#modal"><img src="../../img/img_peita1_frente.png" alt="" id="img_1" onmouseover="alternarImagem1()"></a>
+                    <a href=""><img src="../../uploads/<?= $tshirt['picture'] ?>" alt="" id="img_1"></a>
                 </div>
                 
                 <hr>
 
-                <div class="shoes_info">
-                    <div class="shoes_contents">
-                        <div>
-                            <label for="" id="roupa1"><?= $stock['type'] . ' - ' . $stock['color']?></label>
+                <div class="tshirt_info">
+                    <div class="tshirt_contents">
+                        <div class="tshirt_img">
+                            <label for="" id="roupa1"><?= $tshirt['material'] . ' - ' . $tshirt['sector'] . ' - ' . $tshirt['size'] ?></label>
                         </div>
-                        <div class="shoes_value">
-                            <label for=""><?= $stock['value'] ?></label>
+                        <div class="tshirt_value">
+                            <label for=""><?='R$' . $tshirt['value'] ?></label>
                         </div>
                     </div>
                 </div>
