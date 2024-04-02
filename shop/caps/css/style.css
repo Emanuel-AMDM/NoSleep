@@ -55,7 +55,7 @@
     flex-wrap: wrap;
 
     img{
-        width: 589px;
+        width: 604px;
         height: 690px;
     }
 
@@ -65,13 +65,18 @@
         border: 1px solid black;
         padding: 10px;
 
-        .shoes_info{
+        .caps_info{
             display: flex;
             justify-content: center;
 
-            .shoes_contents{
-                .shoes_value{
-                    padding-left: 38px;
+            .caps_contents{
+                .caps_img{
+                    display: flex;
+                    justify-content: center;
+                }
+                .caps_value{
+                    display: flex;
+                    justify-content: center;
                 }
             }
         }
