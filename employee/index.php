@@ -1,5 +1,5 @@
 <?php
-require_once('../services/list_entity.php');
+require_once('../services/employee/list_entity_index.php');
 $employee = list_entity_employee();
 ?>
 
@@ -17,75 +17,79 @@ $employee = list_entity_employee();
 <body>
     
     <nav class="nav_menu">
-        <div>
+        <div class="nav_flex">
+            <div>
+                <a href="../index/index.html"><img src="../img_logo/Destaques_07 - Menu.png" alt=""></a>
+            </div>
             <ul>
-                <li><img src="../img_logo/Destaques_07 - Menu.png" alt=""></li>
                 <div class="menu">
-                    <li><a href="../shop/index.html">Shop</a></li>
+                    <li><a href="../shop/index.php">Shop</a></li>
                     <li><a href="../MANUAL-DA-IDENTIDADE-VISUAL.pdf">Lookbook</a></li>
-                    <li><a href="../stock/index.php">Stock</a></li>
-                    <li><a href="index.php">Employee</a></li>
+                    <li><a href="index.php">Stock</a></li>
+                    <li><a href="../employee/index.php">Employee</a></li>
                     <li><a href="../client/index.php">Clients</a></li>
                 </div>
-                <div class="menu_login">
-                    <li><a href="">Emanuel Menezes</a></li>
-                    <li><img src="../img/user.png" alt=""></li>
-                </div>
             </ul>
+            <div class="menu_login">
+                <li><a href="">Emanuel Menezes</a></li>
+            </div>
         </div>
     </nav>
 
-    <div class='button_create'>
-        <a href="create/index.php">Part Create</a>
-    </div>
+    <div class='contents_center'>
+        <div>
+            <div class='button_create'>
+                <div class='glow-on-hover'>
+                    <a href="create/index.php">Part Create</a>
+                </div>
+            </div>
 
-    <div class='employee_show'>
-        <table>
-            <thead class='employee_show_title'>
-                <tr>
-                    <td>id</td>
-                    <td>name</td>
-                    <td>birth</td>
-                    <td>cpf/cnpj</td>
-                    <td>rg/ie</td>
-                    <td>telephone</td>
-                    <td>email</td>
-                    <td>cep</td>
-                    <td>road</td>
-                    <td>neighborhood</td>
-                    <td>city</td>
-                    <td>state</td>
-                    <td>complement</td>
-                    <td>number</td>
-                    <td>create</td>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach($employee as $employee): ?>
-                <tr>
-                    <td><?= $employee['id'] ?></td>
-                    <td><?= $employee['name'] ?></td>
-                    <td><?= $employee['dt_birth'] ?></td>
-                    <td><?= $employee['cpf_cnpj'] ?></td>
-                    <td><?= $employee['rg_ie'] ?></td>
-                    <td><?= $employee['telephone'] ?></td>
-                    <td><?= $employee['email'] ?></td>
-                    <td><?= $employee['cep'] ?></td>
-                    <td><?= $employee['road'] ?></td>
-                    <td><?= $employee['neighborhood'] ?></td>
-                    <td><?= $employee['city'] ?></td>
-                    <td><?= $employee['state'] ?></td>
-                    <td><?= $employee['complement'] ?></td>
-                    <td><?= $employee['number'] ?></td>
-                    <td><?= $employee['dt_created_at'] ?></td>
-                    <td><a href="edit/index.php?id=<?= $employee['id'] ?>">|Show| </a><a href="../routes/employee/delete.php?id=<?= $employee['id'] ?>">|Excluir| </a></td>
-                </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+            <div class='employee_show'>
+                <table>
+                    <thead class='employee_show_up'>
+                        <tr>
+                            <th>Name</th>
+                            <th>Birth</th>
+                            <th>CPF/CNPJ</th>
+                            <th>RG/IE</th>
+                            <th>Telephone</th>
+                            <th>Email</th>
+                            <th>CEP</th>
+                            <th>Road</th>
+                            <th>Neighborhood</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Complement</th>
+                            <th>Number</th>
+                            <th>Create</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody  class='employee_show_down'>
+                        <?php foreach($employee as $employee): ?>
+                        <tr>
+                            <td><?= $employee['name'] ?></td>
+                            <td><?= $employee['dt_birth'] ?></td>
+                            <td><?= $employee['cpf_cnpj'] ?></td>
+                            <td><?= $employee['rg_ie'] ?></td>
+                            <td><?= $employee['telephone'] ?></td>
+                            <td><?= $employee['email'] ?></td>
+                            <td><?= $employee['cep'] ?></td>
+                            <td><?= $employee['road'] ?></td>
+                            <td><?= $employee['neighborhood'] ?></td>
+                            <td><?= $employee['city'] ?></td>
+                            <td><?= $employee['state'] ?></td>
+                            <td><?= $employee['complement'] ?></td>
+                            <td><?= $employee['number'] ?></td>
+                            <td><?= $employee['dt_created_at'] ?></td>
+                            <td><a href="edit/index.php?id=<?= $employee['id'] ?>"><i class="fa-solid fa-eye"></i></a><a id="trash" href="../routes/employee/delete.php?id=<?= $employee['id'] ?>"><i class="fa-solid fa-trash"></i></a></td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-
-    
 
     <script src="https://kit.fontawesome.com/5dc8345cee.js" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
