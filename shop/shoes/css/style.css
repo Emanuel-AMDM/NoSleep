@@ -55,7 +55,7 @@
     flex-wrap: wrap;
 
     img{
-        width: 589px;
+        width: 604px;
         height: 690px;
     }
 
@@ -70,8 +70,13 @@
             justify-content: center;
 
             .shoes_contents{
+                .shoes_img{
+                    display: flex;
+                    justify-content: center;
+                }
                 .shoes_value{
-                    padding-left: 38px;
+                    display: flex;
+                    justify-content: center;
                 }
             }
         }
