@@ -40,7 +40,7 @@ $sweatshirts = list_entity_sweatshirts();
         <?php foreach($sweatshirts as $sweatshirts): ?>
             <div class="border_img">
                 <div>
-                    <a href=""><img src="../../uploads/<?= $sweatshirts['picture'] ?>" alt="" id="img_1"></a>
+                    <a href="../view_part/index.php?id=<?= $sweatshirts['id'] ?>"><img src="../../uploads/<?= $sweatshirts['picture'] ?>" alt="" id="img_1"></a>
                 </div>
                 
                 <hr>
