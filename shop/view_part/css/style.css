@@ -1,0 +1,153 @@
+/* ultiliza a pagina inteira  */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.filter_bar{
+    display: flex;
+    gap: 50px;
+    background-color: black;
+    padding: 25px;
+
+    .img_logo{
+        img{
+            width: 200px;
+            height: 40px;
+        }
+    }
+
+    .menu{
+        display: flex;
+        gap: 50px;
+        
+        li{
+            list-style: none;
+            margin-top: 7px;
+        }
+
+        li a{
+            text-decoration: none;
+            color: white;
+        }
+
+        li a:hover{
+            background-color: blue;
+            display: block;
+            transition: all .3s;
+            border-radius: 10px;
+            padding: 10px;
+        }
+    }
+}
+
+.content_cart{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    gap: 150px;
+
+    .part_cart_title{
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+    .part_cart_img{
+        display: flex;
+        justify-content: center;
+        img{
+            width: 400px;
+            height: 400px;
+        }
+    }
+}
+
+.part_info{
+    padding: 70px;
+    
+    hr{
+        width: 500px;
+    }
+
+    .part_value_padding{
+        padding: 15px;
+        .part_value{
+            display: flex;
+            flex-direction: column;
+            
+            #text{
+                color: red;
+            }
+            #value{
+                font-size: 30px;
+            }
+            .part_value_incash{
+                display: flex;
+                flex-direction: row;
+                gap: 5px;
+    
+                #value{
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    
+    .part_size{
+        padding: 15px;
+    }
+
+    .part_qntd{
+        padding: 15px;
+    }
+
+    .part_cart{
+        padding: 15px;
+    }
+
+}
+
+.more_part{
+    display: flex;
+    justify-content: center;
+    padding: 70px;
+    
+    .more_part_title{
+        font-size: 15px;
+    }
+}
+
+.related_products{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 50px;
+
+    .related_products_border{
+
+        .related_products_img{
+            display: flex;
+            justify-content: center;
+            
+            img{
+                width: 250px;
+                height: 250px;
+            }
+        }
+        .related_products_info{
+            text-align: center;
+            
+            p{
+                width: 250px;
+            }
+        }
+    }
+}
