@@ -14,4 +14,3 @@ function get_stock_by_id($id){
     }
 
 }
-
