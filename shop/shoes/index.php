@@ -25,7 +25,7 @@ $shoes = list_entity_shoes();
         <div class="filter_bar">
             <div>
                 <ul class="menu">
-                    <li><a href="index.php"         >Shoes         </a></li>
+                    <li><a href="index.php"                  >Shoes         </a></li>
                     <li><a href="../tshirt/index.php"        >T-shirts      </a></li>
                     <li><a href="../caps/index.php"          >Caps          </a></li>
                     <li><a href="../sweatshirts/index.php"   >Sweatshirts   </a></li>
@@ -39,7 +39,7 @@ $shoes = list_entity_shoes();
         <?php foreach($shoes as $shoes): ?>
             <div class="border_img">
                 <div>
-                    <a href=""><img src="../../uploads/<?= $shoes['picture'] ?>" alt="" id="img_1"></a>
+                    <a href="../view_part/index.php?id=<?= $shoes['id'] ?>"><img src="../../uploads/<?= $shoes['picture'] ?>" alt="" id="img_1"></a>
                 </div>
                 
                 <hr>
