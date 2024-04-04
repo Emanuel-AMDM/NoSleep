@@ -40,7 +40,7 @@ $tshirt = list_entity_tshirt();
         <?php foreach($tshirt as $tshirt): ?>
             <div class="border_img">
                 <div>
-                    <a href=""><img src="../../uploads/<?= $tshirt['picture'] ?>" alt="" id="img_1"></a>
+                    <a href="../view_part/index.php?id=<?= $tshirt['id'] ?>"><img src="../../uploads/<?= $tshirt['picture'] ?>" alt="" id="img_1"></a>
                 </div>
                 
                 <hr>
