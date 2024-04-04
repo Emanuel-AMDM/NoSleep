@@ -39,7 +39,7 @@ $caps = list_entity_caps()
         <?php foreach($caps as $caps): ?>
             <div class="border_img">
                 <div>
-                    <a href=""><img src="../../uploads/<?= $caps['picture'] ?>" alt="" id="img_1"></a>
+                    <a href="../view_part/index.php?id=<?= $caps['id'] ?>"><img src="../../uploads/<?= $caps['picture'] ?>" alt="" id="img_1"></a>
                 </div>
                 
                 <hr>
