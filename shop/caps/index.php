@@ -17,23 +17,7 @@ $caps = list_entity_caps()
 </head>
 <body>
 
-    <div id="top" class="titulo">
-        <a href="../../index/index.html"><img src="../../img_logo/Destaques_07.png" alt=""></a>
-    </div>
-
-    <nav>
-        <div class="filter_bar">
-            <div>
-                <ul class="menu">
-                    <li><a href="../shoes/index.php"         >Shoes         </a></li>
-                    <li><a href="../tshirt/index.php"        >T-shirts      </a></li>
-                    <li><a href="../caps/index.php"          >Caps          </a></li>
-                    <li><a href="../sweatshirts/index.php"   >Sweatshirts   </a></li>
-                    <li><a href="../all_categories/index.php">All categories</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <?php require_once('../../nav/shop_contents.php'); ?>
 
     <div class="img_shop">
         <?php foreach($caps as $caps): ?>

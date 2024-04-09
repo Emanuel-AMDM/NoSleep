@@ -1,7 +1,18 @@
 <?php
-require_once('../services/shop/list_entity_index.php');
-$stock = list_entity_stock();
+session_start();
 
+require_once('../services/shop/list_entity_index.php');
+require_once('../services/client/get_by_id.php');
+
+if(!isset($_SESSION['user'])){
+    header('/index.php');
+    $client = get_by_id(0);
+}else{
+    $id_client = $_SESSION['user'];
+    $client = get_by_id($id_client);
+}
+
+$stock = list_entity_stock();
 ?>
 
 <!DOCTYPE html>
@@ -18,13 +29,32 @@ $stock = list_entity_stock();
 </head>
 <body>
 
-    <div class="titulo">
-        <a href="../index/index.html"><img src="../img_logo/Destaques_01.png" alt=""></a>
-    </div>
+    <?php if($client['name'] != '' && $client['surname'] != ''): ?>
+        <div class="title_login">
+            <ul class="login">
+                <li>
+                    <a><?= $client['name'] . ' ' . $client['surname'] ?></a>
+                    <ul>
+                        <li>
+                            <form action="../routes/login/logout.php" method="POST">
+                                <button>Sair</button>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    <?php else: ?>
+        <div class="title_login_register">
+            <a href="../login/index.php">Login/Register</a>
+        </div>
+    <?php endif; ?>
 
-    <form action="../routes/login/logout.php" method="POST">
-        <button>Sair</button>
-    </form>
+    <div class="title">
+        <div class="title_img">
+            <a href="../index/index.html"><img src="../img_logo/Destaques_01.png" alt=""></a>
+        </div>
+    </div>
 
     <nav>
         <div class="filter_bar">
