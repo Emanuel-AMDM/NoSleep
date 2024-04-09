@@ -117,7 +117,7 @@ function create_stock($part_code, $sector, $type, $subtype, $material, $line, $c
     execute_query($sql1); 
 }
 
-function create_cart($id_part, $id_client, $qntd_part, $size){
+function create_cart($id_part, $id_client, $id_cart, $qntd_part, $size){
 
     //coloca a data de hoje
     $agora = date('Y-m-d');
@@ -131,39 +131,8 @@ function create_cart($id_part, $id_client, $qntd_part, $size){
     if(empty($size)){
         $size = 0;
     }
-    //NAO TA ADICIONANDO A PEÇA----------- TESTAAAAAA
-    //checa se já existe essa peça no carrinho da pessoa
-    $sql = "SELECT * FROM cart WHERE id_part = $id_part AND id_client = $id_client";
-    $sql_checa = execute_query($sql);
 
-    foreach($sql_checa as $sql_checa){
-        if($sql_checa['id'] !== '' && $sql_checa['qntd_part'] == 0 && $sql_checa['size'] == 0){
-            
-            $id = $sql_checa['id'];
-
-            $sql1 = "UPDATE cart SET qntd_part = '$qntd_part', size = '$size', dt_updated_at = '$dt_updated_at' WHERE id = $id";
-            execute_query($sql1);
-        
-        }elseif($sql_checa['id'] !== '' && $sql_checa['qntd_part'] == 0 && $sql_checa['size'] > 0){
-            
-            $id = $sql_checa['id'];
-
-            $sql2 = "UPDATE cart SET qntd_part = '$qntd_part', dt_updated_at = '$dt_updated_at' WHERE id = $id";
-            execute_query($sql2);
-        
-        }elseif($sql_checa['id'] !== '' && $sql_checa['qntd_part'] > 0 && $sql_checa['size'] == 0){
-
-            $id = $sql_checa['id'];
-
-            $sql3 = "UPDATE cart SET size = '$size', dt_updated_at = '$dt_updated_at' WHERE id = $id";
-            execute_query($sql3);
-
-        }elseif($sql_checa['id'] == ''){
-
-            //insert sql
-            $sql4 = "INSERT INTO cart (id_part, id_client, qntd_part, size, dt_created_at, dt_updated_at) VALUES ('$id_part', '$id_client', '$qntd_part', '$size', '$dt_created_at', '$dt_updated_at')";
-            execute_query($sql4);
-
-        }
-    } 
+    //insert sql
+    $sql1 = "INSERT INTO cart (id_part, id_client, qntd_part, size, dt_created_at, dt_updated_at) VALUES ('$id_part', '$id_client', '$qntd_part', '$size', '$dt_created_at', '$dt_updated_at')";
+    execute_query($sql1);
 }

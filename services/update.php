@@ -81,3 +81,22 @@ function update_stock($id, $part_code, $sector, $type, $subtype, $material, $lin
     $sql1 = "UPDATE stock SET part_code = '$part_code', sector = '$sector', type = '$type', subtype = '$subtype', material = '$material', line = '$line', color = '$color', details = '$details', pp = '$pp', p = '$p', m = '$m', g = '$g', gg = '$gg', xgg = '$xgg', employee = '$employee', dt_register = '$dt_register', value = '$value', dt_created_at = '$dt_created_at', dt_updated_at = '$dt_updated_at', picture = '$name_picture' WHERE id = $id";
     execute_query($sql1);
 }
+
+function update_cart($id, $qntd_part, $size){
+
+    //coloca a data de hoje
+    $agora = date('Y-m-d');
+    $dt_updated_at = $agora;
+
+    if(empty($qntd_part)){
+        $qntd_part = 0;
+    }
+    
+    if(empty($size)){
+        $size = 0;
+    }
+
+    //insert sql
+    $sql1 = "UPDATE cart SET qntd_part = '$qntd_part', size = '$size', dt_updated_at = '$dt_updated_at' WHERE id = $id";
+    execute_query($sql1);
+}

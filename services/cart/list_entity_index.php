@@ -4,8 +4,8 @@ require_once('../database/execute_query.php');
 
 function list_entity_cart($id_user){
 
-    $sql = "SELECT  stock.id as idstock,
-                    cart.id as idcart,
+    $sql = "SELECT  stock.id as id_stock,
+                    cart.id as id_cart,
                     stock.part_code,
                     stock.sector,
                     stock.type,

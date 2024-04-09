@@ -73,20 +73,20 @@ $cart = list_entity_cart($id_user);
                                 <td><?= $cart['value'] ?></td>
                                 <td>
                                     <?php if($cart['qntd_part'] === 'Selecionar Quantidade'): ?>
-                                        <a href="../shop/view_part/index.php?id=<?= $cart['idstock'] ?>">Selecionar Quantidade</a>
+                                        <a href="../shop/view_part/edit/index.php?id_cart=<?= $cart['id_cart'] ?>&id_peca=<?= $cart['id_stock'] ?>">Selecionar Quantidade</a>
                                     <?php else: ?>
                                         <?= $cart['qntd_part'] ?>
                                     <?php endif; ?>
                                 </td>
                                 <td>
                                     <?php if($cart['size'] === 'Selecionar Tamanho'): ?>
-                                        <a href="../shop/view_part/index.php?id=<?= $cart['idstock'] ?>">Selecionar Tamanho</a>
+                                        <a href="../shop/view_part/edit/index.php?id_cart=<?= $cart['id_cart'] ?>&id_peca=<?= $cart['id_stock'] ?>">Selecionar Tamanho</a>
                                     <?php else: ?>
                                         <?= $cart['size'] ?>
                                     <?php endif; ?>
                                 </td>
                                 <td><img src="../uploads/<?= $cart['picture'] ?>"></td>
-                                <td><a href=""><i class="fa-solid fa-eye"></i></a><a id="trash" href="../routes/cart/delete.php?id=<?= $cart['idcart'] ?>"><i class="fa-solid fa-trash"></i></a></td>
+                                <td><a href="../shop/view_part/edit/index.php?id_cart=<?= $cart['id_cart'] ?>&id_peca=<?= $cart['id_stock'] ?>"><i class="fa-solid fa-eye"></i></a><a id="trash" href="../routes/cart/delete.php?id=<?= $cart['id_cart'] ?>"><i class="fa-solid fa-trash"></i></a></td>
                             </tr>
                         </tbody>
                     <?php endforeach; ?>
