@@ -47,7 +47,7 @@ $shoes = list_entity_shoes();
                 <div class="shoes_info">
                     <div class="shoes_contents">
                         <div class="shoes_img">
-                            <label for="" id="roupa1"><?= $shoes['material'] . ' - ' . $shoes['sector'] . ' - ' . $shoes['size'] ?></label>
+                            <label for="" id="roupa1"><?= $shoes['material'] . ' - ' . $shoes['sector'] ?></label>
                         </div>
                         <div class="shoes_value">
                             <label for=""><?='R$' . $shoes['value'] ?></label>

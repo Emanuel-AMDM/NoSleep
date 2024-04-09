@@ -80,11 +80,34 @@ foreach($cod as $cod){
                 <label for="">Linha</label>
                 <input type="text" name="line" id="">
 
-                <label for="">Tamanho</label>
-                <input type="text" name="size" id="">
-
-                <label for="">Quantidade de Peças</label>
-                <input type="number" name="qntd_part" id="" required>
+                <div class="stock_content_column">
+                    <div class="stock_information_size">
+                        <div class="stock_content_column">
+                            <label for="">PP</label>
+                            <input type="number" name="pp" id="pp">
+                        </div>
+                        <div class="stock_content_column">
+                            <label for="">P</label>
+                            <input type="number" name="p" id="p">
+                        </div>
+                        <div class="stock_content_column">
+                            <label for="">M</label>
+                            <input type="number" name="m" id="m">
+                        </div>
+                        <div class="stock_content_column">
+                            <label for="">G</label>
+                            <input type="number" name="g" id="g">
+                        </div>
+                        <div class="stock_content_column">
+                            <label for="">GG</label>
+                            <input type="number" name="gg" id="gg">
+                        </div>
+                        <div class="stock_content_column">
+                            <label for="">XGG</label>
+                            <input type="number" name="xgg" id="xgg">
+                        </div>
+                    </div>
+                </div>
 
                 <div class="stock_content_column">
                     <div class="stock_information">

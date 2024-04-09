@@ -35,11 +35,14 @@
         gap: 100px;
     }
 
+    ul li{
+        padding: 15px;
+    }
+
     ul li:hover{
         background-color: blue;
         transition: all .3s;
         border-radius: 10px;
-        padding: 15px;
     }
 
     ul li a{

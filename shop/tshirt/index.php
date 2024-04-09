@@ -48,7 +48,7 @@ $tshirt = list_entity_tshirt();
                 <div class="tshirt_info">
                     <div class="tshirt_contents">
                         <div class="tshirt_img">
-                            <label for="" id="roupa1"><?= $tshirt['material'] . ' - ' . $tshirt['sector'] . ' - ' . $tshirt['size'] ?></label>
+                            <label for="" id="roupa1"><?= $tshirt['material'] . ' - ' . $tshirt['sector'] ?></label>
                         </div>
                         <div class="tshirt_value">
                             <label for=""><?='R$' . $tshirt['value'] ?></label>

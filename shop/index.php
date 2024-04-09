@@ -22,6 +22,10 @@ $stock = list_entity_stock();
         <a href="../index/index.html"><img src="../img_logo/Destaques_01.png" alt=""></a>
     </div>
 
+    <form action="../routes/login/logout.php" method="POST">
+        <button>Sair</button>
+    </form>
+
     <nav>
         <div class="filter_bar">
             <div>

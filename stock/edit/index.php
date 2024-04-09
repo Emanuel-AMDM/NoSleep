@@ -29,7 +29,7 @@ $stock = get_stock_by_id($id);
                 <div class="menu">
                     <li><a href="../shop/index.php">Shop</a></li>
                     <li><a href="../MANUAL-DA-IDENTIDADE-VISUAL.pdf">Lookbook</a></li>
-                    <li><a href="index.php">Stock</a></li>
+                    <li><a href="../index.php">Stock</a></li>
                     <li><a href="../../employee/index.php">Employee</a></li>
                     <li><a href="../client/index.php">Clients</a></li>
                 </div>
@@ -81,11 +81,34 @@ $stock = get_stock_by_id($id);
                 <label for="">Linha</label>
                 <input type="text" name="line" id="" value='<?= $stock['line'] ?>'>
 
-                <label for="">Tamanho</label>
-                <input type="text" name="size" id="" value='<?= $stock['size'] ?>'>
-
-                <label for="">Quantidade de Peças</label>
-                <input type="text" name="qntd_part" id="" value='<?= $stock['qntd_part'] ?>'>
+                <div class="stock_content_column">
+                    <div class="stock_information_size">
+                        <div class="stock_content_column">
+                            <label for="">PP</label>
+                            <input type="number" name="pp" id="pp" value='<?= $stock['pp'] ?>'>
+                        </div>
+                        <div class="stock_content_column">
+                            <label for="">P</label>
+                            <input type="number" name="p" id="p" value='<?= $stock['p'] ?>'>
+                        </div>
+                        <div class="stock_content_column">
+                            <label for="">M</label>
+                            <input type="number" name="m" id="m" value='<?= $stock['m'] ?>'>
+                        </div>
+                        <div class="stock_content_column">
+                            <label for="">G</label>
+                            <input type="number" name="g" id="g" value='<?= $stock['g'] ?>'>
+                        </div>
+                        <div class="stock_content_column">
+                            <label for="">GG</label>
+                            <input type="number" name="gg" id="gg" value='<?= $stock['gg'] ?>'>
+                        </div>
+                        <div class="stock_content_column">
+                            <label for="">XGG</label>
+                            <input type="number" name="xgg" id="xgg" value='<?= $stock['xgg'] ?>'>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="stock_content_column">
                     <div class="stock_information">

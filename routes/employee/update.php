@@ -5,8 +5,10 @@ require_once('../../services/update.php');
 update_employee(
     $_GET['id'],
     mb_strtoupper($_POST['name']),
-    $_POST['dt_birth'],
+    mb_strtoupper($_POST['surname']),
+    $_POST['birthday'],
     $_POST['cpf_cnpj'],
+    $_POST['gender'],
     $_POST['rg_ie'],
     $_POST['telephone'],
     $_POST['email'],

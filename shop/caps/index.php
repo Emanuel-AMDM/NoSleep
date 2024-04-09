@@ -47,7 +47,7 @@ $caps = list_entity_caps()
                 <div class="caps_info">
                     <div class="caps_contents">
                         <div class="caps_img">
-                            <label for="" id="roupa1"><?= $caps['material'] . ' - ' . $caps['sector'] . ' - ' . $caps['size'] ?></label>
+                            <label for="" id="roupa1"><?= $caps['material'] . ' - ' . $caps['sector'] ?></label>
                         </div>
                         <div class="caps_value">
                             <label for=""><?='R$' . $caps['value'] ?></label>

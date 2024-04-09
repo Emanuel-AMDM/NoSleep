@@ -16,25 +16,7 @@ $employee = list_entity_employee();
 </head>
 <body>
     
-    <nav class="nav_menu">
-        <div class="nav_flex">
-            <div>
-                <a href="../index/index.html"><img src="../img_logo/Destaques_07 - Menu.png" alt=""></a>
-            </div>
-            <ul>
-                <div class="menu">
-                    <li><a href="../shop/index.php">Shop</a></li>
-                    <li><a href="../MANUAL-DA-IDENTIDADE-VISUAL.pdf">Lookbook</a></li>
-                    <li><a href="../stock/index.php">Stock</a></li>
-                    <li><a href="../employee/index.php">Employee</a></li>
-                    <li><a href="../client/index.php">Clients</a></li>
-                </div>
-            </ul>
-            <div class="menu_login">
-                <li><a href="">Emanuel Menezes</a></li>
-            </div>
-        </div>
-    </nav>
+    <?php require_once('../nav/index.php'); ?>
 
     <div class='contents_center'>
         <div>
@@ -49,7 +31,8 @@ $employee = list_entity_employee();
                     <thead class='employee_show_up'>
                         <tr>
                             <th>Name</th>
-                            <th>Birth</th>
+                            <th>Surname</th>
+                            <th>Birthday</th>
                             <th>CPF/CNPJ</th>
                             <th>RG/IE</th>
                             <th>Telephone</th>
@@ -69,7 +52,8 @@ $employee = list_entity_employee();
                         <?php foreach($employee as $employee): ?>
                         <tr>
                             <td><?= $employee['name'] ?></td>
-                            <td><?= $employee['dt_birth'] ?></td>
+                            <td><?= $employee['surname'] ?></td>
+                            <td><?= $employee['birthday'] ?></td>
                             <td><?= $employee['cpf_cnpj'] ?></td>
                             <td><?= $employee['rg_ie'] ?></td>
                             <td><?= $employee['telephone'] ?></td>

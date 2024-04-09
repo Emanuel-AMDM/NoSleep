@@ -1,7 +1,17 @@
+<?php
+session_start();
+
+if(isset($_SESSION['user'])){
+    header('Location: ../shop/index.php');
+
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="Latin1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NoSleep - Login</title>
     <link rel="stylesheet" href="css/style.css">
@@ -19,26 +29,29 @@
         <p>LOGIN</p>
     </div>
 
-    <div class="login">
-        <input type="text" placeholder="Email">
-        <br>
-        <input type="password" placeholder="Password">
-        
-        <div class="login_button">
-            <div class="glow-on-hover">
-                <a href="">Login</a>
+    <form action="../routes/login/login.php" method="post">
+
+        <div class="login">
+            <input type="text" placeholder="Email" name='email'>
+            <br>
+            <input type="password" placeholder="Password" name='password'>
+            
+            <div class="login_button">
+                <div class="glow-on-hover">
+                    <button type='submit'>Login</button>
+                </div>
+            </div>
+            
+            <div class="login_register">
+                <div class="glow-on-hover">
+                    <a href="">Forgot password?</a>
+                </div>
+                <div class="glow-on-hover">
+                    <a href='register/index.html'>Register</a>
+                </div>
             </div>
         </div>
-        
-        <div class="login_register">
-            <div class="glow-on-hover">
-                <a href="">Forgot password?</a>
-            </div>
-            <div class="glow-on-hover">
-                <a href="../login/register/index.html">Register</a>
-            </div>
-        </div>
-    </div>
+    </form>
 
     <footer class="footer">
         <div class="rede_social">

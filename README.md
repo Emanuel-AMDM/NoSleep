@@ -94,3 +94,30 @@ complement   (varchar200)
 number       (int)
 dt_created_at(date)
 dt_updated_at(date)
+
+CRUD CART:
+
+INDEX  = index    -> exibe a peça selecionada
+CREATE = create   -> cria um item no carrinho
+READ   = show/:id -> exibe um item do carrinho da pessoa
+UPDATE = edit/:id -> atualiza o carrinho da pessoa
+GET    = get      -> pega o id do item no carrinho
+LIST   = list     -> mostra todos os itens do carrinho da pessoa
+
+posts, services, actions:
+
+UPDATE = update/:id -> atualiza um item do carrinho
+DELETE = delete/:id -> deleta um item do carrinho
+CREATE = save       -> cria um item no carrinho 
+GET    = get        -> pega o id de um item do carrinho
+LIST   = list       -> mostra todos os itens do carrinho
+
+banco: cart
+colunas:
+id           (altoincrement)
+id_part      (int)              -> stock
+id_client    (int)              -> client
+qntd_part    (int)
+size         (varchar(10))
+dt_created_at(date)
+dt_updated_at(date)

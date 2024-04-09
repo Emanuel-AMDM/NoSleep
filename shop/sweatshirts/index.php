@@ -48,7 +48,7 @@ $sweatshirts = list_entity_sweatshirts();
                 <div class="sweatshirts_info">
                     <div class="sweatshirts_contents">
                         <div class="sweatshirts_img">
-                            <label for="" id="roupa1"><?= $sweatshirts['material'] . ' - ' . $sweatshirts['sector'] . ' - ' . $sweatshirts['size'] ?></label>
+                            <label for="" id="roupa1"><?= $sweatshirts['material'] . ' - ' . $sweatshirts['sector'] ?></label>
                         </div>
                         <div class="sweatshirts_value">
                             <label for=""><?='R$' . $sweatshirts['value'] ?></label>

@@ -1,0 +1,108 @@
+/* ultiliza a pagina inteira  */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.filter_bar{
+    display: flex;
+    gap: 50px;
+    background-color: black;
+    padding: 25px;
+
+    .img_logo{
+        img{
+            width: 200px;
+            height: 40px;
+        }
+    }
+
+    .menu{
+        display: flex;
+        gap: 50px;
+        
+        li{
+            list-style: none;
+            margin-top: 7px;
+        }
+
+        li a{
+            text-decoration: none;
+            color: white;
+        }
+
+        li a:hover{
+            background-color: blue;
+            display: block;
+            transition: all .3s;
+            border-radius: 10px;
+            padding: 10px;
+        }
+    }
+
+    .menu_perfil{
+        margin-top: 7px;
+        padding-left: 1400px;
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        a:hover{
+            background-color: blue;
+            display: block;
+            transition: all .3s;
+            border-radius: 10px;
+            padding: 10px;
+        }
+    }
+}
+
+.contents_center{
+    display: flex;
+    justify-content: center;
+  
+    .cart_show{
+      margin-top: 50px;
+  
+      table{
+        border-collapse: collapse;  
+      }
+  
+      .cart_show_up{
+        tr th{
+          padding: 10px 20px;
+          text-align: center;
+          border-bottom: 1px solid #ddd;
+          background-color: #04AA6D;
+          color: white;
+        }
+      }
+  
+      .cart_show_down{
+        tr td{
+          text-align: left;
+          padding: 10px 20px;
+          border-bottom: 1px solid #ddd;
+        }
+        tr:nth-child(even){
+          background-color: #f2f2f2;
+        }
+        tr td img{
+          width: 100px;
+          height: 100px;
+        }
+        tr td a i{
+          padding: 10px;
+          border: 1px solid black;
+          border-radius: 5px;
+          text-decoration: none;
+        }
+      }
+    }
+  }

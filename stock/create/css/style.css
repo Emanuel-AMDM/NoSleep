@@ -120,7 +120,7 @@ input{
         .stock_information{
             display: flex;
             gap: 20px;
-            margin-top: 92px;
+            margin-top: 149px;
 
             #dt_register{
                 width: 190px;
@@ -129,7 +129,29 @@ input{
             #value{
                 width: 190px;
             }
-        }  
+        } 
+        .stock_information_size{
+            display: flex;
+            gap: 20px;
+            #pp{
+                width: 50px;
+            }
+            #p{
+                width: 50px;
+            }
+            #m{
+                width: 50px;
+            }
+            #g{
+                width: 50px;
+            }
+            #gg{
+                width: 50px;
+            }
+            #xgg{
+                width: 50px;
+            }
+        }
     }
 }
 

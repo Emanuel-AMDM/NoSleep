@@ -18,59 +18,31 @@ function create_client($name, $surname, $email, $telephone, $gender, $birthday, 
     }
 
     //insert sql
-    $sql2 = "INSERT INTO client (id, name, surname, email, telephone, gender, birthday, password, dt_created_at, dt_updated_at) VALUES (NULL, '$name', '$surname', '$email', '$telephone', '$gender', '$birthday', '$password', '$dt_created_at', '$dt_updated_at')";
+    $sql2 = "INSERT INTO client (id, type, name, surname, email, telephone, gender, login, password, cpf_cnpj, rg_ie, cep, road, neighborhood, city, state, complement, number, birthday, dt_created_at, dt_updated_at) VALUES (NULL, 1, '$name', '$surname', '$email', '$telephone', '$gender', '$email', '$password', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$birthday', '$dt_created_at', '$dt_updated_at')";
     execute_query($sql2);
 }
 
-function create_employee($name, $dt_birth, $cpf_cnpj, $rg_ie, $telephone, $email, $cep, $road, $neighborhood, $city, $state, $complement, $number, $login, $password){
+function create_employee($name, $surname, $birthday, $cpf_cnpj, $gender, $rg_ie, $telephone, $email, $cep, $road, $neighborhood, $city, $state, $complement, $number, $login, $password, $birthday){
 
     //coloca a data de hoje
     $agora = date('Y-m-d');
     $dt_created_at = $agora;
     $dt_updated_at = $agora;
 
-    if(empty($dt_birth)){
-        $dt_birth = '0000-00-00';
-    }
+    //checa se email ja existe
+    $sql1 = "SELECT email FROM client WHERE email = '$email'";
+    $emails = execute_query($sql1);
 
-    if(empty($rg_ie)){
-        $rg_ie = '';
-    }
-    
-    if(empty($cep)){
-        $cep = '';
-    }
-
-    if(empty($road)){
-        $road = '';
-    }
-
-    if(empty($neighborhood)){
-        $neighborhood = '';
-    }
-
-    if(empty($city)){
-        $city = '';
-    }
-
-    if(empty($state)){
-        $state = '';
-    }
-
-    if(empty($complement)){
-        $complement = '';
-    }
-
-    if(empty($number)){
-        $number = '';
+    if(count($emails) > 0){
+        return exit('E-mail já cadastrado');
     }
 
     //insert sql
-    $sql1 = "INSERT INTO employee (name, dt_birth, cpf_cnpj, rg_ie, telephone, email, cep, road, neighborhood, city, state, complement, number, login, password, dt_created_at, dt_updated_at) VALUES ('$name', '$dt_birth', '$cpf_cnpj', '$rg_ie', '$telephone', '$email', '$cep', '$road', '$neighborhood', '$city', '$state', '$complement', '$number', '$login', '$password', '$dt_created_at', '$dt_updated_at')";
+    $sql1 = "INSERT INTO client (id, type, name, surname, email, telephone, gender, login, password, cpf_cnpj, rg_ie, cep, road, neighborhood, city, state, complement, number, birthday, dt_created_at, dt_updated_at) VALUES (NULL, 2, '$name', '$surname', '$email', '$telephone', '$gender', '$login', '$password', '$cpf_cnpj', '$rg_ie', '$cep', '$road', '$neighborhood', '$city', '$state', '$complement', '$number', '$birthday', '$dt_created_at', '$dt_updated_at')";
     execute_query($sql1);
 }
 
-function create_stock($part_code, $sector, $type, $subtype, $material, $line, $color, $details, $size, $employee, $dt_register, $value, $name_picture, $qntd_part){
+function create_stock($part_code, $sector, $type, $subtype, $material, $line, $color, $details, $pp, $p, $m, $g, $gg, $xgg, $employee, $dt_register, $value, $name_picture){
 
     //coloca a data de hoje
     $agora = date('Y-m-d');
@@ -121,8 +93,77 @@ function create_stock($part_code, $sector, $type, $subtype, $material, $line, $c
         $name_picture = '';
     }
 
+    if(empty($pp)){
+        $pp = 0;
+    }
+    if(empty($p)){
+        $p = 0;
+    }
+    if(empty($m)){
+        $m = 0;
+    }
+    if(empty($g)){
+        $g = 0;
+    }
+    if(empty($gg)){
+        $gg = 0;
+    }
+    if(empty($xgg)){
+        $xgg = 0;
+    }
+
     //insert sql
-    $sql1 = "INSERT INTO stock (part_code, sector, type, subtype, material, line, color, details, size, employee, dt_register, value, qntd_part, dt_created_at, dt_updated_at, picture) VALUES ('$part_code', '$sector', '$type', '$subtype', '$material', '$line', '$color', '$details', '$size', '$employee', '$dt_register', '$value', '$qntd_part', '$dt_created_at', '$dt_updated_at', '$name_picture')";
-    execute_query($sql1);
+    $sql1 = "INSERT INTO stock (part_code, sector, type, subtype, material, line, color, details, pp, p, m, g, gg, xgg, employee, dt_register, value, dt_created_at, dt_updated_at, picture) VALUES ('$part_code', '$sector', '$type', '$subtype', '$material', '$line', '$color', '$details', '$pp', '$p', '$m', '$g', '$gg', '$xgg', '$employee', '$dt_register', '$value', '$dt_created_at', '$dt_updated_at', '$name_picture')";
+    execute_query($sql1); 
 }
 
+function create_cart($id_part, $id_client, $qntd_part, $size){
+
+    //coloca a data de hoje
+    $agora = date('Y-m-d');
+    $dt_created_at = $agora;
+    $dt_updated_at = $agora;
+
+    if(empty($qntd_part)){
+        $qntd_part = 0;
+    }
+    
+    if(empty($size)){
+        $size = 0;
+    }
+    //NAO TA ADICIONANDO A PEÇA----------- TESTAAAAAA
+    //checa se já existe essa peça no carrinho da pessoa
+    $sql = "SELECT * FROM cart WHERE id_part = $id_part AND id_client = $id_client";
+    $sql_checa = execute_query($sql);
+
+    foreach($sql_checa as $sql_checa){
+        if($sql_checa['id'] !== '' && $sql_checa['qntd_part'] == 0 && $sql_checa['size'] == 0){
+            
+            $id = $sql_checa['id'];
+
+            $sql1 = "UPDATE cart SET qntd_part = '$qntd_part', size = '$size', dt_updated_at = '$dt_updated_at' WHERE id = $id";
+            execute_query($sql1);
+        
+        }elseif($sql_checa['id'] !== '' && $sql_checa['qntd_part'] == 0 && $sql_checa['size'] > 0){
+            
+            $id = $sql_checa['id'];
+
+            $sql2 = "UPDATE cart SET qntd_part = '$qntd_part', dt_updated_at = '$dt_updated_at' WHERE id = $id";
+            execute_query($sql2);
+        
+        }elseif($sql_checa['id'] !== '' && $sql_checa['qntd_part'] > 0 && $sql_checa['size'] == 0){
+
+            $id = $sql_checa['id'];
+
+            $sql3 = "UPDATE cart SET size = '$size', dt_updated_at = '$dt_updated_at' WHERE id = $id";
+            execute_query($sql3);
+
+        }elseif($sql_checa['id'] == ''){
+
+            //insert sql
+            $sql4 = "INSERT INTO cart (id_part, id_client, qntd_part, size, dt_created_at, dt_updated_at) VALUES ('$id_part', '$id_client', '$qntd_part', '$size', '$dt_created_at', '$dt_updated_at')";
+            execute_query($sql4);
+
+        }
+    } 
+}

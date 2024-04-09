@@ -52,8 +52,12 @@ $employee = get_employee_by_id($id);
                 <input type="text" name="name" id="" value='<?= $employee['name'] ?>'>
             </div>
             <div class="employee_content_column">
-                <label for="">Data Nascimento</label>
-                <input type="date" name="dt_birth" id="" value='<?= $employee['dt_birth'] ?>'>
+                <label for="">Surname</label>
+                <input type="text" name="surname" id="" value='<?= $employee['surname'] ?>'>
+            </div>
+            <div class="employee_content_column">
+                <label for="">Birthday</label>
+                <input type="date" name="birthday" id="" value='<?= $employee['birthday'] ?>'>
             </div>
             <div class="employee_content_column">
                 <label for="">CPF/CNPJ</label>
@@ -63,17 +67,40 @@ $employee = get_employee_by_id($id);
 
         <div class="employee_content_center">
             <div class="employee_content_column">
+            <label>Gender</label>
+                <select name="gender" id="gender">
+                    <option value="<?=$employee['gender']?>">
+                        <?php   
+                            if($employee['gender'] == 0){
+                                echo 'Prefer not to say';
+                            }elseif($employee['gender'] == 1){
+                                echo 'Masculine';
+                            }else{
+                                echo 'Feminine';
+                            }
+                        ?>
+                    </option>
+                    <option value="0">Prefer not to say</option>
+                    <option value="1">MASCULINE</option>
+                    <option value="2">FEMININE</option>
+                </select>
+            </div>
+            <div class="employee_content_column">
                 <label for="">RG/IE</label>
                 <input type="text" name="rg_ie" id="" value='<?= $employee['rg_ie'] ?>'>
             </div>
             <div class="employee_content_column">
-                <label for="">Telefone</label>
+                <label for="">Telephone</label>
                 <input type="text" name="telephone" id="" value='<?= $employee['telephone'] ?>'>
             </div>
             <div class="employee_content_column">
-                <label for="">E-Mail</label>
+                <label for="">Email</label>
                 <input type="text" name="email" id="" value='<?= $employee['email'] ?>'>
             </div>
+        </div>
+
+        <div class="employee_title">
+            <h1>address</h1>
         </div>
 
         <div class="employee_content_center">
@@ -82,30 +109,30 @@ $employee = get_employee_by_id($id);
                 <input type="text" name="cep" id="cep" value='<?= $employee['cep'] ?>'>
             </div>
             <div class="employee_content_column">
-                <label for="">Rua</label>
+                <label for="">Road</label>
                 <input type="text" name="road" id="rua" value='<?= $employee['road'] ?>'>
             </div>
             <div class="employee_content_column">
-                <label for="">Bairro</label>
+                <label for="">Neighborhood</label>
                 <input type="text" name="neighborhood" id="bairro" value='<?= $employee['neighborhood'] ?>'>
             </div>
         </div>
 
         <div class="employee_content_center">
             <div class="employee_content_column">
-                <label for="">Cidade</label>
+                <label for="">City</label>
                 <input type="text" name="city" id="cidade" value='<?= $employee['city'] ?>'>
             </div>
             <div class="employee_content_column">
-                <label for="">Estado</label>
+                <label for="">State</label>
                 <input type="text" name="state" id="estado" value='<?= $employee['state'] ?>'>
             </div>
             <div class="employee_content_column">
-                <label for="">Complemento</label>
+                <label for="">Complement</label>
                 <input type="text" name="complement" id="complemento" value='<?= $employee['complement'] ?>'>
             </div>
             <div class="employee_content_column">
-                <label for="">Numero</label>
+                <label for="">Number</label>
                 <input type="text" name="number" id="numero" value='<?= $employee['number'] ?>'>
             </div>
         </div>
@@ -120,7 +147,7 @@ $employee = get_employee_by_id($id);
                 <input type="text" name="login" id="" value='<?= $employee['login'] ?>'>
             </div>
             <div class="employee_content_column">
-                <label for="">Senha</label>
+                <label for="">Password</label>
                 <input type="text" name="password" id="" value='<?= $employee['password'] ?>'>
             </div>
         </div>

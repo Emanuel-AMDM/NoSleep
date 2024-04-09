@@ -47,7 +47,7 @@ $allcategories = list_entity_allcategories();
                 <div class="allcategories_info">
                     <div class="allcategories_contents">
                         <div class="allcategories_img">
-                            <label for="" id="roupa1"><?= $allcategories['material'] . ' - ' . $allcategories['sector'] . ' - ' . $allcategories['size'] ?></label>
+                            <label for="" id="roupa1"><?= $allcategories['material'] . ' - ' . $allcategories['sector'] ?></label>
                         </div>
                         <div class="allcategories_value">
                             <label for=""><?='R$' . $allcategories['value'] ?></label>

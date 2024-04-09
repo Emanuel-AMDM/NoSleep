@@ -17,7 +17,7 @@ function get_client_by_id($id){
 
 function get_employee_by_id($id){
 
-    $sql = "SELECT * FROM employee WHERE id = $id";
+    $sql = "SELECT * FROM client WHERE id = $id";
     $employee = execute_query($sql);
 
     foreach($employee as $employee){
@@ -26,4 +26,3 @@ function get_employee_by_id($id){
         }
     }
 }
-

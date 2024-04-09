@@ -19,13 +19,17 @@ update_stock(
     mb_strtoupper($_POST['line']),
     mb_strtoupper($_POST['color']),
     mb_strtoupper($_POST['details']),
-    mb_strtoupper($_POST['size']),
+    mb_strtoupper($_POST['pp']),
+    mb_strtoupper($_POST['p']),
+    mb_strtoupper($_POST['m']),
+    mb_strtoupper($_POST['g']),
+    mb_strtoupper($_POST['gg']),
+    mb_strtoupper($_POST['xgg']),
     mb_strtoupper($_POST['employee']),
     $_POST['dt_register'],
     $_POST['value'],
     $_POST['dt_created_at'],
-    $name_picture,
-    $_POST['qntd_part']
+    $name_picture
 );
 
 header('Location: ../../stock/index.php');

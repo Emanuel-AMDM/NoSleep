@@ -4,8 +4,10 @@ require_once('../../services/create.php');
 
 create_employee(
     mb_strtoupper($_POST['name']),
+    mb_strtoupper($_POST['surname']),
     $_POST['dt_birth'],
     $_POST['cpf_cnpj'],
+    $_POST['gender'],
     $_POST['rg_ie'],
     $_POST['telephone'],
     $_POST['email'],

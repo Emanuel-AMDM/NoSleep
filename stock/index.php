@@ -56,10 +56,14 @@ $stock = list_entity_stock();
                             <th>Line</th>
                             <th>Color</th>
                             <th>Details</th>
-                            <th>Size</th>
+                            <th>P</th>
+                            <th>PP</th>
+                            <th>M</th>
+                            <th>G</th>
+                            <th>GG</th>
+                            <th>XGG</th>
                             <th>Employee</th>
                             <th>Value</th>
-                            <th>Number Parts</th>
                             <th>Date Register</th>
                             <th>Picture</th>
                             <th>Action</th>
@@ -76,10 +80,14 @@ $stock = list_entity_stock();
                             <td><?= $stock['line'] ?></td>
                             <td><?= $stock['color'] ?></td>
                             <td><?= $stock['details'] ?></td>
-                            <td><?= $stock['size'] ?></td>
+                            <td><?= $stock['p'] ?></td>
+                            <td><?= $stock['pp'] ?></td>
+                            <td><?= $stock['m'] ?></td>
+                            <td><?= $stock['g'] ?></td>
+                            <td><?= $stock['gg'] ?></td>
+                            <td><?= $stock['xgg'] ?></td>
                             <td><?= $stock['employee'] ?></td>
                             <td><?= $stock['value'] ?></td>
-                            <td><?= $stock['qntd_part'] ?></td>
                             <td><?= $stock['dt_register'] ?></td>
                             <td><img src="../uploads/<?= $stock['picture'] ?>"></td>
                             <td><a href="edit/index.php?id=<?= $stock['id'] ?>"><i class="fa-solid fa-eye"></i></a><a id="trash" href="../routes/stock/delete.php?id=<?= $stock['id'] ?>"><i class="fa-solid fa-trash"></i></a></td>
