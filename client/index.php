@@ -1,6 +1,6 @@
 <?php
-require_once('../services/client/list_entity_index.php');
-$client = list_entity_client();
+    require_once('../services/client/list_entity_index.php');
+    $client_table = list_entity_client();
 ?>
 
 <!DOCTYPE html>
@@ -32,16 +32,16 @@ $client = list_entity_client();
                 </tr>
             </thead>
             <tbody class='client_show_down'>
-                <?php foreach($client as $client): ?>
-                <tr>
-                    <td><?= $client['name'] ?></td>
-                    <td><?= $client['surname'] ?></td>
-                    <td><?= $client['email'] ?></td>
-                    <td><?= $client['telephone'] ?></td>
-                    <td><?= $client['gender'] ?></td>
-                    <td><?= $client['birthday'] ?></td>
-                    <td><a href="../login/register/edit/index.php?id=<?= $client['id'] ?>"><i class="fa-solid fa-eye"></i></a>
-                </tr>
+                <?php foreach($client_table as $client_table): ?>
+                    <tr>
+                        <td><?= $client_table['name'] ?></td>
+                        <td><?= $client_table['surname'] ?></td>
+                        <td><?= $client_table['email'] ?></td>
+                        <td><?= $client_table['telephone'] ?></td>
+                        <td><?= $client_table['gender'] ?></td>
+                        <td><?= $client_table['birthday'] ?></td>
+                        <td><a href="edit/index.php?id=<?= $client_table['id'] ?>"><i class="fa-solid fa-eye"></i></a></td>
+                    </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>

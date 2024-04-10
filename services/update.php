@@ -2,7 +2,7 @@
 
 require_once('../../database/execute_query.php');
 
-function update_client($id, $name, $surname, $email, $telephone, $gender, $birthday, $password, $dt_created_at){
+function update_client($id, $name, $surname, $birthday, $cpf_cnpj, $gender, $rg_ie, $telephone, $email, $cep, $road, $neighborhood, $city, $state, $complement, $number, $login, $password, $dt_created_at){
 
     //coloca a data de hoje
     $agora = date('Y-m-d');
@@ -18,9 +18,45 @@ function update_client($id, $name, $surname, $email, $telephone, $gender, $birth
         }
     }
 
+    if(empty($cpf_cnpj)){
+        $cpf_cnpj = NULL;
+    }
+
+    if(empty($rg_ie)){
+        $rg_ie = NULL;
+    }
+
+    if(empty($cep)){
+        $cep = NULL;
+    }
+
+    if(empty($road)){
+        $road = NULL;
+    }
+
+    if(empty($neighborhood)){
+        $neighborhood = NULL;
+    }
+
+    if(empty($city)){
+        $city = NULL;
+    }
+
+    if(empty($state)){
+        $state = NULL;
+    }
+
+    if(empty($complement)){
+        $number = NULL;
+    }
+
+    if(empty($number)){
+        $number = 0;
+    }
+
     //insert sql
-    $sql2 = "UPDATE client SET type = 1, name = '$name', surname = '$surname', email = '$email', telephone = '$telephone', gender = '$gender', login = '$email', password = '$password', cpf_cnpj = NULL, rg_ie = NULL, cep = NULL, road = NULL, neighborhood = NULL, city = NULL, state = NULL, complement = NULL, number = NULL, birthday = '$birthday', dt_created_at = '$dt_created_at', dt_updated_at = '$dt_updated_at' WHERE id = $id";
-    execute_query($sql2);
+    $sql1 = "UPDATE client SET type = 1, name = '$name', surname = '$surname', email = '$email', telephone = '$telephone', gender = '$gender', login = '$login', password = '$password', cpf_cnpj = '$cpf_cnpj', rg_ie = '$rg_ie', cep = '$cep', road = '$road', neighborhood = '$neighborhood', city = '$city', state = '$state', complement = '$complement', number = '$number', birthday = '$birthday',dt_created_at = '$dt_created_at', dt_updated_at = '$dt_updated_at' WHERE id = $id";
+    execute_query($sql1);
 }
 
 function update_employee($id, $name, $surname, $birthday, $cpf_cnpj, $gender, $rg_ie, $telephone, $email, $cep, $road, $neighborhood, $city, $state, $complement, $number, $login, $password, $dt_created_at){

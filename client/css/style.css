@@ -12,57 +12,100 @@
 .nav_menu{
   background-color:beige;
   padding: 20px;
+
   .nav_flex{
     display: flex;
-  }
-  ul{
-      display: flex;
-  }
-  ul li{
-      list-style: none;
-  }
-  ul li a{
-    text-decoration: none;
-    color: black;
-    padding: 5px;
-  }
-  ul li a:hover{
-    background-color: #04AA6D;
-    transition: all .3s;
-    border-radius: 5px;
-  }
-  .menu{
-    display: flex;
-    padding-left: 150px;
-    margin-top: 10px;
-    gap: 50px;
-  }
-  .menu_login{
-    display: flex;
-    padding-left: 1400px;
-    margin-top: 10px;
-    gap: 10px;
-    li{
-      list-style: none;
-    }
-    a{
-      text-decoration: none;
-      color: black;
-      padding: 5px;
-    }
-    a:hover{
-      background-color: #04AA6D;
-      transition: all .3s;
-      border-radius: 5px;
-    }
+  
     img{
-      width: 20px;
-      height: 20px;
+      margin-top: 15px;
+      width: 200px;
+      height: 40px;
     }
-  }
-  img{
-    width: 200px;
-    height: 40px;
+  
+    .title_login{
+      padding: 20px 40px;
+      padding-left: 2000px;
+  
+      .login{
+        list-style:none;
+        border:1px solid #c0c0c0;
+        float:left;
+      }
+  
+      .login li{
+        position: relative;
+        border-right: 1px solid #c0c0c0;
+      }
+      
+      .login li a{
+        color: black;
+        text-decoration:none;
+        padding:5px 10px;
+        display:block;
+      }
+  
+      .login li a:hover{
+        background:#333;
+        color:white;
+        -moz-box-shadow:0 3px 10px 0 #7a7979;
+        -webkit-box-shadow:0 3px 10px 0 #7a7979;
+        text-shadow:0px 0px 5px #7a7979;
+      }
+  
+      ul li ul li button{
+        color: black;
+        padding:5px 62px;
+        display:block;
+        border: none;
+        background: none;
+      }
+  
+      ul li ul li button:hover{
+        background:#333;
+        color:white;
+        -moz-box-shadow:0 3px 10px 0 #7a7979;
+        -webkit-box-shadow:0 3px 10px 0 #7a7979;
+        text-shadow:0px 0px 5px #7a7979;
+      }
+  
+      .login li ul{
+        position:absolute;
+        top:25px;
+        left:0;
+        background-color:white;
+        display:none;
+      }
+  
+      .login li:hover ul, .login li.over ul{
+        display:block;
+      }
+  
+      .login li ul li{
+        border:1px solid #c0c0c0;
+        display:block;
+        width:150px;
+      }
+    }
+    
+    .title_login_register{
+      padding: 0px 40px;
+      padding-left: 2100px;
+  
+      a{
+        color: black;
+        text-decoration:none;
+        padding: 10px 10px;
+        display:block;
+      }
+  
+      a:hover{
+        background:#333;
+        color:white;
+        -moz-box-shadow:0 3px 10px 0 #7a7979;
+        -webkit-box-shadow:0 3px 10px 0 #7a7979;
+        text-shadow:0px 0px 5px #7a7979;
+      }
+    }
   }
 }
 

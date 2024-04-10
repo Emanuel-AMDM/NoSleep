@@ -21,6 +21,7 @@ update_employee(
     $_POST['number'],
     $_POST['login'],
     $_POST['password'],
-    $_POST['dt_created_at']);
+    $_POST['dt_created_at']
+);
 
 header('Location: ../../employee/index.php');

@@ -8,4 +8,5 @@ function list_entity_client(){
     $client = execute_query($sql);
 
     return $client;
+
 }

@@ -28,6 +28,29 @@
         list-style:none;
         border:1px solid #c0c0c0;
         float:left;
+
+        .li_contents{
+            
+            li a{
+                color: white;
+                text-decoration: none;
+            }
+
+            li button{
+                width:140px;
+                color: white;
+                background: none;
+                border: none;
+            }
+        
+            li button:hover{
+                background:#333;
+                color:white;
+                -moz-box-shadow:0 3px 10px 0 #7a7979;
+                -webkit-box-shadow:0 3px 10px 0 #7a7979;
+                text-shadow:0px 0px 5px #7a7979;
+            }
+        }
     }
 
     .login li{
@@ -43,21 +66,6 @@
     }
 
     .login li a:hover{
-        background:#333;
-        color:white;
-        -moz-box-shadow:0 3px 10px 0 #7a7979;
-        -webkit-box-shadow:0 3px 10px 0 #7a7979;
-        text-shadow:0px 0px 5px #7a7979;
-    }
-
-    ul li ul li button{
-        width:140px;
-        color: white;
-        background: none;
-        border: none;
-    }
-
-    ul li ul li button:hover{
         background:#333;
         color:white;
         -moz-box-shadow:0 3px 10px 0 #7a7979;

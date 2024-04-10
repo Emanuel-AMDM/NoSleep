@@ -35,6 +35,15 @@ $stock = list_entity_stock();
                 <li>
                     <a><?= $client['name'] . ' ' . $client['surname'] ?></a>
                     <ul>
+                        <?php if($client['type'] == 2): ?>
+                            <li><a href="../shop/index.php">Shop</a></li>
+                            <li><a href="../MANUAL-DA-IDENTIDADE-VISUAL.pdf">Lookbook</a></li>
+                            <li><a href="../stock/index.php">Stock</a></li>
+                            <li><a href="../employee/index.php">Employee</a></li>
+                            <li><a href="../client/index.php">Clients</a></li>
+                        <?php else: ?>
+                            <li><a href="../client/edit/index.php?id=<?= $id_client ?>">Configurações</a></li>
+                        <?php endif; ?>
                         <li>
                             <form action="../routes/login/logout.php" method="POST">
                                 <button>Sair</button>

@@ -50,24 +50,24 @@ $employee = list_entity_employee();
                     </thead>
                     <tbody  class='employee_show_down'>
                         <?php foreach($employee as $employee): ?>
-                        <tr>
-                            <td><?= $employee['name'] ?></td>
-                            <td><?= $employee['surname'] ?></td>
-                            <td><?= $employee['birthday'] ?></td>
-                            <td><?= $employee['cpf_cnpj'] ?></td>
-                            <td><?= $employee['rg_ie'] ?></td>
-                            <td><?= $employee['telephone'] ?></td>
-                            <td><?= $employee['email'] ?></td>
-                            <td><?= $employee['cep'] ?></td>
-                            <td><?= $employee['road'] ?></td>
-                            <td><?= $employee['neighborhood'] ?></td>
-                            <td><?= $employee['city'] ?></td>
-                            <td><?= $employee['state'] ?></td>
-                            <td><?= $employee['complement'] ?></td>
-                            <td><?= $employee['number'] ?></td>
-                            <td><?= $employee['dt_created_at'] ?></td>
-                            <td><a href="edit/index.php?id=<?= $employee['id'] ?>"><i class="fa-solid fa-eye"></i></a><a id="trash" href="../routes/employee/delete.php?id=<?= $employee['id'] ?>"><i class="fa-solid fa-trash"></i></a></td>
-                        </tr>
+                            <tr>
+                                <td><?= $employee['name'] ?></td>
+                                <td><?= $employee['surname'] ?></td>
+                                <td><?= $employee['birthday'] ?></td>
+                                <td><?= $employee['cpf_cnpj'] ?></td>
+                                <td><?= $employee['rg_ie'] ?></td>
+                                <td><?= $employee['telephone'] ?></td>
+                                <td><?= $employee['email'] ?></td>
+                                <td><?= $employee['cep'] ?></td>
+                                <td><?= $employee['road'] ?></td>
+                                <td><?= $employee['neighborhood'] ?></td>
+                                <td><?= $employee['city'] ?></td>
+                                <td><?= $employee['state'] ?></td>
+                                <td><?= $employee['complement'] ?></td>
+                                <td><?= $employee['number'] ?></td>
+                                <td><?= $employee['dt_created_at'] ?></td>
+                                <td><a href="edit/index.php?id=<?= $employee['id'] ?>"><i class="fa-solid fa-eye"></i></a><a id="trash" href="../routes/employee/delete.php?id=<?= $employee['id'] ?>"><i class="fa-solid fa-trash"></i></a></td>
+                            </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
