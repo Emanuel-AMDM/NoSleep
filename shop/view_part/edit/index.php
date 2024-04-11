@@ -12,8 +12,8 @@ $stock = list_entity_viewpart($id);
 $cart = list_entity_cart($id_user, $id);
 
 if(!isset($_SESSION['user'])){
-    header('/index.php');
-    $client = get_by_id(0);
+    header('../../../login/index.php');
+    exit;
 }else{
     $id_client = $_SESSION['user'];
     $client = get_by_id($id_client);
