@@ -42,7 +42,8 @@ $stock = list_entity_stock();
                             <li><a href="../employee/index.php">Employee</a></li>
                             <li><a href="../client/index.php">Clients</a></li>
                         <?php else: ?>
-                            <li><a href="../client/edit/index.php?id=<?= $id_client ?>">Configurações</a></li>
+                            <li><a href="../cart/index.php">Cart</a></li>
+                            <li><a href="../client/edit/index.php?id=<?= $client['id'] ?>">Configurações</a></li>
                         <?php endif; ?>
                         <li>
                             <form action="../routes/login/logout.php" method="POST">

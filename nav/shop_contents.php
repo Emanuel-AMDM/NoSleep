@@ -25,6 +25,7 @@ if(!isset($_SESSION['user'])){
                         <li><a href="../../employee/index.php">Employee</a></li>
                         <li><a href="../../client/index.php">Clients</a></li>
                     <?php else: ?>
+                        <li><a href="../../cart/index.php">Cart</a></li>
                         <li><a href="../../client/edit/index.php?id=<?= $client['id'] ?>">Configurações</a></li>
                     <?php endif; ?>
                     <li>

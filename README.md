@@ -16,13 +16,19 @@ CREATE = save       -> cria o cliente
 banco: client
 colunas:
 id           (altoincrement)
-name         (varchar50)
-surname      (varchar50)
-email        (varchar100)
-telephone    (varchar50)
-gender       (int)
-birthday     (date)
-password     (varchar100)
+name         (varchar150)
+dt_birth     (date)
+cpf_cnpj     (varchar20)
+rg_ie        (varchar20)
+telefone     (varchar20)
+email        (varchar50)
+cep          (varchar20)
+road         (varchar100)
+neighborhood (varchar100)
+city         (varchar100)
+state        (varchar10)
+complement   (varchar200)
+number       (int)
 dt_created_at(date)
 dt_updated_at(date)
 
@@ -76,7 +82,7 @@ CREATE = save       -> cria um funcionario
 GET    = get        -> pega o id de um funcionario
 LIST   = list       -> lista os registros para trazer todos os funcionarios
 
-banco: employee
+banco: client
 colunas:
 id           (altoincrement)
 name         (varchar150)

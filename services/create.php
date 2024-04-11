@@ -117,7 +117,7 @@ function create_stock($part_code, $sector, $type, $subtype, $material, $line, $c
     execute_query($sql1); 
 }
 
-function create_cart($id_part, $id_client, $id_cart, $qntd_part, $size){
+function create_cart($id_part, $id_client, $qntd_part, $size){
 
     //coloca a data de hoje
     $agora = date('Y-m-d');

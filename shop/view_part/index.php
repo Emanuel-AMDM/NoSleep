@@ -1,9 +1,19 @@
 <?php
+session_start();
 require_once('../../services/stock/get_by_id.php');
 require_once('../../services/stock/list_entity_viewpart.php');
+require_once('../../services/client/get_by_id_nav_viewpart.php');
 $id = $_GET['id'];
 $viewpart = get_stock_by_id($id);
 $stock = list_entity_viewpart($id);
+
+if(!isset($_SESSION['user'])){
+    header('/index.php');
+    $client = get_by_id(0);
+}else{
+    $id_client = $_SESSION['user'];
+    $client = get_by_id($id_client);
+}
 ?>
 
 <!DOCTYPE html>
@@ -18,23 +28,44 @@ $stock = list_entity_viewpart($id);
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <div class="filter_bar">
-            <div class="img_logo">
-                <img src="../../img_logo/Destaques_02.png" alt="">
-            </div>
+    
+    <nav class="nav_menu">
+        <div class="nav_flex">
             <div>
-                <ul class="menu">
-                    <li><a href="../../shop/shoes/index.php"         >Shoes         </a></li>
-                    <li><a href="../../shop/tshirt/index.php"        >T-shirts      </a></li>
-                    <li><a href="../../shop/caps/index.php"          >Caps          </a></li>
-                    <li><a href="../../shop/sweatshirts/index.php"   >Sweatshirts   </a></li>
-                    <li><a href="../../shop/all_categories/index.php">All categories</a></li>
-                </ul>
+                <a href="../../index/index.html"><img src="../../img_logo/Destaques_07 - Menu.png" alt=""></a>
             </div>
-            <div class="menu_perfil">
-                <a href="">Emanuel Menezes</a>
-            </div>
+
+            <?php if($client['name'] != '' && $client['surname'] != ''): ?>
+                <div class="title_login">
+                    <ul class="login">
+                        <li>
+                            <a><?= $client['name'] . ' ' . $client['surname'] ?></a>
+                            <ul>
+                                <?php if($client['type'] == 2): ?>
+                                    <li><a href="../../shop/index.php">Shop</a></li>
+                                    <li><a href="../../MANUAL-DA-IDENTIDADE-VISUAL.pdf">Lookbook</a></li>
+                                    <li><a href="../../stock/index.php">Stock</a></li>
+                                    <li><a href="../../employee/index.php">Employee</a></li>
+                                    <li><a href="../../client/index.php">Clients</a></li>
+                                <?php else: ?>
+                                    <li><a href="../../cart/index.php">Cart</a></li>
+                                    <li><a href="../../client/edit/index.php?id=<?= $client['id'] ?>">Configurações</a></li>
+                                <?php endif; ?>
+                                <li>
+                                    <form action="../../routes/login/logout.php" method="POST">
+                                        <button>Sair</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            <?php else: ?>
+                <div class="title_login_register">
+                    <a href="../../login/index.php">Login/Register</a>
+                </div>
+            <?php endif; ?>
+
         </div>
     </nav>
 
@@ -131,7 +162,7 @@ $stock = list_entity_viewpart($id);
         <?php foreach($stock as $stock): ?>
             <div class="related_products_border">
                 <div class="related_products_img">
-                    <a href="index.php?id=<?= $stock['id'] ?>"><img src="../../uploads/<?= $stock['picture'] ?>" alt=""></a>
+                    <a href="index.php?id=<?= $stock['id'] ?>&id_peca=<?= $stock['id'] ?>"><img src="../../uploads/<?= $stock['picture'] ?>" alt=""></a>
                 </div>
                 <div class="related_products_info">
                     <p><?php echo $stock['type'] . ' ' . $stock['sector'] .  ' ' . $stock['subtype'] .  ' ' . $stock['color'] ?></p>
