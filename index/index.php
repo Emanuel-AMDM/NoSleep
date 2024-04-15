@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['user'])){
+    $id_user = 0;
+}else{
+    $id_user = $_SESSION['user'];
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -37,11 +48,20 @@
 
     <div class="menu">
         <ul>
-            <li><a href="../shop/index.php">Shop</a></li>
-            <li><a href="../login/index.php">Login</a></li>
+            <li><a href="../shop/index.php"                 >Shop</a></li>
+            <?php if($id_user == 0): ?>
+                <li><a href="../login/index.php"            >Login</a></li>
+            <?php endif; ?>
             <li><a href="../MANUAL-DA-IDENTIDADE-VISUAL.pdf">Lookbook</a></li>
-            <li><a href="#modal">Contact</a></li>
-            <li><a href="">Info</a></li>
+            <li><a href="#modal"                            >Contact</a></li>
+            <li><a href=""                                  >Info</a></li>
+            <?php if($id_user != 0): ?>
+                <li>
+                    <form action="../routes/login/logout.php" method="POST">
+                        <button>Sair</button>
+                    </form>
+                </li>
+            <?php endif; ?>
         </ul>
     </div>
 

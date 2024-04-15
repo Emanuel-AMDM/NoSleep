@@ -64,27 +64,27 @@
 }
 
 .information_info{
-    display: flex;
-    padding-left: 650px;
-    gap: 30px;
+    padding-left: 620px;
+    .information_info_contents{
+        display: flex;
+        gap: 10px;
+        padding: 10px;
 
-    #txt_info{
-        color: black;
-        margin-top: 30px;
-        font-size: 14px;
-    }
+        button{
+            background-color: none;
+            border: none;
+            background: none;
+            color: black;
+            padding: 2px;
+        }
 
-    a{
-        text-decoration: none;
-        font-size: 15px;
-        color: black;
+        button:hover{
+            background-color: rgb(60, 60, 252);
+            transition: all .3s;
+            border-radius: 10px;
+        }
     }
-
-    img{
-        margin-top: 20px;
-        width: 80px;
-        height: 80px;
-    }
+    
 }
 
 .information_email{
@@ -173,29 +173,6 @@
             }
         }
 
-        .information_summary_card{
-            padding: 25px 0px;
-            display: flex;
-            gap: 20px;
-            
-            input{
-                border: 3px solid #918e8e;
-                border-radius: 6px;
-                width: 255px;
-                height: 28px;
-            }
-
-            a{
-                text-decoration: none;
-                color: black;
-                border: 1px solid black;
-                padding: 4px;
-                border-radius: 5px;
-                font-size: 12px;
-                background-color: #cfcece;
-            }
-        }
-
         .information_summary_subtotal_frete{
             padding: 20px 0px;
 
@@ -210,6 +187,7 @@
                 gap: 100px;
                 margin-top: 15px;
                 font-size: 15px;
+                color: #918e8e;
             }
         }
 
@@ -229,15 +207,17 @@
     justify-content: flex-end;
     padding-right: 700px;
 
-    a{
-        text-decoration: none;
-        color: black;
-        border: none;
-        background-color: rgb(252, 69, 69);
+    button{
+        width: 280px;
+        height: 60px;
         padding: 20px 100px;
-        font-size: 17px;
         border-radius: 15px;
         box-shadow: 2px 2px 2px black;
+        font-size: 17px;
+        background: none;
+        border: none;
+        background-color: rgb(252, 69, 69);
+        color: black;
     }
 }
 

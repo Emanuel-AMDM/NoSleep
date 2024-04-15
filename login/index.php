@@ -22,7 +22,7 @@ if(isset($_SESSION['user'])){
 <body>
     
     <div class="titulo">
-        <a href="../index/index.html"><img src="../img_logo/Destaques_01.png" alt=""></a>
+        <a href="../index/index.php"><img src="../img_logo/Destaques_01.png" alt=""></a>
     </div>
 
     <div class="subtitulo">

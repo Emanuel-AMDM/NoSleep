@@ -1,3 +1,22 @@
+<?php
+session_start();
+
+require_once('../../services/cart_payment/list_entity.php');
+require_once('../../services/cart_payment/value_total.php');
+
+if(!isset($_SESSION['user'])){
+    header('Location: ../../login/index.php');
+    exit;
+}else{
+    $id_user = $_SESSION['user'];
+}
+
+$cart_payment = list_entity($id_user);
+$cart_pay = list_entity($id_user);
+$value_total = value_total($id_user);
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,7 +29,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+
     <nav class="nav_menu">
         <div>
             <img src="../../img_logo/Destaques_07 - Menu.png" alt="">
@@ -28,89 +47,65 @@
     <div class="border"><hr></div>
 
     <div class="frete_calculate">
-        <div class="cart_itens">
-            <div>
-                <h2>Itens</h2>
-            </div>
-            <div class="cart_item_up">
+        <div>
+            
+            <div class="cart_itens">
                 <div>
-                    <img src="../../img/img_peita1_frente.png" alt="">
+                    <h2>Itens</h2>
                 </div>
-                <div class="cart_item_up_text">
-                    <p>Camiseta - Preta</p>
-                    <p>cod.123 | $10</p>
-                    <div class="qntd1">
-                        <div>
-                            <button id="plus1"><i class="fa-solid fa-minus"></i></button>
+                <?php foreach($cart_payment as $cart_payment): ?>
+                    <div class="cart_item_up">
+                        <div class="cart_item_img">
+                            <img src="../../uploads/<?= $cart_payment['picture'] ?>" alt="">
                         </div>
-                        <div id="qntd1"> 1 </div>
-                        <div>
-                            <button id="minus1"><i class="fa-solid fa-plus"></i></button>
+                        <div class="cart_item_up_text">
+                            <p><?= $cart_payment['type'] ?> - <?= $cart_payment['color'] ?></p>
+                            <p>cod.<?= $cart_payment['cod'] ?> | <?= 'R$' . $cart_payment['value'] ?></p>
+                        </div>
+                        <div class="cart_item_up_qntd">
+                            <p>amount - <?= $cart_payment['amount'] ?> | size - <?= $cart_payment['size'] ?></p>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="cart_item_up">
-                <div>
-                    <img src="../../img/img_peita1_frente.png" alt="">
-                </div>
-                <div class="cart_item_up_text">
-                    <p>Camiseta - Preta</p>
-                    <p>cod.123 | $10</p>
-                    <div class="qntd2">
-                        <div>
-                            <button id="plus2"><i class="fa-solid fa-minus"></i></button>
-                        </div>
-                        <div id="qntd2"> 1 </div>
-                        <div>
-                            <button id="minus2"><i class="fa-solid fa-plus"></i></button>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
         
-        <div class="frete_summary">
-            <h2>Purchase Summary</h2>
-            
-            <div class="frete_summary_subtotal_frete">
+        <div>
+            <div class="frete_summary">
+                <h2>Purchase Summary</h2>
+                
                 <div class="frete_summary_subtotal">
-                    <div>
-                        <p>Subtotal</p>
-                    </div>
-                    <div>
-                        <p>$10</p>
-                    </div>
+                    <?php foreach($cart_pay as $cart_pay): ?>
+                        <div>
+                            <spam>Subtotal</spam>
+                        </div>
+                        <div>
+                            <p>R$<?= ROUND($cart_pay['value'] * $cart_pay['amount']) ?></p>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
 
-                <div class="frete_summary_frete">
+                <div class="border_summary"><hr></div>
+
+                <div class="frete_summary_total">
                     <div>
-                        <p>Frete</p>
+                        <p>Total</p>
                     </div>
-                    <div>
-                        <p>$15</p>
-                    </div>
+                    <?php foreach($value_total as $value_total): ?>
+                        <div>
+                            <p>R$<?= $value_total['value']?></p>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
+                
             </div>
-
-            <div class="border_summary"><hr></div>
-
-            <div class="frete_summary_total">
-                <div>
-                    <p>Total</p>
-                </div>
-                <div>
-                    <p>$10</p>
-                </div>
-            </div>
-            
         </div>
     </div>
 
     <div class="border"><hr id="border_continue"></div>
 
     <div class="continue">
-        <a href="../information/index.html" type="button" class="btn btn-primary">Continue</a>
+        <a href="../information/index.php" type="button" class="btn btn-primary">Continue</a>
     </div>
 
     <footer class="footer">

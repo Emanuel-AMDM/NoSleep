@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NoSleep - Information</title>
+    <title>NoSleep - Frete</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,97 +17,101 @@
         </div>
     </nav>
 
-    <div class="info_payment">
-        <label for="">MyCart > <strong>Infomation</strong> > Frete > Payment</label>
+    <div class="info_frete">
+        <label for="">MyCart > Infomation > <strong>Frete</strong> > Payment</label>
     </div>
 
-    <div class="titulo_information">
-        <h2>Contact</h2>
+    <div class="titulo_frete">
+        <h2>Infomation</h2>
     </div>
 
     <div class="border"><hr></div>
 
-    <div class="information_info">
-        <div>
-            <img src="../../img/user.png" alt="">
+    <div class="frete_info">
+        <div class="frete_info_border">
+            <div class="frete_info_contact">
+                <div>
+                    <p>Contact</p>
+                </div>
+                <div>
+                    <p>menezesemanuel@gmail.com</p>
+                </div>
+                <div>
+                    <a href="" id="alter_up">To alter</a>
+                </div>
+            </div>
+            <hr>
+            <div class="frete_info_sendto">
+                <div>
+                    <p>Send to</p>
+                </div>
+                <div>
+                    <p>Av. General osório, 644, trujillo, 18060-501, ap-121b bloco3</p>
+                </div>
+                <div>
+                    <a href="" id="alter_down">To alter</a>
+                </div>
+            </div>
         </div>
-        <div>
-            <p id="txt_info">Emanuel Menezes(menezesemanuel@teste.com)</p>
-            <a href="">Sair</a>
-        </div>
-    </div>
-
-    <div class="information_email">
-        <input type="checkbox" name="" id="" checked><label for="">Send news and offers to me by email</label>
     </div>
 
     <div class="border"><hr id="border_down"></div>
 
-    <div class="delivery_address">
+    <div class="frete_calculate">
         <div>
             <div>
-                <h2>Delivery Address</h2>
+                <h2>Frete</h2>
             </div>
-            <div class="address_input">
-                <div class="address_info">
-                    <input type="text" placeholder="CPF/CNPJ">
-                </div>
-                <div class="address_info">
-                    <input type="text" placeholder="CEP" id="cep">
-                </div>
-                <div class="address_info">
-                    <div class="address_info_united">
+            <div class="frete_type">
+                <p>Select a shipping method below:</p>
+                <div class="border_box">
+                    <div class="border_box_display">
                         <div>
-                            <input type="text" placeholder="Rua" id="rua">
+                            <input type="radio" name="frete" id="">Sedex Correio
+                            <p>4 dias ulteis</p>
                         </div>
                         <div>
-                            <input type="text" placeholder="Numero" id="numero">
+                            <p id="value1">$25</p>
                         </div>
                     </div>
                 </div>
-                <div class="address_info">
-                    <input type="text" placeholder="Complemento">
-                </div>
-                <div class="address_info">
-                    <input type="text" placeholder="Bairro" id="bairro">
-                </div>
-                <div class="address_info">
-                    <div class="address_info_united">
+                <div class="border_box">
+                    <div  class="border_box_display">
                         <div>
-                            <input type="text" placeholder="Cidade" id="cidade">
+                            <input type="radio" name="frete" id="">PAC Correio
+                            <p>5 dias ulteis</p>
                         </div>
-                        <div class="address_info">
-                            <input type="text" placeholder="Estado" id="estado">
+                        <div>
+                            <p id="value2">$15</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="border_box">
+                    <div  class="border_box_display">
+                        <div> 
+                            <input type="radio" name="frete" id="">Motoboy Sorocaba / Votorantim
+                            <p>Entregas a partir das 14horas</p>
+                        </div>
+                        <div>
+                            <p id="value3">$5</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="information_summary">
+        <div class="frete_summary">
             <h2>Purchase Summary</h2>
 
-            <div class="information_summary_img">
+            <div class="frete_summary_img">
                 <img src="../../img/img_peita1_frente.png" alt="">
                 <p>Camiseta - Preta <br> qntd.1 | cod.123</p>
                 <p id="value">$10</p>
             </div>
 
             <div class="border_summary"><hr></div>
-
-            <div class="information_summary_card">
-                <div>
-                    <input type="text" placeholder="Código de desconto ou cartão presente">
-                </div>
-                <div>
-                    <a href="">Aplicar</a>
-                </div>
-            </div>
-
-            <div class="border_summary"><hr></div>
             
-            <div class="information_summary_subtotal_frete">
-                <div class="information_summary_subtotal">
+            <div class="frete_summary_subtotal_frete">
+                <div class="frete_summary_subtotal">
                     <div>
                         <p>Subtotal</p>
                     </div>
@@ -116,19 +120,19 @@
                     </div>
                 </div>
 
-                <div class="information_summary_frete">
+                <div class="frete_summary_frete">
                     <div>
                         <p>Frete</p>
                     </div>
                     <div>
-                        <p>Calculado na proxima etapa</p>
+                        <p>$15</p>
                     </div>
                 </div>
             </div>
 
             <div class="border_summary"><hr></div>
 
-            <div class="information_summary_total">
+            <div class="frete_summary_total">
                 <div>
                     <p>Total</p>
                 </div>
@@ -143,7 +147,7 @@
     <div class="border"><hr id="border_continue"></div>
 
     <div class="continue">
-        <a href="../frete/index.html" type="button" class="btn btn-primary">Continue</a>
+        <a href="../index.html" type="button" class="btn btn-primary">Continue</a>
     </div>
 
     <footer class="footer">
@@ -176,7 +180,6 @@
     </footer>
 
     <script src="https://kit.fontawesome.com/5dc8345cee.js" crossorigin="anonymous"></script>
-    <script src="js/endereco.js"></script>
 
 </body>
 </html>

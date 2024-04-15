@@ -110,6 +110,9 @@
             .cart_item_up_text{
                 margin-top: 20px;
             }
+            .cart_item_up_qntd{
+                margin-top: 20px;
+            }
         }
         .qntd1{
             display: flex;
@@ -123,21 +126,11 @@
     
     .frete_summary{
 
-
-        .frete_summary_subtotal_frete{
+        .frete_summary_subtotal{
             padding: 20px 0px;
-
-            .frete_summary_subtotal{
-                display: flex;
-                gap: 250px;
-                font-size: 15px;
-            }
-    
-            .frete_summary_frete{
-                display: flex;
-                gap: 272px;
-                margin-top: 15px;
-                font-size: 15px;
+            font-size: 15px;
+            p{
+                padding-left: 300px;
             }
         }
 

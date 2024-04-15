@@ -54,6 +54,7 @@ body{
     ul li a{
         text-decoration: none;
         color: white;
+        padding: 10px;
     }
 
     ul li a:hover{
@@ -61,7 +62,21 @@ body{
         display: block;
         transition: all .3s;
         border-radius: 10px;
+    }
+
+    ul li button{
+        color: white;
+        border: none;
+        background: none;
+        background-color: none;
         padding: 10px;
+        font-size: 15px;
+    }
+
+    ul li button:hover{
+        background-color: blue;
+        transition: all .3s;
+        border-radius: 10px;
     }
 
 }

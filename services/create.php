@@ -136,3 +136,15 @@ function create_cart($id_part, $id_client, $qntd_part, $size){
     $sql1 = "INSERT INTO cart (id_part, id_client, qntd_part, size, dt_created_at, dt_updated_at) VALUES ('$id_part', '$id_client', '$qntd_part', '$size', '$dt_created_at', '$dt_updated_at')";
     execute_query($sql1);
 }
+
+function create_cart_payment($id){
+
+    //coloca a data de hoje
+    $agora = date('Y-m-d');
+    $dt_created_at = $agora;
+    $dt_updated_at = $agora;
+
+    //insert sql
+    $sql1 = "INSERT INTO cart_payment (id_cart, dt_created_at, dt_updated_at) VALUES ('$id', '$dt_created_at', '$dt_updated_at')";
+    execute_query($sql1);
+}

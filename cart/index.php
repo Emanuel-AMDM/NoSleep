@@ -5,6 +5,7 @@ $id_user = $_SESSION['user'];
 
 require_once('../services/cart/list_entity_index.php');
 require_once('../services/client/get_by_id_nav_cart.php');
+require_once('../services/cart_payment/get_by_id.php');
 
 $cart = list_entity_cart($id_user);
 
@@ -49,6 +50,11 @@ if(!isset($_SESSION['user'])){
                                     <li><a href="../employee/index.php">Employee</a></li>
                                     <li><a href="../client/index.php">Clients</a></li>
                                 <?php else: ?>
+                                    <li><a href="../shoes/index.php"                              >Shoes         </a></li>
+                                    <li><a href="../tshirt/index.php"                             >T-shirts      </a></li>
+                                    <li><a href="../caps/index.php"                               >Caps          </a></li>
+                                    <li><a href="../sweatshirts/index.php"                        >Sweatshirts   </a></li>
+                                    <li><a href="../all_categories/index.php"                     >All categories</a></li>
                                     <li><a href="../cart/index.php">Cart</a></li>
                                     <li><a href="../client/edit/index.php?id=<?= $client['id'] ?>">Configurações</a></li>
                                 <?php endif; ?>
@@ -69,6 +75,14 @@ if(!isset($_SESSION['user'])){
 
         </div>
     </nav>
+
+    <div class="title_cart">
+        <h1>Information Cart</h1>
+    </div>
+
+    <div class="subtitle_cart">
+        <p>Here you choose quantity, size and whether you are going to buy the piece</p>
+    </div>
 
     <div class='contents_center'>
         <div>
@@ -116,15 +130,23 @@ if(!isset($_SESSION['user'])){
                                     <?php endif; ?>
                                 </td>
                                 <td><img src="../uploads/<?= $cart['picture'] ?>"></td>
-                                <td><a href="../shop/view_part/edit/index.php?id_cart=<?= $cart['id_cart'] ?>&id_peca=<?= $cart['id_stock'] ?>"><i class="fa-solid fa-eye"></i></a><a id="trash" href="../routes/cart/delete.php?id=<?= $cart['id_cart'] ?>"><i class="fa-solid fa-trash"></i></a></td>
+                                <td>
+                                    <a href="../shop/view_part/edit/index.php?id_cart=<?= $cart['id_cart'] ?>&id_peca=<?= $cart['id_stock'] ?>"><i class="fa-solid fa-eye"></i></a>
+                                    
+                                    <a id="cart_plus" href="../routes/cart_payment/save.php?id=<?= $cart['id_cart'] ?>"><i class="fa-solid fa-cart-plus"></i></a>
+                
+                                    <a id="trash" href="../routes/cart/delete.php?id=<?= $cart['id_cart'] ?>"><i class="fa-solid fa-trash"></i></a>
+                                </td>
                             </tr>
                         </tbody>
                     <?php endforeach; ?>
                 </table>
             </div>
+            <div class="continue">
+                <a href="../payment/cart/index.php" type="button" class="btn btn-primary">Continue</a>
+            </div>
         </div>
     </div>
-
 
     <script src="https://kit.fontawesome.com/5dc8345cee.js" crossorigin="anonymous"></script>
 

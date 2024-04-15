@@ -110,6 +110,18 @@
   }
 }
 
+.title_cart{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.subtitle_cart{
+  display: flex;
+  justify-content: center;
+  color: #999999;
+}
+
 .contents_center{
   display: flex;
   justify-content: center;
@@ -152,4 +164,22 @@
       }
     }
   }
+  
+  .continue{
+    display: flex;
+    justify-content: flex-end;
+    padding: 50px;
+  
+    a{
+        text-decoration: none;
+        color: black;
+        border: none;
+        background-color: rgb(252, 69, 69);
+        padding: 20px 100px;
+        font-size: 17px;
+        border-radius: 15px;
+        box-shadow: 2px 2px 2px black;
+    }
+  }
 }
+

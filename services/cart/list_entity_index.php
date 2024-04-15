@@ -34,8 +34,5 @@ function list_entity_cart($id_user){
             AND cart.id_client = $id_user";
     $cart = execute_query($sql);
 
-    // $sql = "SELECT * FROM cart WHERE id_client = $id_user";
-    $cart = execute_query($sql);
-
     return $cart;
 }

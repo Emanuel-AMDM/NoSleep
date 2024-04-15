@@ -127,3 +127,62 @@ qntd_part    (int)
 size         (varchar(10))
 dt_created_at(date)
 dt_updated_at(date)
+
+CRUD CART PAYMENT:
+
+INDEX  = index    -> exibe as peças selecionada
+CREATE = create   -> cria as peças a serem pagas
+READ   = show/:id -> exibe as peças a serem pagas
+UPDATE = edit/:id -> atualiza o pagamento das peças
+GET    = get      -> pega o id do item no carrinho
+LIST   = list     -> mostra todos os itens do carrinho da pessoa
+
+posts, services, actions:
+
+UPDATE = update/:id -> atualiza um item do carrinho
+DELETE = delete/:id -> deleta um item do carrinho
+CREATE = save       -> cria um item no carrinho
+GET    = get        -> pega o id de um item do carrinho
+LIST   = list       -> mostra todos os itens do carrinho
+
+banco: cart
+colunas:
+id           (altoincrement)
+id_cart      (int)              -> cart
+dt_created_at(date)
+dt_updated_at(date)
+
+CRUD INFORMATION PAYMENT:
+
+INDEX  = index    -> exibe as peças selecionada para compra
+CREATE = create   -> cria o endereço de frete da pessoa
+READ   = show/:id -> exibe as peças a serem pagas
+UPDATE = edit/:id -> atualiza o pagamento das peças
+GET    = get      -> pega o id do carrinho
+LIST   = list     -> mostra todos os itens do carrinho da pessoa a serem pagos
+
+posts, services, actions:
+
+UPDATE = update/:id -> atualiza o pagamento das peças
+CREATE = save       -> cria um pagamento para todos os itens do carrinho
+GET    = get        -> pega o id de um item do carrinho
+LIST   = list       -> mostra todos os itens do carrinho
+
+banco: client
+colunas:
+id           (altoincrement)
+name         (varchar150)
+dt_birth     (date)
+cpf_cnpj     (varchar20)
+rg_ie        (varchar20)
+telefone     (varchar20)
+email        (varchar50)
+cep          (varchar20)
+road         (varchar100)
+neighborhood (varchar100)
+city         (varchar100)
+state        (varchar10)
+complement   (varchar200)
+number       (int)
+dt_created_at(date)
+dt_updated_at(date)

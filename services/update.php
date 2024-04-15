@@ -4,20 +4,7 @@ require_once('../../database/execute_query.php');
 
 function update_client($id, $name, $surname, $birthday, $cpf_cnpj, $gender, $rg_ie, $telephone, $email, $cep, $road, $neighborhood, $city, $state, $complement, $number, $login, $password, $dt_created_at){
 
-    //coloca a data de hoje
-    $agora = date('Y-m-d');
-    $dt_updated_at = $agora;
-
-    //checa se email ja existe
-    $sql1 = "SELECT * FROM client WHERE email = '$email'";
-    $emails = execute_query($sql1);
-
-    foreach($emails as $content){
-        if($content['email'] === $email && $content['id'] != $id){
-            return exit('E-mail já cadastrado');
-        }
-    }
-
+    //tratamento dos dados
     if(empty($cpf_cnpj)){
         $cpf_cnpj = NULL;
     }
@@ -54,9 +41,23 @@ function update_client($id, $name, $surname, $birthday, $cpf_cnpj, $gender, $rg_
         $number = 0;
     }
 
+    //coloca a data de hoje
+    $agora = date('Y-m-d');
+    $dt_updated_at = $agora;
+
+    //checa se email ja existe
+    $sql1 = "SELECT * FROM client WHERE email = '$email'";
+    $checa_emails = execute_query($sql1);
+
+    foreach($checa_emails as $content){
+        if(count($content['email']) == 1 && $content['id'] != $id){
+            return exit('E-mail já cadastrado');
+        }
+    }
+
     //insert sql
-    $sql1 = "UPDATE client SET type = 1, name = '$name', surname = '$surname', email = '$email', telephone = '$telephone', gender = '$gender', login = '$login', password = '$password', cpf_cnpj = '$cpf_cnpj', rg_ie = '$rg_ie', cep = '$cep', road = '$road', neighborhood = '$neighborhood', city = '$city', state = '$state', complement = '$complement', number = '$number', birthday = '$birthday',dt_created_at = '$dt_created_at', dt_updated_at = '$dt_updated_at' WHERE id = $id";
-    execute_query($sql1);
+    $sql2 = "UPDATE client SET type = 1, name = '$name', surname = '$surname', email = '$email', telephone = '$telephone', gender = '$gender', login = '$login', password = '$password', cpf_cnpj = '$cpf_cnpj', rg_ie = '$rg_ie', cep = '$cep', road = '$road', neighborhood = '$neighborhood', city = '$city', state = '$state', complement = '$complement', number = '$number', birthday = '$birthday',dt_created_at = '$dt_created_at', dt_updated_at = '$dt_updated_at' WHERE id = $id";
+    execute_query($sql2);
 }
 
 function update_employee($id, $name, $surname, $birthday, $cpf_cnpj, $gender, $rg_ie, $telephone, $email, $cep, $road, $neighborhood, $city, $state, $complement, $number, $login, $password, $dt_created_at){
@@ -134,5 +135,16 @@ function update_cart($id, $qntd_part, $size){
 
     //insert sql
     $sql1 = "UPDATE cart SET qntd_part = '$qntd_part', size = '$size', dt_updated_at = '$dt_updated_at' WHERE id = $id";
+    execute_query($sql1);
+}
+
+function update_address($id, $cpf_cnpj, $cep, $road, $neighborhood, $city, $state, $complement, $number){
+
+    //coloca a data de hoje
+    $agora = date('Y-m-d');
+    $dt_updated_at = $agora;
+
+    //insert sql
+    $sql1 = "UPDATE client SET type = 1, cpf_cnpj = '$cpf_cnpj',cep = '$cep', road = '$road', neighborhood = '$neighborhood', city = '$city', state = '$state', complement = '$complement', number = '$number', dt_updated_at = '$dt_updated_at' WHERE id = $id";
     execute_query($sql1);
 }

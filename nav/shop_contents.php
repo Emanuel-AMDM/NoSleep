@@ -19,13 +19,18 @@ if(!isset($_SESSION['user'])){
                 <a><?= $client['name'] . ' ' . $client['surname'] ?></a>
                 <ul class="li_contents">
                     <?php if($client['type'] == 2): ?>
-                        <li><a href="../../shop/index.php">Shop</a></li>
+                        <li><a href="../../shop/index.php"                 >Shop</a></li>
                         <li><a href="../../MANUAL-DA-IDENTIDADE-VISUAL.pdf">Lookbook</a></li>
-                        <li><a href="../../stock/index.php">Stock</a></li>
-                        <li><a href="../../employee/index.php">Employee</a></li>
-                        <li><a href="../../client/index.php">Clients</a></li>
+                        <li><a href="../../stock/index.php"                >Stock</a></li>
+                        <li><a href="../../employee/index.php"             >Employee</a></li>
+                        <li><a href="../../client/index.php"               >Clients</a></li>
                     <?php else: ?>
-                        <li><a href="../../cart/index.php">Cart</a></li>
+                        <li><a href="../../shoes/index.php"                              >Shoes         </a></li>
+                        <li><a href="../../tshirt/index.php"                             >T-shirts      </a></li>
+                        <li><a href="../../caps/index.php"                               >Caps          </a></li>
+                        <li><a href="../../sweatshirts/index.php"                        >Sweatshirts   </a></li>
+                        <li><a href="../../all_categories/index.php"                     >All categories</a></li>
+                        <li><a href="../../cart/index.php"                               >Cart</a></li>
                         <li><a href="../../client/edit/index.php?id=<?= $client['id'] ?>">Configurações</a></li>
                     <?php endif; ?>
                     <li>
@@ -44,7 +49,7 @@ if(!isset($_SESSION['user'])){
 <?php endif; ?>
 
 <div id="top" class="titulo">
-    <a href="../../index/index.html"><img src="../../img_logo/Destaques_07.png" alt=""></a>
+    <a href="../../index/index.php"><img src="../../img_logo/Destaques_07.png" alt=""></a>
 </div>
 
 <nav>
