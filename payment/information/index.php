@@ -75,18 +75,18 @@ $value_total      = value_total($id_user);
                 </div>
                 <div class="address_input">
                     <div class="address_info">
-                        <input type="text" placeholder="CPF/CNPJ" name="cpf_cnpj" value="<?= $client['cpf_cnpj'] ?>">
+                        <input type="text" placeholder="CPF/CNPJ" name="cpf_cnpj" value="<?= $client['cpf_cnpj'] ?>"required>
                     </div>
                     <div class="address_info">
-                        <input type="text" placeholder="CEP" id="cep" name="cep" value="<?= $client['cep'] ?>">
+                        <input type="text" placeholder="CEP" id="cep" name="cep" value="<?= $client['cep'] ?>"required>
                     </div>
                     <div class="address_info">
                         <div class="address_info_united">
                             <div>
-                                <input type="text" placeholder="Road" id="rua" name="road" value="<?= $client['road'] ?>">
+                                <input type="text" placeholder="Road" id="rua" name="road" value="<?= $client['road'] ?>"required>
                             </div>
                             <div>
-                                <input type="number" placeholder="Number" id="numero" name="number" value="<?= $client['number'] ?>">
+                                <input type="number" placeholder="Number" id="numero" name="number" value="<?= $client['number'] ?>"required>
                             </div>
                         </div>
                     </div>
@@ -94,15 +94,15 @@ $value_total      = value_total($id_user);
                         <input type="text" placeholder="Complement" name="complement" value="<?= $client['complement'] ?>">
                     </div>
                     <div class="address_info">
-                        <input type="text" placeholder="Neighborhood" id="bairro" name="neighborhood" value="<?= $client['neighborhood'] ?>">
+                        <input type="text" placeholder="Neighborhood" id="bairro" name="neighborhood" value="<?= $client['neighborhood'] ?>"required>
                     </div>
                     <div class="address_info">
                         <div class="address_info_united">
                             <div>
-                                <input type="text" placeholder="City" id="cidade" name="city" value="<?= $client['city'] ?>">
+                                <input type="text" placeholder="City" id="cidade" name="city" value="<?= $client['city'] ?>"required>
                             </div>
                             <div class="address_info">
-                                <input type="text" placeholder="State" id="estado" name="state" value="<?= $client['state'] ?>">
+                                <input type="text" placeholder="State" id="estado" name="state" value="<?= $client['state'] ?>"required>
                             </div>
                         </div>
                     </div>

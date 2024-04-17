@@ -49,15 +49,15 @@ function update_client($id, $name, $surname, $birthday, $cpf_cnpj, $gender, $rg_
     $sql1 = "SELECT * FROM client WHERE email = '$email'";
     $checa_emails = execute_query($sql1);
 
-    foreach($checa_emails as $content){
-        if(count($content['email']) == 1 && $content['id'] != $id){
+    foreach($checa_emails as $emails){
+        if(count($emails['email']) === 1 && $emails['id'] === $id){
+            //insert sql
+            $sql2 = "UPDATE client SET type = 1, name = '$name', surname = '$surname', email = '$email', telephone = '$telephone', gender = '$gender', login = '$login', password = '$password', cpf_cnpj = '$cpf_cnpj', rg_ie = '$rg_ie', cep = '$cep', road = '$road', neighborhood = '$neighborhood', city = '$city', state = '$state', complement = '$complement', number = '$number', birthday = '$birthday',dt_created_at = '$dt_created_at', dt_updated_at = '$dt_updated_at' WHERE id = $id";
+            execute_query($sql2);
+        }else{
             return exit('E-mail já cadastrado');
         }
     }
-
-    //insert sql
-    $sql2 = "UPDATE client SET type = 1, name = '$name', surname = '$surname', email = '$email', telephone = '$telephone', gender = '$gender', login = '$login', password = '$password', cpf_cnpj = '$cpf_cnpj', rg_ie = '$rg_ie', cep = '$cep', road = '$road', neighborhood = '$neighborhood', city = '$city', state = '$state', complement = '$complement', number = '$number', birthday = '$birthday',dt_created_at = '$dt_created_at', dt_updated_at = '$dt_updated_at' WHERE id = $id";
-    execute_query($sql2);
 }
 
 function update_employee($id, $name, $surname, $birthday, $cpf_cnpj, $gender, $rg_ie, $telephone, $email, $cep, $road, $neighborhood, $city, $state, $complement, $number, $login, $password, $dt_created_at){

@@ -1,3 +1,23 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['user'])){
+    header('Location: ../../login/index.php');
+    exit;
+}else{
+    $id_user = $_SESSION['user'];
+}
+
+require_once('../../services/frete_payment/get_by_id.php');
+require_once('../../services/frete_payment/list_entity.php');
+require_once('../../services/frete_payment/value_total.php');
+
+$client           = get_by_id($id_user);
+$cart_information = list_entity($id_user);
+$cart_subtotal    = list_entity($id_user);
+$value_total      = value_total($id_user);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -34,10 +54,10 @@
                     <p>Contact</p>
                 </div>
                 <div>
-                    <p>menezesemanuel@gmail.com</p>
+                    <p><?= $client['email'] ?></p>
                 </div>
                 <div>
-                    <a href="" id="alter_up">To alter</a>
+                    <a href="../../client/edit/index.php?id=<?= $client['id'] ?>" id="alter_up">To alter</a>
                 </div>
             </div>
             <hr>
@@ -46,10 +66,10 @@
                     <p>Send to</p>
                 </div>
                 <div>
-                    <p>Av. General osório, 644, trujillo, 18060-501, ap-121b bloco3</p>
+                    <p><?= $client['road'] . ', ' . $client['neighborhood'] . ', ' . $client['state'] . ', ' . $client['city'] . ', ' . $client['complement'] . ', ' . $client['number'] ?></p>
                 </div>
                 <div>
-                    <a href="" id="alter_down">To alter</a>
+                    <a href="../../client/edit/index.php?id=<?= $client['id'] ?>" id="alter_down">To alter</a>
                 </div>
             </div>
         </div>
@@ -102,23 +122,32 @@
         <div class="frete_summary">
             <h2>Purchase Summary</h2>
 
-            <div class="frete_summary_img">
-                <img src="../../img/img_peita1_frente.png" alt="">
-                <p>Camiseta - Preta <br> qntd.1 | cod.123</p>
-                <p id="value">$10</p>
-            </div>
+            <?php foreach($cart_information as $cart): ?>
+
+                <div class="frete_summary_img">
+                    <img src="../../uploads/<?= $cart['picture'] ?>" alt="">
+                    <p><?= $cart['type'] ?> - <?= $cart['color'] ?> <br> cod.<?= $cart['cod'] ?> | R$<?= $cart['value'] ?></p>
+                    <p id="value">Amount.<?= $cart['amount'] ?> | Size.<?= $cart['size'] ?></p>
+                </div>
+
+            <?php endforeach; ?>
 
             <div class="border_summary"><hr></div>
             
             <div class="frete_summary_subtotal_frete">
-                <div class="frete_summary_subtotal">
-                    <div>
-                        <p>Subtotal</p>
+
+                <?php foreach($cart_subtotal as $cart_sub): ?>
+
+                    <div class="frete_summary_subtotal">
+                        <div>
+                            <p>Subtotal</p>
+                        </div>
+                        <div>
+                            <p>R$<?= ROUND($cart_sub['value'] * $cart_sub['amount']) ?></p>
+                        </div>
                     </div>
-                    <div>
-                        <p>$10</p>
-                    </div>
-                </div>
+
+                <?php endforeach; ?>
 
                 <div class="frete_summary_frete">
                     <div>
@@ -136,9 +165,15 @@
                 <div>
                     <p>Total</p>
                 </div>
-                <div>
-                    <p>$10</p>
-                </div>
+
+                <?php foreach($value_total as $value): ?>
+                    
+                    <div>
+                        <p>R$<?=$value['value']?></p>
+                    </div>
+
+                <?php endforeach; ?>
+            
             </div>
             
         </div>
@@ -147,7 +182,7 @@
     <div class="border"><hr id="border_continue"></div>
 
     <div class="continue">
-        <a href="../index.html" type="button" class="btn btn-primary">Continue</a>
+        <a href="../index.php" type="button" class="btn btn-primary">Continue</a>
     </div>
 
     <footer class="footer">
