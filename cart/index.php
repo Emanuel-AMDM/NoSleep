@@ -34,7 +34,7 @@ if(!isset($_SESSION['user'])){
     <nav class="nav_menu">
         <div class="nav_flex">
             <div>
-                <a href="../index/index.html"><img src="../img_logo/Destaques_07 - Menu.png" alt=""></a>
+                <a href="../index/index.php"><img src="../img_logo/Destaques_07 - Menu.png" alt=""></a>
             </div>
 
             <?php if($client['name'] != '' && $client['surname'] != ''): ?>
@@ -50,13 +50,13 @@ if(!isset($_SESSION['user'])){
                                     <li><a href="../employee/index.php">Employee</a></li>
                                     <li><a href="../client/index.php">Clients</a></li>
                                 <?php else: ?>
-                                    <li><a href="../shoes/index.php"                              >Shoes         </a></li>
-                                    <li><a href="../tshirt/index.php"                             >T-shirts      </a></li>
-                                    <li><a href="../caps/index.php"                               >Caps          </a></li>
-                                    <li><a href="../sweatshirts/index.php"                        >Sweatshirts   </a></li>
-                                    <li><a href="../all_categories/index.php"                     >All categories</a></li>
-                                    <li><a href="../cart/index.php">Cart</a></li>
-                                    <li><a href="../client/edit/index.php?id=<?= $client['id'] ?>">Configurações</a></li>
+                                    <li><a href="../shop/shoes/index.php"                              >Shoes         </a></li>
+                                    <li><a href="../shop/tshirt/index.php"                             >T-shirts      </a></li>
+                                    <li><a href="../shop/caps/index.php"                               >Caps          </a></li>
+                                    <li><a href="../shop/sweatshirts/index.php"                        >Sweatshirts   </a></li>
+                                    <li><a href="../shop/all_categories/index.php"                     >All categories</a></li>
+                                    <li><a href="../shop/cart/index.php">Cart</a></li>
+                                    <li><a href="../shop/client/edit/index.php?id=<?= $client['id'] ?>">Configurações</a></li>
                                 <?php endif; ?>
                                 <li>
                                     <form action="../routes/login/logout.php" method="POST">

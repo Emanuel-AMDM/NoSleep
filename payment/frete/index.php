@@ -38,7 +38,7 @@ $value_total      = value_total($id_user);
     </nav>
 
     <div class="info_frete">
-        <label for="">MyCart > Infomation > <strong>Frete</strong> > Payment</label>
+        <label for="">MyCart > Infomation > <strong>Frete</strong></label>
     </div>
 
     <div class="titulo_frete">
@@ -92,17 +92,6 @@ $value_total      = value_total($id_user);
                         </div>
                         <div>
                             <p id="value1">$25</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="border_box">
-                    <div  class="border_box_display">
-                        <div>
-                            <input type="radio" name="frete" id="">PAC Correio
-                            <p>5 dias ulteis</p>
-                        </div>
-                        <div>
-                            <p id="value2">$15</p>
                         </div>
                     </div>
                 </div>

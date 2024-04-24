@@ -39,7 +39,7 @@ $value_total      = value_total($id_user);
     </nav>
 
     <div class="info_payment">
-        <label for="">MyCart > <strong>Infomation</strong> > Frete > Payment</label>
+        <label for="">MyCart > <strong>Infomation</strong> > Frete</label>
     </div>
 
     <div class="titulo_information">

@@ -48,6 +48,11 @@ if(!isset($_SESSION['user'])){
                                     <li><a href="../../employee/index.php">Employee</a></li>
                                     <li><a href="../../client/index.php">Clients</a></li>
                                 <?php else: ?>
+                                    <li><a href="../../shop/shoes/index.php"                         >Shoes         </a></li>
+                                    <li><a href="../../shop/tshirt/index.php"                        >T-shirts      </a></li>
+                                    <li><a href="../../shop/caps/index.php"                          >Caps          </a></li>
+                                    <li><a href="../../shop/sweatshirts/index.php"                   >Sweatshirts   </a></li>
+                                    <li><a href="../../shop/all_categories/index.php"                >All categories</a></li>
                                     <li><a href="../../cart/index.php">Cart</a></li>
                                     <li><a href="../../client/edit/index.php?id=<?= $client['id'] ?>">Configurações</a></li>
                                 <?php endif; ?>
