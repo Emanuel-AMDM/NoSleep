@@ -32,7 +32,7 @@ if(!isset($_SESSION['user'])){
     <nav class="nav_menu">
         <div class="nav_flex">
             <div>
-                <a href="../../index/index.html"><img src="../../img_logo/Destaques_07 - Menu.png" alt=""></a>
+                <a href="../../index/index.php"><img src="../../img_logo/Destaques_07 - Menu.png" alt=""></a>
             </div>
 
             <?php if($client['name'] != '' && $client['surname'] != ''): ?>
@@ -144,8 +144,8 @@ if(!isset($_SESSION['user'])){
                 </div>
                 <hr>
                 <div class="part_cart">
-                    <div class="glow-on-hover">
-                        <button type="submit">
+                    <div>
+                        <button type="submit" class="glow-on-hover">
                             <div>
                                 <label for=""><i class="fa-solid fa-cart-plus"></i> Adicionar ao Carrinho</label>
                             </div>

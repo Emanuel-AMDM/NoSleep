@@ -7,14 +7,16 @@ require_once('../services/cart/list_entity_index.php');
 require_once('../services/client/get_by_id_nav_cart.php');
 require_once('../services/cart_payment/get_by_id.php');
 
-$cart = list_entity_cart($id_user);
+$cart         = list_entity_cart($id_user);
+
+// $cart_payment = get_cart_payment_by_id($id_cart); esse usa pro if do botao
 
 if(!isset($_SESSION['user'])){
     header('Location: ../../login/index.php');
     exit;
 }else{
     $id_client = $_SESSION['user'];
-    $client = get_by_id($id_client);
+    $client    = get_by_id($id_client);
 }
 ?>
 
@@ -132,9 +134,9 @@ if(!isset($_SESSION['user'])){
                                 <td><img src="../uploads/<?= $cart['picture'] ?>"></td>
                                 <td>
                                     <a href="../shop/view_part/edit/index.php?id_cart=<?= $cart['id_cart'] ?>&id_peca=<?= $cart['id_stock'] ?>"><i class="fa-solid fa-eye"></i></a>
-                                    
+                                        
                                     <a id="cart_plus" href="../routes/cart_payment/save.php?id=<?= $cart['id_cart'] ?>"><i class="fa-solid fa-cart-plus"></i></a>
-                
+                                
                                     <a id="trash" href="../routes/cart/delete.php?id=<?= $cart['id_cart'] ?>"><i class="fa-solid fa-trash"></i></a>
                                 </td>
                             </tr>

@@ -1,17 +1,17 @@
 <?php
 
-require_once('../../services/update.php');
+require_once('../../services/create.php');
 
-update_address(
+create_address_order(
     $_GET['id'],
-    $_POST['cpf_cnpj'],
     $_POST['cep'],
     mb_strtoupper($_POST['road']),
+    $_POST['number'],
+    mb_strtoupper($_POST['complement']),
     mb_strtoupper($_POST['neighborhood']),
     mb_strtoupper($_POST['city']),
     mb_strtoupper($_POST['state']),
-    mb_strtoupper($_POST['complement']),
-    $_POST['number']
+    $_POST['amount']
 );
 
 header('Location: ../../payment/frete/index.php');

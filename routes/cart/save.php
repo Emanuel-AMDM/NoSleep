@@ -3,7 +3,11 @@ session_start();
 
 require_once('../../services/create.php');
 
-$id_client = $_SESSION['user'];
+if(!isset($_SESSION['user'])){
+    header('Location: ../../login/index.php');
+}else{
+    $id_client = $_SESSION['user'];
+}
 
 create_cart(
     $_GET['id'],

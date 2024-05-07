@@ -42,7 +42,7 @@ function update_client($id, $name, $surname, $birthday, $cpf_cnpj, $gender, $rg_
     }
 
     //coloca a data de hoje
-    $agora = date('Y-m-d');
+    $agora = date('Y-m-d H:i:s');
     $dt_updated_at = $agora;
 
     //checa se email ja existe
@@ -63,7 +63,7 @@ function update_client($id, $name, $surname, $birthday, $cpf_cnpj, $gender, $rg_
 function update_employee($id, $name, $surname, $birthday, $cpf_cnpj, $gender, $rg_ie, $telephone, $email, $cep, $road, $neighborhood, $city, $state, $complement, $number, $login, $password, $dt_created_at){
 
     //coloca a data de hoje
-    $agora = date('Y-m-d');
+    $agora = date('Y-m-d H:i:s');
     $dt_updated_at = $agora;
 
     //checa se email ja existe
@@ -84,7 +84,7 @@ function update_employee($id, $name, $surname, $birthday, $cpf_cnpj, $gender, $r
 function update_stock($id, $part_code, $sector, $type, $subtype, $material, $line, $color, $details, $pp, $p, $m, $g, $gg, $xgg, $employee, $dt_register, $value, $dt_created_at, $name_picture){
 
     //coloca a data de hoje
-    $agora = date('Y-m-d');
+    $agora = date('Y-m-d H:i:s');
     $dt_updated_at = $agora;
 
     if(empty($picture__input)){
@@ -122,7 +122,7 @@ function update_stock($id, $part_code, $sector, $type, $subtype, $material, $lin
 function update_cart($id, $qntd_part, $size){
 
     //coloca a data de hoje
-    $agora = date('Y-m-d');
+    $agora = date('Y-m-d H:i:s');
     $dt_updated_at = $agora;
 
     if(empty($qntd_part)){
@@ -138,13 +138,14 @@ function update_cart($id, $qntd_part, $size){
     execute_query($sql1);
 }
 
-function update_address($id, $cpf_cnpj, $cep, $road, $neighborhood, $city, $state, $complement, $number){
+function update_address_order($id, $zipcode, $street, $number, $complement, $neighborhood, $city, $state, $amount){
 
     //coloca a data de hoje
-    $agora = date('Y-m-d');
+    $agora = date('Y-m-d H:i:s');
+    $dt_created_at = $agora;
     $dt_updated_at = $agora;
 
     //insert sql
-    $sql1 = "UPDATE client SET type = 1, cpf_cnpj = '$cpf_cnpj',cep = '$cep', road = '$road', neighborhood = '$neighborhood', city = '$city', state = '$state', complement = '$complement', number = '$number', dt_updated_at = '$dt_updated_at' WHERE id = $id";
+    $sql1 = "INSERT INTO orders (id_client, zipcode, street, number, complement, neighborhood, city, state, status, amount, reference, shipping_method, dt_created_at, dt_updated_at) VALUES ('$id', '$zipcode', '$street', '$number', '$complement', '$neighborhood', '$city', '$state', 0, '$amount', 0, 0, '$dt_created_at', '$dt_updated_at')";
     execute_query($sql1);
 }

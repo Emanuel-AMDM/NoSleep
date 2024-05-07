@@ -67,7 +67,7 @@ $value_total      = value_total($id_user);
 
     <div class="border"><hr id="border_down"></div>
 
-    <form action="../../routes/information_payment/update.php?id=<?= $client['id'] ?>" method="post">
+    <form action="../../routes/information_payment/save.php?id=<?= $client['id'] ?>" method="post">
         <div class="delivery_address">
             <div>
                 <div>
@@ -160,6 +160,7 @@ $value_total      = value_total($id_user);
 
                         <div>
                             <p>R$<?=$value['value']?></p>
+                            <input type="hidden" value='<?=$value['value']?>' name='amount'>
                         </div>
                     <?php endforeach; ?>
                 </div>

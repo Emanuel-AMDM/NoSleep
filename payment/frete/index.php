@@ -11,11 +11,13 @@ if(!isset($_SESSION['user'])){
 require_once('../../services/frete_payment/get_by_id.php');
 require_once('../../services/frete_payment/list_entity.php');
 require_once('../../services/frete_payment/value_total.php');
+require_once('../../services/frete_payment/get_by_id_order.php');
 
 $client           = get_by_id($id_user);
 $cart_information = list_entity($id_user);
 $cart_subtotal    = list_entity($id_user);
 $value_total      = value_total($id_user);
+$id_order         = get_by_id_order($id_user);
 ?>
 
 <!DOCTYPE html>
@@ -77,96 +79,100 @@ $value_total      = value_total($id_user);
 
     <div class="border"><hr id="border_down"></div>
 
-    <div class="frete_calculate">
-        <div>
-            <div>
-                <h2>Frete</h2>
-            </div>
-            <div class="frete_type">
-                <p>Select a shipping method below:</p>
-                <div class="border_box">
-                    <div class="border_box_display">
-                        <div>
-                            <input type="radio" name="frete" id="">Sedex Correio
-                            <p>4 dias ulteis</p>
-                        </div>
-                        <div>
-                            <p id="value1">$25</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="border_box">
-                    <div  class="border_box_display">
-                        <div> 
-                            <input type="radio" name="frete" id="">Motoboy Sorocaba / Votorantim
-                            <p>Entregas a partir das 14horas</p>
-                        </div>
-                        <div>
-                            <p id="value3">$5</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="frete_summary">
-            <h2>Purchase Summary</h2>
-
-            <?php foreach($cart_information as $cart): ?>
-
-                <div class="frete_summary_img">
-                    <img src="../../uploads/<?= $cart['picture'] ?>" alt="">
-                    <p><?= $cart['type'] ?> - <?= $cart['color'] ?> <br> cod.<?= $cart['cod'] ?> | R$<?= $cart['value'] ?></p>
-                    <p id="value">Amount.<?= $cart['amount'] ?> | Size.<?= $cart['size'] ?></p>
-                </div>
-
-            <?php endforeach; ?>
-
-            <div class="border_summary"><hr></div>
-            
-            <div class="frete_summary_subtotal_frete">
-
-                <?php foreach($cart_subtotal as $cart_sub): ?>
-
-                    <div class="frete_summary_subtotal">
-                        <div>
-                            <p>Subtotal</p>
-                        </div>
-                        <div>
-                            <p>R$<?= ROUND($cart_sub['value'] * $cart_sub['amount']) ?></p>
-                        </div>
-                    </div>
-
-                <?php endforeach; ?>
-
-                <div class="frete_summary_frete">
-                    <div>
-                        <p>Frete</p>
-                    </div>
-                    <div>
-                        <p>$15</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="border_summary"><hr></div>
-
-            <div class="frete_summary_total">
+        <div class="frete_calculate">
+            <form action="../../routes/frete_payment/update.php?id=<?= $client['id'] ?>" method="post">
                 <div>
-                    <p>Total</p>
-                </div>
-
-                <?php foreach($value_total as $value): ?>
-                    
                     <div>
-                        <p>R$<?=$value['value']?></p>
+                        <h2>Frete</h2>
+                    </div>
+                    <div class="frete_type">
+                        <p>Select a shipping method below:</p>
+                        <div class="border_box">
+                            <div class="border_box_display">
+                                <div>
+                                    <input type="radio" name="frete" id="">Sedex Correio
+                                    <p>4 dias ulteis</p>
+                                </div>
+                                <div>
+                                    <p id="value1">$25</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border_box">
+                            <div  class="border_box_display">
+                                <div> 
+                                    <input type="radio" name="frete" id="">Motoboy Sorocaba / Votorantim
+                                    <p>Entregas a partir das 14horas</p>
+                                </div>
+                                <div>
+                                    <p id="value3">$5</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="frete_summary">
+                <h2>Purchase Summary</h2>
+
+                <?php foreach($cart_information as $cart): ?>
+
+                    <div class="frete_summary_img">
+                        <img src="../../uploads/<?= $cart['picture'] ?>" alt="">
+                        <p><?= $cart['type'] ?> - <?= $cart['color'] ?> <br> cod.<?= $cart['cod'] ?> | R$<?= $cart['value'] ?></p>
+                        <p id="value">Amount.<?= $cart['amount'] ?> | Size.<?= $cart['size'] ?></p>
                     </div>
 
                 <?php endforeach; ?>
-            
+
+                <div class="border_summary"><hr></div>
+                
+                <div class="frete_summary_subtotal_frete">
+
+                    <?php foreach($cart_subtotal as $cart_sub): ?>
+
+                        <div class="frete_summary_subtotal">
+                            <div>
+                                <p>Subtotal</p>
+                            </div>
+                            <div>
+                                <p>R$<?= ROUND($cart_sub['value'] * $cart_sub['amount']) ?></p>
+                            </div>
+                        </div>
+
+                    <?php endforeach; ?>
+
+                    <div class="frete_summary_frete">
+                        <div>
+                            <p>Frete</p>
+                        </div>
+                        <div>
+                            <p>$15</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border_summary"><hr></div>
+
+                <div class="frete_summary_total">
+                    <div>
+                        <p>Total</p>
+                    </div>
+
+                    <?php foreach($value_total as $value): ?>
+                        
+                        <div>
+                            <p>R$<?=$value['value']?></p>
+                        </div>
+
+                    <?php endforeach; ?>
+                
+                </div>
+                
             </div>
-            
         </div>
-    </div>
+        
 
     <div class="border"><hr id="border_continue"></div>
 

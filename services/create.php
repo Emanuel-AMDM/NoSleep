@@ -5,7 +5,7 @@ require_once('../../database/execute_query.php');
 function create_client($name, $surname, $email, $telephone, $gender, $birthday, $password){
 
     //coloca a data de hoje
-    $agora = date('Y-m-d');
+    $agora = date('Y-m-d H:i:s');
     $dt_created_at = $agora;
     $dt_updated_at = $agora;
 
@@ -25,7 +25,7 @@ function create_client($name, $surname, $email, $telephone, $gender, $birthday, 
 function create_employee($name, $surname, $birthday, $cpf_cnpj, $gender, $rg_ie, $telephone, $email, $cep, $road, $neighborhood, $city, $state, $complement, $number, $login, $password, $birthday){
 
     //coloca a data de hoje
-    $agora = date('Y-m-d');
+    $agora = date('Y-m-d H:i:s');
     $dt_created_at = $agora;
     $dt_updated_at = $agora;
 
@@ -45,7 +45,7 @@ function create_employee($name, $surname, $birthday, $cpf_cnpj, $gender, $rg_ie,
 function create_stock($part_code, $sector, $type, $subtype, $material, $line, $color, $details, $pp, $p, $m, $g, $gg, $xgg, $employee, $dt_register, $value, $name_picture){
 
     //coloca a data de hoje
-    $agora = date('Y-m-d');
+    $agora = date('Y-m-d H:i:s');
     $dt_created_at = $agora;
     $dt_updated_at = $agora;
 
@@ -120,7 +120,7 @@ function create_stock($part_code, $sector, $type, $subtype, $material, $line, $c
 function create_cart($id_part, $id_client, $qntd_part, $size){
 
     //coloca a data de hoje
-    $agora = date('Y-m-d');
+    $agora = date('Y-m-d H:i:s');
     $dt_created_at = $agora;
     $dt_updated_at = $agora;
 
@@ -140,11 +140,48 @@ function create_cart($id_part, $id_client, $qntd_part, $size){
 function create_cart_payment($id){
 
     //coloca a data de hoje
-    $agora = date('Y-m-d');
+    $agora = date('Y-m-d H:i:s');
     $dt_created_at = $agora;
     $dt_updated_at = $agora;
 
     //insert sql
     $sql1 = "INSERT INTO cart_payment (id_cart, dt_created_at, dt_updated_at) VALUES ('$id', '$dt_created_at', '$dt_updated_at')";
     execute_query($sql1);
+}
+
+
+
+function create_address_order($id, $zipcode, $street, $number, $complement, $neighborhood, $city, $state, $amount){
+
+    //coloca a data de hoje
+    $agora = date('Y-m-d H:i:s');
+    $dt_created_at = $agora;
+    $dt_updated_at = $agora;
+
+    //insert sql
+    $sql1 = "INSERT INTO orders (id_client, zipcode, street, number, complement, neighborhood, city, state, status, amount, reference, shipping_method, dt_created_at, dt_updated_at) VALUES ('$id', '$zipcode', '$street', '$number', '$complement', '$neighborhood', '$city', '$state', 0, '$amount', 0, 0, '$dt_created_at', '$dt_updated_at')";
+    execute_query($sql1);
+
+    $sql2 = "SELECT * FROM orders WHERE id_client = $id";
+    $ultimo_pedido = execute_query($sql2);
+
+    foreach($ultimo_pedido as $ulti){
+        $ulti_id = $ulti['id']; //ultimo id orders do cliente
+    }
+
+    $sql3 = "SELECT * FROM cart_payment, cart, stock WHERE cart_payment.id_cart = cart.id AND cart.id_part = stock.id AND cart.id_client = $id";
+    $info_cart = execute_query($sql3);
+
+    foreach($info_cart as $info){
+
+        $cod_part = $info['part_code'];
+        $quantity = $info['qntd_part'];
+        $amount   = $info['value'];
+        $size     = $info['size'];
+
+        $sql4 = "INSERT INTO order_items (id_orders, cod_part, quantity, amount, size, dt_created_at, dt_updated_at) VALUES ('$ulti_id', '$cod_part', '$quantity', '$amount', '$size','$dt_created_at', '$dt_updated_at')";
+        execute_query($sql4);
+    }
+
+
 }
