@@ -177,7 +177,7 @@ $id_order         = get_by_id_order($id_user);
     <div class="border"><hr id="border_continue"></div>
 
     <div class="continue">
-        <a href="../index.php" type="button" class="btn btn-primary">Continue</a>
+        <a href="../process/index.php" type="button" class="btn btn-primary">Continue</a>
     </div>
 
     <footer class="footer">

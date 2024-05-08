@@ -158,8 +158,10 @@ function create_address_order($id, $zipcode, $street, $number, $complement, $nei
     $dt_created_at = $agora;
     $dt_updated_at = $agora;
 
+    $reference = md5(uniqid(time() * rand()));
+
     //insert sql
-    $sql1 = "INSERT INTO orders (id_client, zipcode, street, number, complement, neighborhood, city, state, status, amount, reference, shipping_method, dt_created_at, dt_updated_at) VALUES ('$id', '$zipcode', '$street', '$number', '$complement', '$neighborhood', '$city', '$state', 0, '$amount', 0, 0, '$dt_created_at', '$dt_updated_at')";
+    $sql1 = "INSERT INTO orders (id_client, zipcode, street, number, complement, neighborhood, city, state, status, amount, reference, shipping_method, dt_created_at, dt_updated_at) VALUES ('$id', '$zipcode', '$street', '$number', '$complement', '$neighborhood', '$city', '$state', 0, '$amount', '$reference', 0, '$dt_created_at', '$dt_updated_at')";
     execute_query($sql1);
 
     $sql2 = "SELECT * FROM orders WHERE id_client = $id";

@@ -4,7 +4,9 @@ require_once('../../database/execute_query.php');
 
 function list_entity($id_user){
 
-    $sql = "    SELECT  stock.type as type,
+    $sql = "    SELECT  cart.id as id,
+                        cart.qntd_part as quantity,
+                        stock.type as type,
                         stock.color as color,
                         stock.value as value,
                         stock.part_code as cod,
