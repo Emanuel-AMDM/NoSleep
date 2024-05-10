@@ -3,13 +3,11 @@ session_start();
 
 $id_user = $_SESSION['user'];
 
-require_once('../services/cart/list_entity_index.php');
+require_once('../services/orders/list_entity_orders.php');
 require_once('../services/client/get_by_id_nav_cart.php');
 require_once('../services/cart_payment/get_by_id.php');
 
-$cart = list_entity_cart($id_user);
-
-// $cart_payment = get_cart_payment_by_id($id_cart); esse usa pro if do botao
+$orders = list_entity_orders($id_user);
 
 if(!isset($_SESSION['user'])){
     header('Location: ../../login/index.php');
@@ -25,7 +23,7 @@ if(!isset($_SESSION['user'])){
 <head>
     <meta charset="Latin1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NoSleep - Cart</title>
+    <title>NoSleep - Orders</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -79,11 +77,7 @@ if(!isset($_SESSION['user'])){
     </nav>
 
     <div class="title_cart">
-        <h1>Information Cart</h1>
-    </div>
-
-    <div class="subtitle_cart">
-        <p>Here you choose quantity, size and whether you are going to buy the piece</p>
+        <h1>Information Orders</h1>
     </div>
 
     <div class='contents_center'>
@@ -92,60 +86,27 @@ if(!isset($_SESSION['user'])){
                 <table>
                     <thead class='cart_show_up'>
                         <tr>
-                            <th>Part Code</th>
-                            <th>Sector</th>
-                            <th>Type</th>
-                            <th>Subtype</th>
-                            <th>Material</th>
-                            <th>Color</th>
-                            <th>Details</th>
-                            <th>Value</th>
-                            <th>Amount</th>
-                            <th>Size</th>
-                            <th>Picture</th>
-                            <th>Action</th>
+                            <th>id_order</th>
+                            <th>zipcode_address</th>
+                            <th>status</th>
+                            <th>amount</th>
+                            <th>reference</th>
+                            <th>action</th>
                         </tr>
                     </thead>
-                    <?php foreach($cart as $cart): ?>
+                    <?php foreach($orders as $orders): ?>
                         <tbody class='cart_show_down'>
                             <tr>
-                                <td><?= $cart['part_code'] ?></td>
-                                <td><?= $cart['sector'] ?></td>
-                                <td><?= $cart['type'] ?></td>
-                                <td><?= $cart['subtype'] ?></td>
-                                <td><?= $cart['material'] ?></td>
-                                <td><?= $cart['color'] ?></td>
-                                <td><?= $cart['details'] ?></td>
-                                <td><?= $cart['value'] ?></td>
-                                <td>
-                                    <?php if($cart['qntd_part'] === 'Selecionar Quantidade'): ?>
-                                        <a href="../shop/view_part/edit/index.php?id_cart=<?= $cart['id_cart'] ?>&id_peca=<?= $cart['id_stock'] ?>">Selecionar Quantidade</a>
-                                    <?php else: ?>
-                                        <?= $cart['qntd_part'] ?>
-                                    <?php endif; ?>
-                                </td>
-                                <td>
-                                    <?php if($cart['size'] === 'Selecionar Tamanho'): ?>
-                                        <a href="../shop/view_part/edit/index.php?id_cart=<?= $cart['id_cart'] ?>&id_peca=<?= $cart['id_stock'] ?>">Selecionar Tamanho</a>
-                                    <?php else: ?>
-                                        <?= $cart['size'] ?>
-                                    <?php endif; ?>
-                                </td>
-                                <td><img src="../uploads/<?= $cart['picture'] ?>"></td>
-                                <td>
-                                    <a href="../shop/view_part/edit/index.php?id_cart=<?= $cart['id_cart'] ?>&id_peca=<?= $cart['id_stock'] ?>"><i class="fa-solid fa-eye"></i></a>
-                                        
-                                    <a id="cart_plus" href="../routes/cart_payment/save.php?id=<?= $cart['id_cart'] ?>"><i class="fa-solid fa-cart-plus"></i></a>
-                                
-                                    <a id="trash" href="../routes/cart/delete.php?id=<?= $cart['id_cart'] ?>"><i class="fa-solid fa-trash"></i></a>
-                                </td>
+                                <td><?= $orders['id_order'] ?></td>
+                                <td><?= $orders['zipcode_address'] ?></td>
+                                <td><?= $orders['status'] ?></td>
+                                <td><?= $orders['amount'] ?></td>
+                                <td><?= $orders['reference'] ?></td>
+                                <td><a href="items/index.php?id=<?= $orders['id_order'] ?>"><i class="fa-solid fa-eye"></i></a></td>
                             </tr>
                         </tbody>
                     <?php endforeach; ?>
                 </table>
-            </div>
-            <div class="continue">
-                <a href="../payment/cart/index.php" type="button" class="btn btn-primary">Continue</a>
             </div>
         </div>
     </div>

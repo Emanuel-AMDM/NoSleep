@@ -1,0 +1,185 @@
+/* ultiliza a pagina inteira  */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.nav_menu{
+  background-color:beige;
+  padding: 20px;
+
+  .nav_flex{
+    display: flex;
+  
+    img{
+      margin-top: 15px;
+      width: 200px;
+      height: 40px;
+    }
+  
+    .title_login{
+      padding: 20px 40px;
+      padding-left: 2000px;
+  
+      .login{
+        list-style:none;
+        border:1px solid #c0c0c0;
+        float:left;
+      }
+  
+      .login li{
+        position: relative;
+        border-right: 1px solid #c0c0c0;
+      }
+      
+      .login li a{
+        color: black;
+        text-decoration:none;
+        padding:5px 10px;
+        display:block;
+      }
+  
+      .login li a:hover{
+        background:#333;
+        color:white;
+        -moz-box-shadow:0 3px 10px 0 #7a7979;
+        -webkit-box-shadow:0 3px 10px 0 #7a7979;
+        text-shadow:0px 0px 5px #7a7979;
+      }
+  
+      ul li ul li button{
+        color: black;
+        padding:5px 62px;
+        display:block;
+        border: none;
+        background: none;
+      }
+  
+      ul li ul li button:hover{
+        background:#333;
+        color:white;
+        -moz-box-shadow:0 3px 10px 0 #7a7979;
+        -webkit-box-shadow:0 3px 10px 0 #7a7979;
+        text-shadow:0px 0px 5px #7a7979;
+      }
+  
+      .login li ul{
+        position:absolute;
+        top:25px;
+        left:0;
+        background-color:white;
+        display:none;
+      }
+  
+      .login li:hover ul, .login li.over ul{
+        display:block;
+      }
+  
+      .login li ul li{
+        border:1px solid #c0c0c0;
+        display:block;
+        width:150px;
+      }
+    }
+    
+    .title_login_register{
+      padding: 0px 40px;
+      padding-left: 2100px;
+  
+      a{
+        color: black;
+        text-decoration:none;
+        padding: 10px 10px;
+        display:block;
+      }
+  
+      a:hover{
+        background:#333;
+        color:white;
+        -moz-box-shadow:0 3px 10px 0 #7a7979;
+        -webkit-box-shadow:0 3px 10px 0 #7a7979;
+        text-shadow:0px 0px 5px #7a7979;
+      }
+    }
+  }
+}
+
+.title_cart{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.subtitle_cart{
+  display: flex;
+  justify-content: center;
+  color: #999999;
+}
+
+.contents_center{
+  display: flex;
+  justify-content: center;
+
+  .cart_show{
+    margin-top: 50px;
+
+    table{
+      border-collapse: collapse;  
+    }
+
+    .cart_show_up{
+      tr th{
+        padding: 10px 20px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+        background-color: #04AA6D;
+        color: white;
+      }
+    }
+
+    .cart_show_down{
+      tr td{
+        text-align: left;
+        padding: 10px 20px;
+        border-bottom: 1px solid #ddd;
+      }
+      tr:nth-child(even){
+        background-color: #f2f2f2;
+      }
+      tr td img{
+        width: 100px;
+        height: 100px;
+      }
+      tr td a i{
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+    }
+  }
+  
+  .continue{
+    display: flex;
+    justify-content: flex-end;
+    padding: 50px;
+  
+    a{
+        text-decoration: none;
+        color: black;
+        border: none;
+        background-color: rgb(252, 69, 69);
+        padding: 20px 100px;
+        font-size: 17px;
+        border-radius: 15px;
+        box-shadow: 2px 2px 2px black;
+    }
+  }
+}
+
