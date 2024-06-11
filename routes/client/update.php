@@ -24,4 +24,4 @@ update_client(
     $_POST['dt_created_at']
 );
 
-header('Location: ../../login/index.php');
+header('Location: ../../pages/auth/login/index.php');

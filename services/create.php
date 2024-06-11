@@ -22,7 +22,7 @@ function create_client($name, $surname, $email, $telephone, $gender, $birthday, 
     execute_query($sql2);
 }
 
-function create_employee($name, $surname, $birthday, $cpf_cnpj, $gender, $rg_ie, $telephone, $email, $cep, $road, $neighborhood, $city, $state, $complement, $number, $login, $password, $birthday){
+function create_employee($name, $surname, $birthday, $cpf_cnpj, $gender, $rg_ie, $telephone, $email, $cep, $road, $neighborhood, $city, $state, $complement, $number, $login, $password){
 
     //coloca a data de hoje
     $agora = date('Y-m-d H:i:s');

@@ -13,19 +13,19 @@ foreach($login as $login){
     if($email === $login['email'] && $password === $login['password'] && $login['type'] == 2){
         $_SESSION['user'] = $login['id'];
 
-        header('Location: ../../stock/index.php');
+        header('Location: ../../pages/stock/index.php');
 
         exit;
     
     }elseif($email === $login['email'] && $password === $login['password'] && $login['type'] == 1){
         $_SESSION['user'] = $login['id'];
 
-        header('Location: ../../shop/index.php');
+        header('Location: ../../pages/shop/index.php');
 
         exit;
     }
 }
 
-header('Location: ../../login/index.php');
+header('Location: ../../pages/auth/login/index.php');
 
 exit;

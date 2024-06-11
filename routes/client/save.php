@@ -12,4 +12,4 @@ create_client(
     $_POST['password']
 );
 
-header('Location: ../../login/index.php');
+header('Location: ../../pages/auth/login/index.php');
