@@ -32,4 +32,4 @@ update_stock(
     $name_picture
 );
 
-header('Location: ../../stock/index.php');
+header('Location: ../../pages/stock/index.php');

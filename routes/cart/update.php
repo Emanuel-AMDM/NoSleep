@@ -8,4 +8,4 @@ update_cart(
     $_POST['size']
 );
 
-header('Location: ../../cart/index.php');
+header('Location: ../../pages/cart/index.php');

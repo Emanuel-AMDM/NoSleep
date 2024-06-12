@@ -195,6 +195,6 @@ if(!isset($_SESSION['user'])){
     </form>
 
     <script src="https://kit.fontawesome.com/5dc8345cee.js" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
+    <script src="../../js/cep.js"></script>
 </body>
 </html>

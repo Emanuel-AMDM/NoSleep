@@ -1,0 +1,18 @@
+.back_top{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: 50px;
+    
+    h3 a{
+        text-decoration: none;
+        color: black;
+    }
+
+    h3 a:hover{
+        background-color: rgb(178, 178, 241);
+        transition: all .3s;
+        border-radius: 10px;
+        padding: 15px;
+    }
+}

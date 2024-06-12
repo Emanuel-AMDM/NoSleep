@@ -28,4 +28,4 @@ create_stock(
     $name_picture
 );
 
-header('Location: ../../stock/create/index.php');
+header('Location: ../../pages/stock/create.php');

@@ -22,4 +22,4 @@ create_employee(
     $_POST['password']
 );
 
-header('Location: ../../employee/create/index.php');
+header('Location: ../../pages/employee/create/index.php');

@@ -16,14 +16,14 @@ foreach($cod as $cod){
     <meta charset="Latin1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NoSleep - Stock</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../../css/stock/create.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     
-    <?php require_once('../../nav/index_create_edit.php'); ?>
+    <?php require_once('../nav/index_create_edit.php'); ?>
 
     <form action="../../routes/stock/save.php" method="post" enctype="multipart/form-data">
 
@@ -118,12 +118,12 @@ foreach($cod as $cod){
 
         <div class="stock_button_save">
             <div class="glow-on-hover">
-                <button type="submit">Save</button>
+                <button type="submit">Salvar</button>
             </div>
         </div>
     </form>
 
     <script src="https://kit.fontawesome.com/5dc8345cee.js" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
+    <script src="../../js/imagem.js"></script>
 </body>
 </html>

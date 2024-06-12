@@ -23,7 +23,7 @@ $shoes = list_entity_shoes();
         <?php foreach($shoes as $shoes): ?>
             <div class="border_img">
                 <div>
-                    <a href="../view_part/index.php?id=<?= $shoes['id'] ?>"><img src="../../uploads/<?= $shoes['picture'] ?>" alt="" id="img_1"></a>
+                    <a href="./view-piece/index.php?id=<?= $shoes['id'] ?>"><img src="../../uploads/<?= $shoes['picture'] ?>" alt="" id="img_1"></a>
                 </div>
                 
                 <hr>

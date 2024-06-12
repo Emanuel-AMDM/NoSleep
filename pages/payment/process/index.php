@@ -3,15 +3,15 @@
 session_start();
 
 if(!isset($_SESSION['user'])){
-    header('Location: ../../login/index.php');
+    header('Location: ../../auth/login/index.php');
     exit;
 }else{
     $id_user = $_SESSION['user'];
 }
 
-require_once('../../services/frete_payment/get_by_id.php');
-require_once('../../services/frete_payment/list_entity.php');
-require_once('../../services/frete_payment/get_by_id_order.php');
+require_once('../../../services/frete_payment/get_by_id.php');
+require_once('../../../services/frete_payment/list_entity.php');
+require_once('../../../services/frete_payment/get_by_id_order.php');
 require_once('pagseguro.php');
 
 $client           = get_by_id($id_user);

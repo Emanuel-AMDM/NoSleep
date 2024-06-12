@@ -25,7 +25,7 @@ $value_total      = value_total($id_user);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NoSleep - Information</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../../css/payment/information.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -34,16 +34,16 @@ $value_total      = value_total($id_user);
     
     <nav class="nav_menu">
         <div>
-            <img src="../../img_logo/Destaques_07 - Menu.png" alt="">
+            <img src="../../img/img_logo/Destaques_07 - Menu.png" alt="">
         </div>
     </nav>
 
     <div class="info_payment">
-        <label for="">MyCart > <strong>Infomation</strong> > Frete</label>
+        <label for="">Meu Carrinho > <strong>Informações</strong> > Frete</label>
     </div>
 
     <div class="titulo_information">
-        <h2>Contact</h2>
+        <h2>Contato</h2>
     </div>
 
     <div class="border"><hr></div>
@@ -62,7 +62,7 @@ $value_total      = value_total($id_user);
     </div>
 
     <div class="information_email">
-        <input type="checkbox" name="" id="" checked><label for="">Send news and offers to me by email</label>
+        <input type="checkbox" name="" id="" checked><label for="">Deseja receber emails da nossa loja?</label>
     </div>
 
     <div class="border"><hr id="border_down"></div>
@@ -206,7 +206,7 @@ $value_total      = value_total($id_user);
     </footer>
 
     <script src="https://kit.fontawesome.com/5dc8345cee.js" crossorigin="anonymous"></script>
-    <script src="js/endereco.js"></script>
+    <script src="../../js/cep.js"></script>
 
 </body>
 </html>

@@ -26,7 +26,7 @@ $id_order         = get_by_id_order($id_user);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NoSleep - Frete</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../../css/payment/frete.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -35,16 +35,16 @@ $id_order         = get_by_id_order($id_user);
     
     <nav class="nav_menu">
         <div>
-            <img src="../../img_logo/Destaques_07 - Menu.png" alt="">
+            <img src="../../img/img_logo/Destaques_07 - Menu.png" alt="">
         </div>
     </nav>
 
     <div class="info_frete">
-        <label for="">MyCart > Infomation > <strong>Frete</strong></label>
+        <label for="">Meu Carrinho > Informações > <strong>Frete</strong></label>
     </div>
 
     <div class="titulo_frete">
-        <h2>Infomation</h2>
+        <h2>Informações</h2>
     </div>
 
     <div class="border"><hr></div>
@@ -59,7 +59,7 @@ $id_order         = get_by_id_order($id_user);
                     <p><?= $client['email'] ?></p>
                 </div>
                 <div>
-                    <a href="../../client/edit/index.php?id=<?= $client['id'] ?>" id="alter_up">To alter</a>
+                    <a href="../client/edit.php?id=<?= $client['id'] ?>" id="alter_up">To alter</a>
                 </div>
             </div>
             <hr>
@@ -71,7 +71,7 @@ $id_order         = get_by_id_order($id_user);
                     <p><?= $client['road'] . ', ' . $client['neighborhood'] . ', ' . $client['state'] . ', ' . $client['city'] . ', ' . $client['complement'] . ', ' . $client['number'] ?></p>
                 </div>
                 <div>
-                    <a href="../../client/edit/index.php?id=<?= $client['id'] ?>" id="alter_down">To alter</a>
+                    <a href="../client/edit.php?id=<?= $client['id'] ?>" id="alter_down">To alter</a>
                 </div>
             </div>
         </div>
@@ -177,7 +177,7 @@ $id_order         = get_by_id_order($id_user);
     <div class="border"><hr id="border_continue"></div>
 
     <div class="continue">
-        <a href="../process/index.php" type="button" class="btn btn-primary">Continue</a>
+        <a href="./process/index.php" type="button" class="btn btn-primary">Continue</a>
     </div>
 
     <footer class="footer">

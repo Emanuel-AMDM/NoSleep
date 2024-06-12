@@ -23,7 +23,7 @@ $value_total = value_total($id_user);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NoSleep - MyCart</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../../css/payment/cart.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -32,16 +32,16 @@ $value_total = value_total($id_user);
 
     <nav class="nav_menu">
         <div>
-            <img src="../../img_logo/Destaques_07 - Menu.png" alt="">
+            <img src="../../img/img_logo/Destaques_07 - Menu.png" alt="">
         </div>
     </nav>
 
     <div class="info_frete">
-        <label for=""><strong>MyCart</strong> > Infomation > Frete</label>
+        <label for=""><strong>Meu Carrinho</strong> > Informações > Frete</label>
     </div>
 
     <div class="titulo_frete">
-        <h2>My Cart</h2>
+        <h2>Meu Carrinho</h2>
     </div>
 
     <div class="border"><hr></div>
@@ -105,7 +105,7 @@ $value_total = value_total($id_user);
     <div class="border"><hr id="border_continue"></div>
 
     <div class="continue">
-        <a href="../information/index.php" type="button" class="btn btn-primary">Continue</a>
+        <a href="./information.php" type="button" class="btn btn-primary">Continue</a>
     </div>
 
     <footer class="footer">

@@ -46,11 +46,17 @@ if(!isset($_SESSION['user'])){
                             <a><?= $client['name'] . ' ' . $client['surname'] ?></a>
                             <ul>
                                 <?php if($client['type'] == 2): ?>
-                                    <li><a href="../shop/index.php"                    >Shop        </a></li>
-                                    <li><a href="../../MANUAL-DA-IDENTIDADE-VISUAL.pdf">Lookbook    </a></li>
-                                    <li><a href="../stock/index.php"                   >Estoque     </a></li>
-                                    <li><a href="../employee/index.php"                >Funcionários</a></li>
-                                    <li><a href="../client/index.php"                  >Clientes    </a></li>
+                                    <li><a href="../shop/index.php"                         >Shop               </a></li>
+                                    <li><a href="../../MANUAL-DA-IDENTIDADE-VISUAL.pdf"     >Lookbook           </a></li>
+                                    <li><a href="../stock/index.php"                        >Estoque            </a></li>
+                                    <li><a href="../employee/index.php"                     >Funcionários       </a></li>
+                                    <li><a href="../client/index.php"                       >Clientes           </a></li>
+                                    <li><a href="../shop/shoes.php"                         >Ténis              </a></li>
+                                    <li><a href="../shop/tshirt.php"                        >Camisetas          </a></li>
+                                    <li><a href="../shop/caps.php"                          >Bonés              </a></li>
+                                    <li><a href="../shop/sweatshirts.php"                   >Moletons           </a></li>
+                                    <li><a href="../shop/all-categories.php"                >Todas as Categorias</a></li>
+                                    <li><a href="../client/edit.php?id=<?= $client['id'] ?>">Configurações      </a></li>
                                 <?php else: ?>
                                     <li><a href="../shop/shoes.php"                         >Ténis              </a></li>
                                     <li><a href="../shop/tshirt.php"                        >Camisetas          </a></li>
@@ -78,11 +84,11 @@ if(!isset($_SESSION['user'])){
     </nav>
 
     <div class="title_cart">
-        <h1>Information Cart</h1>
+        <h1>Informações Carrinho</h1>
     </div>
 
     <div class="subtitle_cart">
-        <p>Here you choose quantity, size and whether you are going to buy the piece</p>
+        <p>Aqui você escolhe a quantidade e o tamanho, qual peça você vai levar do carrinho</p>
     </div>
 
     <div class='contents_center'>
@@ -91,18 +97,18 @@ if(!isset($_SESSION['user'])){
                 <table>
                     <thead class='cart_show_up'>
                         <tr>
-                            <th>Part Code</th>
-                            <th>Sector</th>
-                            <th>Type</th>
-                            <th>Subtype</th>
+                            <th>Codigo da Peça</th>
+                            <th>Setor</th>
+                            <th>Tipo</th>
+                            <th>Subtipo</th>
                             <th>Material</th>
-                            <th>Color</th>
-                            <th>Details</th>
-                            <th>Value</th>
-                            <th>Amount</th>
-                            <th>Size</th>
-                            <th>Picture</th>
-                            <th>Action</th>
+                            <th>Cor</th>
+                            <th>Detalhes</th>
+                            <th>Valor</th>
+                            <th>Quantidade</th>
+                            <th>Tamanho</th>
+                            <th>Foto</th>
+                            <th>Ações</th>
                         </tr>
                     </thead>
                     <?php foreach($cart as $cart): ?>
@@ -118,25 +124,25 @@ if(!isset($_SESSION['user'])){
                                 <td><?= $cart['value'] ?></td>
                                 <td>
                                     <?php if($cart['qntd_part'] === 'Selecionar Quantidade'): ?>
-                                        <a href="../shop/view_part/edit/index.php?id_cart=<?= $cart['id_cart'] ?>&id_peca=<?= $cart['id_stock'] ?>">Selecionar Quantidade</a>
+                                        <a href="../shop/view-piece/edit.php?id_cart=<?= $cart['id_cart'] ?>&id_peca=<?= $cart['id_stock'] ?>">Selecionar Quantidade</a>
                                     <?php else: ?>
                                         <?= $cart['qntd_part'] ?>
                                     <?php endif; ?>
                                 </td>
                                 <td>
                                     <?php if($cart['size'] === 'Selecionar Tamanho'): ?>
-                                        <a href="../shop/view_part/edit/index.php?id_cart=<?= $cart['id_cart'] ?>&id_peca=<?= $cart['id_stock'] ?>">Selecionar Tamanho</a>
+                                        <a href="../shop/view-piece/edit.php?id_cart=<?= $cart['id_cart'] ?>&id_peca=<?= $cart['id_stock'] ?>">Selecionar Tamanho</a>
                                     <?php else: ?>
                                         <?= $cart['size'] ?>
                                     <?php endif; ?>
                                 </td>
-                                <td><img src="../uploads/<?= $cart['picture'] ?>"></td>
+                                <td><img src="../../uploads/<?= $cart['picture'] ?>"></td>
                                 <td>
-                                    <a href="../shop/view_part/edit/index.php?id_cart=<?= $cart['id_cart'] ?>&id_peca=<?= $cart['id_stock'] ?>"><i class="fa-solid fa-eye"></i></a>
+                                    <a href="../shop/view-piece/edit.php?id_cart=<?= $cart['id_cart'] ?>&id_peca=<?= $cart['id_stock'] ?>"><i class="fa-solid fa-eye"></i></a>
                                         
-                                    <a id="cart_plus" href="../routes/cart_payment/save.php?id=<?= $cart['id_cart'] ?>"><i class="fa-solid fa-cart-plus"></i></a>
+                                    <a id="cart_plus" href="../../routes/cart_payment/save.php?id=<?= $cart['id_cart'] ?>"><i class="fa-solid fa-cart-plus"></i></a>
                                 
-                                    <a id="trash" href="../routes/cart/delete.php?id=<?= $cart['id_cart'] ?>"><i class="fa-solid fa-trash"></i></a>
+                                    <a id="trash" href="../../routes/cart/delete.php?id=<?= $cart['id_cart'] ?>"><i class="fa-solid fa-trash"></i></a>
                                 </td>
                             </tr>
                         </tbody>

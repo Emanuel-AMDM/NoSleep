@@ -10,7 +10,7 @@
 }
 
 .nav_menu{
-    padding-left: 600px;
+    padding: 0px 340px;
 
     img{
         margin-top: 50px;
@@ -20,7 +20,7 @@
 }
 
 .info_frete{
-    padding-left: 600px;
+    padding: 0px 340px;
     
     label{
         font-size: 12px;
@@ -30,10 +30,11 @@
 
 .titulo_frete{
 
+    margin-top: 30px;
+
     h2{
         color: rgb(190, 190, 190);
-        margin-top: 35px;
-        padding-left: 630px;
+        padding: 0px 340px;;
     }
 }
 
@@ -65,9 +66,8 @@
 
 .frete_calculate{
     display: flex;
-    justify-content: center;
-    margin-top: 15px;
-    gap: 300px;
+    justify-content: space-evenly;
+    padding: 20px 0px;
 
     h2{
         color: rgb(190, 190, 190);
@@ -144,10 +144,9 @@
 }
 
 .continue{
-    margin-top: 50px;
     display: flex;
-    justify-content: flex-end;
-    padding-right: 700px;
+    justify-content: center;
+    margin-top: 30px;
 
     a{
         text-decoration: none;

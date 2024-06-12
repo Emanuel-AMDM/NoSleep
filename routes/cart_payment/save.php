@@ -8,4 +8,4 @@ create_cart_payment(
     $id
 );
 
-header('Location: ../../cart/index.php');
+header('Location: ../../pages/cart/index.php');

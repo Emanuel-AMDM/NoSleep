@@ -1,6 +1,6 @@
 <?php
 
-require_once('../database/execute_query.php');
+require_once('../../database/execute_query.php');
 
 function get_by_id($id){
 

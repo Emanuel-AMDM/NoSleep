@@ -14,4 +14,4 @@ create_address_order(
     $_POST['amount']
 );
 
-header('Location: ../../payment/frete/index.php');
+header('Location: ../../pages/payment/frete.php');

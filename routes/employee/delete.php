@@ -4,4 +4,4 @@ require_once('../../services/delete.php');
 
 delete_employee($_GET['id']);
 
-header('Location: ../../employee/index.php');
+header('Location: ../../pages/employee/index.php');

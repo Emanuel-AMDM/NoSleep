@@ -24,4 +24,4 @@ update_employee(
     $_POST['dt_created_at']
 );
 
-header('Location: ../../employee/index.php');
+header('Location: ../../pages/employee/index.php');

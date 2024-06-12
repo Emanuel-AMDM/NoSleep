@@ -4,4 +4,4 @@ require_once('../../services/delete.php');
 
 delete_cart($_GET['id']);
 
-header('Location: ../../cart/index.php');
+header('Location: ../../pages/cart/index.php');

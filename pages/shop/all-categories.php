@@ -23,7 +23,7 @@ $allcategories = list_entity_allcategories();
         <?php foreach($allcategories as $allcategories): ?>
             <div class="border_img">
                 <div>
-                    <a href="../view_part/index.php?id=<?= $allcategories['id'] ?>"><img src="../../uploads/<?= $allcategories['picture'] ?>" alt="" id="img_1"></a>
+                    <a href="../view-piece/index.php?id=<?= $allcategories['id'] ?>"><img src="../../uploads/<?= $allcategories['picture'] ?>" alt="" id="img_1"></a>
                 </div>
                 
                 <hr>

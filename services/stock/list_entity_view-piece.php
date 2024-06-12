@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../database/execute_query.php');
+require_once('../../../database/execute_query.php');
 
 function list_entity_viewpart($id){
 

@@ -36,10 +36,17 @@ $stock = list_entity_stock();
                     <a><?= $client['name'] . ' ' . $client['surname'] ?></a>
                     <ul>
                         <?php if($client['type'] == 2): ?>
-                            <li><a href="../../MANUAL-DA-IDENTIDADE-VISUAL.pdf">Lookbook    </a></li>
-                            <li><a href="../stock/index.php"                   >Estoque     </a></li>
-                            <li><a href="../employee/index.php"                >Funcionários</a></li>
-                            <li><a href="../client/index.php"                  >Clientes    </a></li>
+                            <li><a href="../../MANUAL-DA-IDENTIDADE-VISUAL.pdf"     >Lookbook           </a></li>
+                            <li><a href="../stock/index.php"                        >Estoque            </a></li>
+                            <li><a href="../employee/index.php"                     >Funcionários       </a></li>
+                            <li><a href="../client/index.php"                       >Clientes           </a></li>
+                            <li><a href="./shoes.php"                               >Ténis              </a></li>
+                            <li><a href="./tshirt.php"                              >Camisetas          </a></li>
+                            <li><a href="./caps.php"                                >Bonés              </a></li>
+                            <li><a href="./sweatshirts.php"                         >Moletons           </a></li>
+                            <li><a href="./all-categories.php"                      >Todas as Categorias</a></li>
+                            <li><a href="../cart/index.php"                         >Carrinho           </a></li>
+                            <li><a href="../client/edit.php?id=<?= $client['id'] ?>">Configurações      </a></li>
                         <?php else: ?>
                             <li><a href="./shoes.php"                          >Ténis              </a></li>
                             <li><a href="./tshirt.php"                         >Camisetas          </a></li>
@@ -74,11 +81,11 @@ $stock = list_entity_stock();
         <div class="filter_bar">
             <div>
                 <ul class="menu">
-                    <li><a href="./shoes.php"         >Shoes         </a></li>
-                    <li><a href="./tshirt.php"        >T-shirts      </a></li>
-                    <li><a href="./caps.php"          >Caps          </a></li>
-                    <li><a href="./sweatshirts.php"   >Sweatshirts   </a></li>
-                    <li><a href="./all-categories.php">All categories</a></li>
+                    <li><a href="./shoes.php"         >Ténis              </a></li>
+                    <li><a href="./tshirt.php"        >Camisetas          </a></li>
+                    <li><a href="./caps.php"          >Bonés              </a></li>
+                    <li><a href="./sweatshirts.php"   >Moletons           </a></li>
+                    <li><a href="./all-categories.php">Todas as Categorias</a></li>
                 </ul>
             </div>
         </div>
