@@ -40,6 +40,7 @@
     .login li a{
         color: black;
         text-decoration:none;
+        text-align: center;
         padding:5px 10px;
         display:block;
     }

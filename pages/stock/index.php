@@ -1,5 +1,5 @@
 <?php
-require_once('../../services/stock/list_entity_index.php');
+require_once('../../services/data/stock/list-entity.php');
 $stock = list_entity_stock();
 ?>
 
@@ -71,7 +71,7 @@ $stock = list_entity_stock();
                         <td><?= $stock['value'] ?></td>
                         <td><?= $stock['dt_register'] ?></td>
                         <td><img src="../../uploads/<?= $stock['picture'] ?>"></td>
-                        <td><a href="./edit.php?id=<?= $stock['id'] ?>"><i class="fa-solid fa-eye"></i></a><a id="trash" href="../../routes/stock/delete.php?id=<?= $stock['id'] ?>"><i class="fa-solid fa-trash"></i></a></td>
+                        <td><a href="./edit.php?id=<?= $stock['id'] ?>"><i class="fa-solid fa-eye"></i></a><a id="trash" href="../../routes/delete/stock.php?id=<?= $stock['id'] ?>"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>

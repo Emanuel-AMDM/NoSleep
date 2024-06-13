@@ -1,8 +1,8 @@
 <?php
 session_start();
-require_once('../../../services/stock/get_by_id.php');
-require_once('../../../services/stock/list_entity_view-piece.php');
-require_once('../../../services/client/get_by_id_nav_view-piece.php');
+require_once('../../../services/get-by-id/stock/view-piece.php');
+require_once('../../../services/data/stock/view-piece.php');
+require_once('../../../services/get-by-id/client/nav-view-piece.php');
 $id = $_GET['id'];
 $viewpart = get_stock_by_id($id);
 $stock = list_entity_viewpart($id);
@@ -90,7 +90,7 @@ if(!isset($_SESSION['user'])){
                 <img src="../../../uploads/<?= $viewpart['picture'] ?>" alt="">
             </div>
         </div>
-        <form action="../../../routes/cart/save.php?id=<?= $viewpart['id'] ?>" method="post">
+        <form action="../../../routes/save/cart.php?id=<?= $viewpart['id'] ?>" method="post">
             <div class="part_info">
                 <hr>
                 <div class="part_value_padding">

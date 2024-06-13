@@ -2,7 +2,7 @@
 
 require_once('../../database/execute_query.php');
 
-function list_entity_client(){
+function list_entity(){
     
     $sql = "SELECT * FROM client WHERE type = 1";
     $client = execute_query($sql);

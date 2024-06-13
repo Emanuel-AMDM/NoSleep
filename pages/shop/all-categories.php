@@ -1,5 +1,5 @@
 <?php
-require_once('../../services/shop/list_entity_allcategories.php');
+require_once('../../services/data/shop/allcategories.php');
 $allcategories = list_entity_allcategories();
 ?>
 
@@ -23,17 +23,17 @@ $allcategories = list_entity_allcategories();
         <?php foreach($allcategories as $allcategories): ?>
             <div class="border_img">
                 <div>
-                    <a href="../view-piece/index.php?id=<?= $allcategories['id'] ?>"><img src="../../uploads/<?= $allcategories['picture'] ?>" alt="" id="img_1"></a>
+                    <a href="./view-piece/index.php?id=<?= $allcategories['id'] ?>"><img src="../../uploads/<?= $allcategories['picture'] ?>" alt="" id="img_1"></a>
                 </div>
                 
                 <hr>
 
-                <div class="allcategories_info">
-                    <div class="allcategories_contents">
-                        <div class="allcategories_img">
+                <div class="info">
+                    <div class="contents">
+                        <div class="img">
                             <label for="" id="roupa1"><?= $allcategories['material'] . ' - ' . $allcategories['sector'] ?></label>
                         </div>
-                        <div class="allcategories_value">
+                        <div class="value">
                             <label for=""><?='R$' . $allcategories['value'] ?></label>
                         </div>
                     </div>

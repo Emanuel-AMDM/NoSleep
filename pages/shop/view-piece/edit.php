@@ -1,9 +1,9 @@
 <?php
 session_start();
-require_once('../../../services/cart/get_by_id.php');
-require_once('../../../services/cart/list_entity_viewpart.php');
-require_once('../../../services/cart/list_entity_cart.php');
-require_once('../../../services/client/get_by_id_nav_viewpart_edit.php');
+require_once('../../../services/get-by-id/cart/index.php');
+require_once('../../../services/data/cart/view-piece.php');
+require_once('../../../services/data/cart/list-entity.php');
+require_once('../../../services/get-by-id/client/view-piece-edit.php');
 
 $id_user = $_SESSION['user'];
 $id = $_GET['id_peca'];
@@ -16,7 +16,7 @@ if(!isset($_SESSION['user'])){
     exit;
 }else{
     $id_client = $_SESSION['user'];
-    $client = get_by_id($id_client);
+    $client = get_by_id_client($id_client);
 }
 
 ?>
@@ -95,7 +95,7 @@ if(!isset($_SESSION['user'])){
                 <img src="../../../uploads/<?= $viewpart['picture'] ?>" alt="">
             </div>
         </div>
-        <form action="../../../routes/cart/update.php?id=<?= $_GET['id_cart'] ?>" method="post">
+        <form action="../../../routes/update/cart.php?id=<?= $_GET['id_cart'] ?>" method="post">
             <div class="part_info">
                 <hr>
                 <div class="part_value_padding">

@@ -1,5 +1,5 @@
 <?php
-require_once('../../services/shop/list_entity_shoes.php');
+require_once('../../services/data/shop/shoes.php');
 $shoes = list_entity_shoes();
 ?>
 
@@ -28,12 +28,12 @@ $shoes = list_entity_shoes();
                 
                 <hr>
 
-                <div class="shoes_info">
-                    <div class="shoes_contents">
-                        <div class="shoes_img">
+                <div class="info">
+                    <div class="contents">
+                        <div class="img">
                             <label for="" id="roupa1"><?= $shoes['material'] . ' - ' . $shoes['sector'] ?></label>
                         </div>
-                        <div class="shoes_value">
+                        <div class="value">
                             <label for=""><?='R$' . $shoes['value'] ?></label>
                         </div>
                     </div>

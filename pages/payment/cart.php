@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-require_once('../../services/cart_payment/list_entity.php');
-require_once('../../services/cart_payment/value_total.php');
+require_once('../../services/data/cart-payment/list-entity.php');
+require_once('../../services/data/cart-payment/value-total.php');
 
 if(!isset($_SESSION['user'])){
     header('Location: ../../login/index.php');

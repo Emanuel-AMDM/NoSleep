@@ -1,5 +1,5 @@
 <?php
-require_once('../../services/stock/get_by_id.php');
+require_once('../../services/get-by-id/stock/index.php');
 
 $id = $_GET['id'];
 
@@ -22,7 +22,7 @@ $stock = get_stock_by_id($id);
     
     <?php require_once('../nav/index_create_edit.php'); ?>
 
-    <form action="../../routes/stock/update.php?id=<?= $stock['id'] ?>" method="post"  enctype="multipart/form-data">
+    <form action="../../routes/update/stock.php?id=<?= $stock['id'] ?>" method="post"  enctype="multipart/form-data">
         
         <input type="hidden" value='<?= $stock['dt_created_at'] ?>' name='dt_created_at'>
 

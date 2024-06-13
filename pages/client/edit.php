@@ -1,12 +1,12 @@
 <?php
 session_start();
-require_once('../../services/client/get_client_by_id.php');
-require_once('../../services/client/get_by_id_nav_create_edit.php');
+require_once('../../services/get-by-id/client/edit.php');
+require_once('../../services/get-by-id/client/index.php');
 
 
 $id = $_GET['id'];
 
-$client_edit = get_client_by_id($id);
+$client_edit = get_by_id_client($id);
 
 if(!isset($_SESSION['user'])){
     header('Location: ../auth/login/index.php');
@@ -33,7 +33,7 @@ if(!isset($_SESSION['user'])){
     <nav class="nav_menu">
         <div class="nav_flex">
             <div>
-                <a href="../index/index.html"><img src="../../img/img_logo/Destaques_07 - Menu.png" alt=""></a>
+                <a href="../index/index.php"><img src="../../img/img_logo/Destaques_07 - Menu.png" alt=""></a>
             </div>
 
             <?php if($client['name'] != '' && $client['surname'] != ''): ?>
@@ -78,7 +78,7 @@ if(!isset($_SESSION['user'])){
         <h1>Editar Cliente</h1>
     </div>
 
-    <form action='../../routes/client/update.php?id=<?=$client_edit['id']?>' method='post'>
+    <form action='../../routes/update/client.php?id=<?=$client_edit['id']?>' method='post'>
         <input type="hidden" name="dt_created_at" id="" value='<?= $client_edit['dt_created_at'] ?>'>
 
         <div class="client_content_center">

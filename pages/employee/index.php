@@ -1,5 +1,5 @@
 <?php
-require_once('../../services/employee/list_entity_index.php');
+require_once('../../services/data/employee/list-entity.php');
 $employee = list_entity_employee();
 ?>
 
@@ -65,7 +65,7 @@ $employee = list_entity_employee();
                             <td><?= $employee['complement'] ?></td>
                             <td><?= $employee['number'] ?></td>
                             <td><?= $employee['dt_created_at'] ?></td>
-                            <td><a href="./edit.php?id=<?= $employee['id'] ?>"><i class="fa-solid fa-eye"></i></a><a id="trash" href="../../routes/employee/delete.php?id=<?= $employee['id'] ?>"><i class="fa-solid fa-trash"></i></a></td>
+                            <td><a href="./edit.php?id=<?= $employee['id'] ?>"><i class="fa-solid fa-eye"></i></a><a id="trash" href="../../routes/delete/employee.php?id=<?= $employee['id'] ?>"><i class="fa-solid fa-trash"></i></a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

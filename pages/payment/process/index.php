@@ -9,9 +9,9 @@ if(!isset($_SESSION['user'])){
     $id_user = $_SESSION['user'];
 }
 
-require_once('../../../services/frete_payment/get_by_id.php');
-require_once('../../../services/frete_payment/list_entity.php');
-require_once('../../../services/frete_payment/get_by_id_order.php');
+require_once('../../../services/get-by-id/frete-payment/index.php');
+require_once('../../../services/data/frete-payment/list-entity.php');
+require_once('../../../services/get-by-id/frete-payment/order.php');
 require_once('pagseguro.php');
 
 $client           = get_by_id($id_user);

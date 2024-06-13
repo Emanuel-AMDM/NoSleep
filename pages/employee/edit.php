@@ -1,5 +1,5 @@
 <?php
-require_once('../../services/employee/get_by_id.php');
+require_once('../../services/get-by-id/employee/index.php');
 
 $id = $_GET['id'];
 
@@ -25,7 +25,7 @@ $employee = get_employee_by_id($id);
         <h1>Editar Funcionário</h1>
     </div>
 
-    <form action='../../routes/employee/update.php?id=<?=$employee['id']?>' method='post'>
+    <form action='../../routes/update/employee.php?id=<?=$employee['id']?>' method='post'>
     <input type="hidden" name="dt_created_at" id="" value='<?= $employee['dt_created_at'] ?>'>
 
         <div class="content-center">

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once('../../services/client/get_by_id_nav_create_edit.php');
+require_once('../../services/get-by-id/client/nav-index.php');
 
 if(!isset($_SESSION['user'])){
     header('Location: ../auth/login/index.php');

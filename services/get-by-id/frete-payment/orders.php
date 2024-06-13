@@ -2,13 +2,13 @@
 
 require_once('../../database/execute_query.php');
 
-function get_by_id($id){
+function get_by_id_order($id_user){  
 
-    $sql = "SELECT * FROM client WHERE id = $id";
+    $sql = "SELECT * FROM orders WHERE id_client = $id_user ORDER BY id DESC";
     $client = execute_query($sql);
 
     foreach($client as $cli){
-        if($cli['id'] == $id){
+        if($cli['id_client'] == $id_user){
             return $cli;
         }
     }

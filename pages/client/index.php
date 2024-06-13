@@ -1,6 +1,6 @@
 <?php
-    require_once('../../services/client/list_entity_index.php');
-    $client_table = list_entity_client();
+    require_once('../../services/data/client/list-entity.php');
+    $client_table = list_entity();
 ?>
 
 <!DOCTYPE html>

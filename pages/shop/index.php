@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-require_once('../../services/shop/list_entity_index.php');
-require_once('../../services/client/get_by_id.php');
+require_once('../../services/data/shop/index.php');
+require_once('../../services/get-by-id/client/index.php');
 
 if(!isset($_SESSION['user'])){
     header('/index.php');

@@ -1,5 +1,5 @@
 <?php
-require_once('../../services/shop/list_entity_caps.php');
+require_once('../../services/data/shop/caps.php');
 $caps = list_entity_caps()
 ?>
 
@@ -23,17 +23,17 @@ $caps = list_entity_caps()
         <?php foreach($caps as $caps): ?>
             <div class="border_img">
                 <div>
-                    <a href="../view-piece/index.php?id=<?= $caps['id'] ?>"><img src="../../uploads/<?= $caps['picture'] ?>" alt="" id="img_1"></a>
+                    <a href="./view-piece/index.php?id=<?= $caps['id'] ?>"><img src="../../uploads/<?= $caps['picture'] ?>" alt="" id="img_1"></a>
                 </div>
                 
                 <hr>
 
-                <div class="caps_info">
-                    <div class="caps_contents">
-                        <div class="caps_img">
+                <div class="info">
+                    <div class="contents">
+                        <div class="img">
                             <label for="" id="roupa1"><?= $caps['material'] . ' - ' . $caps['sector'] ?></label>
                         </div>
-                        <div class="caps_value">
+                        <div class="value">
                             <label for=""><?='R$' . $caps['value'] ?></label>
                         </div>
                     </div>

@@ -3,9 +3,9 @@ session_start();
 
 $id_user = $_SESSION['user'];
 
-require_once('../../services/cart/list_entity_index.php');
-require_once('../../services/client/get_by_id_nav_cart.php');
-require_once('../../services/cart_payment/get_by_id.php');
+require_once('../../services/data/cart/index.php');
+require_once('../../services/get-by-id/client/nav-index.php');
+require_once('../../services/get-by-id/cart/cart-payment.php');
 
 $cart = list_entity_cart($id_user);
 
@@ -140,9 +140,9 @@ if(!isset($_SESSION['user'])){
                                 <td>
                                     <a href="../shop/view-piece/edit.php?id_cart=<?= $cart['id_cart'] ?>&id_peca=<?= $cart['id_stock'] ?>"><i class="fa-solid fa-eye"></i></a>
                                         
-                                    <a id="cart_plus" href="../../routes/cart_payment/save.php?id=<?= $cart['id_cart'] ?>"><i class="fa-solid fa-cart-plus"></i></a>
+                                    <a id="cart_plus" href="../../routes/save/cart-payment.php?id=<?= $cart['id_cart'] ?>"><i class="fa-solid fa-cart-plus"></i></a>
                                 
-                                    <a id="trash" href="../../routes/cart/delete.php?id=<?= $cart['id_cart'] ?>"><i class="fa-solid fa-trash"></i></a>
+                                    <a id="trash" href="../../routes/delete/cart.php?id=<?= $cart['id_cart'] ?>"><i class="fa-solid fa-trash"></i></a>
                                 </td>
                             </tr>
                         </tbody>

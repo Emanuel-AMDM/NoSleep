@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-require_once('../../services/information_payment/get_by_id.php');
-require_once('../../services/information_payment/list_entity.php');
-require_once('../../services/information_payment/value_total.php');
+require_once('../../services/get-by-id/information-payment/index.php');
+require_once('../../services/data/information-payment/list-entity.php');
+require_once('../../services/data/information-payment/value-total.php');
 
 
 if(!isset($_SESSION['user'])){
@@ -67,7 +67,7 @@ $value_total      = value_total($id_user);
 
     <div class="border"><hr id="border_down"></div>
 
-    <form action="../../routes/information_payment/save.php?id=<?= $client['id'] ?>" method="post">
+    <form action="../../routes/save/information-payment.php?id=<?= $client['id'] ?>" method="post">
         <div class="delivery_address">
             <div>
                 <div>

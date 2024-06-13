@@ -25,7 +25,7 @@ foreach($cod as $cod){
     
     <?php require_once('../nav/index_create_edit.php'); ?>
 
-    <form action="../../routes/stock/save.php" method="post" enctype="multipart/form-data">
+    <form action="../../routes/save/stock.php" method="post" enctype="multipart/form-data">
 
         <div class="title-company">
             <h1>Part Registration</h1>

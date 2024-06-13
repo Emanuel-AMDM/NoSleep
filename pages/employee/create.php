@@ -17,7 +17,7 @@
         <h1>Employee Registration</h1>
     </div>
 
-    <form action='../../routes/employee/save.php' method='post'>
+    <form action='../../routes/save/employee.php' method='post'>
 
         <div class="content-center">
             <div class="content-column">

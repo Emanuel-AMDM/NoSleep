@@ -8,10 +8,10 @@ if(!isset($_SESSION['user'])){
     $id_user = $_SESSION['user'];
 }
 
-require_once('../../services/frete_payment/get_by_id.php');
-require_once('../../services/frete_payment/list_entity.php');
-require_once('../../services/frete_payment/value_total.php');
-require_once('../../services/frete_payment/get_by_id_order.php');
+require_once('../../services/get-by-id/frete-payment/payment-frete.php');
+require_once('../../services/data/frete-payment/index.php');
+require_once('../../services/data/frete-payment/value-total.php');
+require_once('../../services/get-by-id/frete-payment/orders.php');
 
 $client           = get_by_id($id_user);
 $cart_information = list_entity($id_user);

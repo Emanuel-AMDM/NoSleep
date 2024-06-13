@@ -2,7 +2,7 @@
 
 require_once('../../../database/execute_query.php');
 
-function get_by_id($id_user){  
+function get_by_id($id_user){
 
     $sql = "SELECT * FROM client WHERE id = $id_user";
     $client = execute_query($sql);

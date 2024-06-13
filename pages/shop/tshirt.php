@@ -1,5 +1,5 @@
 <?php
-require_once('../../services/shop/list_entity_tshirt.php');
+require_once('../../services/data/shop/tshirt.php');
 $tshirt = list_entity_tshirt();
 
 ?>
@@ -24,17 +24,17 @@ $tshirt = list_entity_tshirt();
         <?php foreach($tshirt as $tshirt): ?>
             <div class="border_img">
                 <div>
-                    <a href="../view-piece/index.php?id=<?= $tshirt['id'] ?>"><img src="../../uploads/<?= $tshirt['picture'] ?>" alt="" id="img_1"></a>
+                    <a href="./view-piece/index.php?id=<?= $tshirt['id'] ?>"><img src="../../uploads/<?= $tshirt['picture'] ?>" alt="" id="img_1"></a>
                 </div>
                 
                 <hr>
 
-                <div class="tshirt_info">
-                    <div class="tshirt_contents">
-                        <div class="tshirt_img">
+                <div class="info">
+                    <div class="contents">
+                        <div class="img">
                             <label for="" id="roupa1"><?= $tshirt['material'] . ' - ' . $tshirt['sector'] ?></label>
                         </div>
-                        <div class="tshirt_value">
+                        <div class="value">
                             <label for=""><?='R$' . $tshirt['value'] ?></label>
                         </div>
                     </div>

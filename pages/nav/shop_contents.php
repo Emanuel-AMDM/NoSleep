@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once('../../services/client/get_by_id_nav.php');
+require_once('../../services/get-by-id/client/index.php');
 
 if(!isset($_SESSION['user'])){
     header('/index.php');
