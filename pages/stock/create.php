@@ -16,7 +16,7 @@ foreach($cod as $cod){
     <meta charset="Latin1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NoSleep - Stock</title>
-    <link rel="stylesheet" href="../../css/stock/create.css">
+    <link rel="stylesheet" href="../../css/stock/create-edit.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -27,12 +27,12 @@ foreach($cod as $cod){
 
     <form action="../../routes/stock/save.php" method="post" enctype="multipart/form-data">
 
-        <div class="stock_title">
+        <div class="title-company">
             <h1>Part Registration</h1>
         </div>
 
-        <div class="stock_content_center">
-            <div class="stock_content_column">
+        <div class="content-center">
+            <div class="content-column">
                 <label for="">Codigo da Peça</label>
                 <input type="text" name="part_code" id="" value='<?= $cod ?>' readonly>
             
@@ -54,7 +54,7 @@ foreach($cod as $cod){
                 <input type="text" name="employee" id="">
             </div>
 
-            <div class="stock_content_column">
+            <div class="content-column">
                 <label for="">Material</label>
                 <input type="text" name="material" id="">
 
@@ -64,42 +64,42 @@ foreach($cod as $cod){
                 <label for="">Linha</label>
                 <input type="text" name="line" id="">
 
-                <div class="stock_content_column">
-                    <div class="stock_information_size">
-                        <div class="stock_content_column">
+                <div class="content-column">
+                    <div class="information-size">
+                        <div class="content-column">
                             <label for="">PP</label>
                             <input type="number" name="pp" id="pp">
                         </div>
-                        <div class="stock_content_column">
+                        <div class="content-column">
                             <label for="">P</label>
                             <input type="number" name="p" id="p">
                         </div>
-                        <div class="stock_content_column">
+                        <div class="content-column">
                             <label for="">M</label>
                             <input type="number" name="m" id="m">
                         </div>
-                        <div class="stock_content_column">
+                        <div class="content-column">
                             <label for="">G</label>
                             <input type="number" name="g" id="g">
                         </div>
-                        <div class="stock_content_column">
+                        <div class="content-column">
                             <label for="">GG</label>
                             <input type="number" name="gg" id="gg">
                         </div>
-                        <div class="stock_content_column">
+                        <div class="content-column">
                             <label for="">XGG</label>
                             <input type="number" name="xgg" id="xgg">
                         </div>
                     </div>
                 </div>
 
-                <div class="stock_content_column">
-                    <div class="stock_information">
-                        <div class="stock_content_column">
+                <div class="content-column">
+                    <div class="information">
+                        <div class="content-column">
                             <label for="">Data Cadastro</label>
                             <input type="date" name="dt_register" id="dt_register" required>
                         </div>
-                        <div class="stock_content_column">
+                        <div class="content-column">
                             <label for="">Valor</label>
                             <input type="text" name="value" id="value" required>
                         </div>
@@ -107,7 +107,7 @@ foreach($cod as $cod){
                 </div>
             </div>
         
-            <div class="stock_content_center">
+            <div class="content-center">
                 <label class="picture" for="picture__input" tabIndex="0">
                 <span class="picture__image"></span>
                 </label>
@@ -116,7 +116,7 @@ foreach($cod as $cod){
             </div>
         </div>
 
-        <div class="stock_button_save">
+        <div class="button-save-company">
             <div class="glow-on-hover">
                 <button type="submit">Salvar</button>
             </div>

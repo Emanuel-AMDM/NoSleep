@@ -1,0 +1,23 @@
+.content-center{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    .content-column{
+        display: flex;
+        flex-direction: column;
+
+        #cidade{
+            width: 280px;
+        }
+        #estado{
+            width: 100px;
+        }
+        #numero{
+            width: 100px;
+        }
+        #complemento{
+            width: 700px;
+        }
+    }
+}
