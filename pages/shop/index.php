@@ -1,18 +1,18 @@
 <?php
-session_start();
+// session_start();
 
-require_once('../../services/data/shop/index.php');
-require_once('../../services/get-by-id/client/index.php');
+// require_once('../../services/data/shop/index.php');
+// require_once('../../services/get-by-id/client/index.php');
 
-if(!isset($_SESSION['user'])){
-    header('/index.php');
-    $client = get_by_id(0);
-}else{
-    $id_client = $_SESSION['user'];
-    $client = get_by_id($id_client);
-}
+// if(!isset($_SESSION['user'])){
+//     header('/index.php');
+//     $client = get_by_id(0);
+// }else{
+//     $id_client = $_SESSION['user'];
+//     $client = get_by_id($id_client);
+// }
 
-$stock = list_entity_stock();
+// $stock = list_entity_stock();
 ?>
 
 <!DOCTYPE html>

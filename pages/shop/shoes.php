@@ -1,6 +1,6 @@
 <?php
-require_once('../../services/data/shop/shoes.php');
-$shoes = list_entity_shoes();
+// require_once('../../services/data/shop/shoes.php');
+// $shoes = list_entity_shoes();
 ?>
 
 <!DOCTYPE html>
@@ -19,11 +19,11 @@ $shoes = list_entity_shoes();
 
     <?php require_once('../nav/shop_contents.php'); ?>
     
-    <div class="img_shop">
+    <!-- <div class="img_shop">
         <?php foreach($shoes as $shoes): ?>
             <div class="border_img">
                 <div>
-                    <a href="./view-piece/index.php?id=<?= $shoes['id'] ?>"><img src="../../uploads/<?= $shoes['picture'] ?>" alt="" id="img_1"></a>
+                    <!-- <a href="./view-piece/index.php?id=<?= $shoes['id'] ?>"><img src="../../uploads/<?= $shoes['picture'] ?>" alt="" id="img_1"></a> -->
                 </div>
                 
                 <hr>
@@ -31,16 +31,16 @@ $shoes = list_entity_shoes();
                 <div class="info">
                     <div class="contents">
                         <div class="img">
-                            <label for="" id="roupa1"><?= $shoes['material'] . ' - ' . $shoes['sector'] ?></label>
+                            <!-- <label for="" id="roupa1"><?= $shoes['material'] . ' - ' . $shoes['sector'] ?></label> -->
                         </div>
                         <div class="value">
-                            <label for=""><?='R$' . $shoes['value'] ?></label>
+                            <!-- <label for=""><?='R$' . $shoes['value'] ?></label> -->
                         </div>
                     </div>
                 </div>
             </div>
         <?php endforeach; ?>
-    </div>
+    </div> -->
     
 
     <div class="back_top">
